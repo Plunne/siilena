@@ -4,7 +4,7 @@
 
 Installer git normalement en fonction de votre Systeme d'Exploitation (OS).
 
-Puis configurer un compte git local.
+Puis configurer un compte git global sur la machine locale.
 
 #+begin_src shell
 git config --global user.email "<adresse@mail.com>"
