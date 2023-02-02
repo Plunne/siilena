@@ -51,3 +51,24 @@ Envoyer les modification sur le depot main distant.
 #+begin_src shell
 git push -u origin main
 #+end_src
+
+* Depot distant vers local
+
+** Cloner un depot
+
+Recuperer un depot distant non existant sur la machine locale.
+
+#+begin_src shell
+git clone <url_du_depot>
+#+end_src
+
+** Mettre a jour le depot local
+
+Mettre a jour son depot local en se synchronisant avec les modifications distantes.
+
+*/!\ IMPORTANT /!\*
+Toute modification locale sera remplacee pour les donnees distantes.
+
+#+begin_src shell
+git pull
+#+end_src
