@@ -62,7 +62,17 @@ Recuperer un depot distant non existant sur la machine locale.
 git clone <url_du_depot>
 #+end_src
 
+** Recuperer des fichiers
+
+Recuperer des fichiers distants non existant dans le depot local.
+
+#+begin_src shell
+git fetch origin
+#+end_src
+
 ** Mettre a jour le depot local
+
+Fusion de =fetch + merge= .
 
 Mettre a jour son depot local en se synchronisant avec les modifications distantes.
 
@@ -71,4 +81,30 @@ Toute modification locale sera remplacee pour les donnees distantes.
 
 #+begin_src shell
 git pull
+#+end_src
+
+* Manipulation de branches
+
+** Creer une branche
+
+Creer une branche.
+
+#+begin_src shell
+git checkout -b <branche>
+#+end_src
+
+** Changer de branche
+
+Passer d'une branche a l'autre.
+
+#+begin_src shell
+git checkout <branche>
+#+end_src
+
+** Supprimer une branche
+
+Supprimer une branche.
+
+#+begin_src shell
+git checkout -d <branche>
 #+end_src
