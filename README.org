@@ -1,7 +1,7 @@
 #+TITLE: POEI SII Logiciels Embarques
 #+AUTHOR: Lena SAVY-LARIGALDIE
 
-Depot regroupement toutes mes notes concernant la formation.
+Depot regroupant toutes mes notes concernant la formation.
 
 * TABLE OF CONTENT :toc:
 - [[#c][C]]
