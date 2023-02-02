@@ -14,15 +14,14 @@ Depot regroupement toutes mes notes concernant la formation.
 
 ** Algorithmie
 
-[[https://github.com/Plunne/siilena][Exercices C]]
+[[https://github.com/Plunne/siilena/tree/main/C/Exo/Algorithmie][Exercices C]]
 
 ** MEMO
 
-[[https://github.com/Plunne/siilena][MEMO 1 - Les Types]]
-[[https://github.com/Plunne/siilena][MEMO 2 - Formattage de chaines]]
+[[https://github.com/Plunne/siilena/tree/main/C/Memo][MEMO Langage C]]
 
 * Gestion de projets
 
 ** Git
 
-[[https://github.com/Plunne/siilena][MEMO - commandes git]]
+[[https://github.com/Plunne/siilena/tree/main/Git][MEMO - commandes git]]
