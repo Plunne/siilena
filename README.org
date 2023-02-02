@@ -1,0 +1,53 @@
+* SII Learning - Cours Git
+
+* Installer Git
+
+Installer git normalement en fonction de votre Systeme d'Exploitation (OS).
+
+Puis configurer un compte git local.
+
+#+begin_src shell
+git config --global user.email "<adresse@mail.com>"
+git config --global user.name "<Identifiant>"
+#+end_src
+
+* Initialiser un depot
+
+Initialise la mecanique de git dans le repertoire pour qu'il devienne un depot git.
+/Un fichier cache =.git= apparait./
+
+#+begin_src shell
+git init
+#+end_src
+
+* Vers depot distant
+
+** Ajouter des fichiers (Stage)
+
+Ajouter un/des fichier(s) au depot pour les commit.
+
+#+begin_src shell
+git add <fichier(s)>
+#+end_src
+
+Ajouter tous les fichiers au depot pour les commit.
+
+#+begin_src shell
+git add .
+#+end_src
+
+** Preparer l'Envoi (Commit)
+
+Preparer les fichiers a l'envoi et assigner une description.
+
+#+begin_src shell
+git commit -m "<message>"
+#+end_src
+
+** Envoyer les changements
+
+Envoyer les modification sur le depot main distant.
+
+#+begin_src shell
+git push -u origin main
+#+end_src
