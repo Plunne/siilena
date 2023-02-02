@@ -108,3 +108,22 @@ Supprimer une branche.
 #+begin_src shell
 git checkout -d <branche>
 #+end_src
+
+* Monitoring
+
+** Voir les log
+
+Voir l'historique des commits.
+
+#+begin_src shell
+git log
+#+end_src
+
+** Voir l'etat du depot
+
+Voir l'etat des modifications en cours sur le depot (rien, ajouts, commit a push).
+
+#+begin_src shell
+git status
+#+end_src
+
