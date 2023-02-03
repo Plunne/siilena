@@ -64,10 +64,29 @@ git clone <url_du_depot>
 
 ** Recuperer des fichiers
 
-Recuperer des fichiers distants non existant dans le depot local.
+Recuperer des fichiers distants n'ayant pas ete modifies sur le depot local entre-temps (depuis notre dernier push).
 
 #+begin_src shell
-git fetch origin
+git fetch
+#+end_src
+
+** Resolution de conflits
+
+/Un conflit se produit lorsque l'on veut pousser des modifications de fichiers ayant ete egalement modifies sur le depot distant entre-temps (depuis notre dernier push)./
+
+Merge permet de :
+- Recuperer les modifications distantes pour les fichiers existants.
+- Cela va alors modifier vos fichiers ayant un conflit en rajoutant les modifications distantes.
+- Grace a cela vous pourrez directement dans votre code choisir quoi faire entre les deux modifications afin de resoudre les conflits.
+
+#+begin_src shell
+git merge
+#+end_src
+
+Meme procedure avec une branche distante specifique.
+
+#+begin_src shell
+git merge <branche>
 #+end_src
 
 ** Mettre a jour le depot local
