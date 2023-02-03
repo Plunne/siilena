@@ -80,14 +80,16 @@ Merge permet de :
 - Grace a cela vous pourrez directement dans votre code choisir quoi faire entre les deux modifications afin de resoudre les conflits.
 
 #+begin_src shell
-git merge
+git merge --no-ff
 #+end_src
 
 Meme procedure avec une branche distante specifique.
 
 #+begin_src shell
-git merge <branche>
+git merge --no-ff <branche>
 #+end_src
+
+L'argument =--no-ff= est conseille comme bonne pratique pour les utilisateurs plus avances. Il n'est pas necessaire pour des petits projets.
 
 ** Mettre a jour le depot local
 
