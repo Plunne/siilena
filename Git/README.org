@@ -146,3 +146,10 @@ Voir l'etat des modifications en cours sur le depot (rien, ajouts, commit a push
 git status
 #+end_src
 
+** Voir les difference
+
+Voir les differences avec le dernier commit.
+
+#+begin_src shell
+git diff
+#+end_src
