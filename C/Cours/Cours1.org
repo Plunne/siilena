@@ -223,13 +223,13 @@ const char MAXIMUM = 100;
 
 **** Unitaire
 
-- Incrementation :
+***** Incrementation :
 
 =i++= -> instruction puis i + 1
 
 =++i= -> i + 1 puis instruction
 
-- Decremenation :
+***** Decremenation :
 
 =i--= -> instruction puis i - 1
 
