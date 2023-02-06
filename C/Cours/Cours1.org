@@ -26,19 +26,19 @@ IDE
 
 * 3. ETAPES DE LA REALISATION D'UN PROGRAMME 
 
-*** Developpement
+*** 1 - Developpement
 
 Developpement du programme en code interpretable par l'humain.
 
-*** Compilation
+*** 2 - Compilation
 
 Convertir le code interpretable (ASM, C, C++, etc.) en un code machine (binaire, fichiers objet ".o").
 
-*** Linkage
+*** 3 - Linkage
 
 Cherche les fichiers objets contenant les fonctions externes utlisees dans le programme.
 
-*** Execution
+*** 4 - Execution
 
 Application executable.
 
