@@ -211,13 +211,16 @@ const char MAXIMUM = 100;
 6. 
 
 ** Operateurs
+
 *** Operateurs arithmetiques
 
-**** Somme =+=
-**** Difference =-=
-**** Multiplication =*=
-**** Division : =/=
-**** Modulo : =%=
+**** Classique
+
+- Somme =+=
+- Difference =-=
+- Multiplication =*=
+- Division : =/=
+- Modulo : =%=
 
 **** Incrementation/Decrementation
   
