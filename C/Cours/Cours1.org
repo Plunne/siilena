@@ -226,15 +226,15 @@ const char MAXIMUM = 100;
   
 ***** Incrementation :
 
-=i++= -> instruction puis i + 1
+=i++= -> instruction puis i+1
 
-=++i= -> i + 1 puis instruction
+=++i= -> i+1 puis instruction
 
 ***** Decremenation :
 
-=i--= -> instruction puis i - 1
+=i--= -> instruction puis i-1
 
-=--i= -> i - 1 puis instruction 
+=--i= -> i-1 puis instruction 
 
 ***** Exemple :
 
