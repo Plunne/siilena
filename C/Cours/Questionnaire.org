@@ -93,13 +93,19 @@ Quelles sont les lignes avec :
 * Partie 4
 
 1. Quelle est a difference avec une variable entiere et une variable a virgule flottante?
+   #+begin_src
 Une variable flottante a une virgule alors qu'une valeur entiere ne peux pas avoir de virgule.
+   #+end_src
 
 2. Donner deux raisons d'utiliser une variable a virgule flottante double precision plutot que le meme variable simple precision?
+   #+begin_src
 La double sera plus precise, les valeurs pourront etre plus grandes avant et apres la virgule.
+   #+end_src
 
 3. Quels sont les deux avantages a utiliser une constante symbolique plutot qu'une constante litterale?
+   #+begin_src
 La place en memoire (pas de variable declaree) et l'interpretation (3.14 dans un int -> 3; 3.14 dans un float -> 3.14) 
+   #+end_src
 
 4. Trouver deux methodes pour definir une constante appelee MAXIMUM qui aurait une valeur de 100.
 #+begin_src c
