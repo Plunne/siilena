@@ -162,7 +162,7 @@ type nom = valeur;
 
 Prefixes des bases numeriques lors de l'affectation d'une variable.
 
-- Decimal : =par defaut=
+- Decimal (par defaut) : =0d=
 - Hexadecimal : =0x=
 - Binaire : =0b=
 - Octal : =0=
@@ -189,7 +189,7 @@ const type nom = valeur;
 #+end_src
 
 /Une constante symbolique prendra moins de place dans la pile mais en prendra plus dans le fichier objet
- tandis qu'une constante litterale prendra plus de place dans la pile mais en prendra moins dans le fichier objet./ 
+ tandis qu'une constante litterale prendra plus de place dans la pile mais n'en prendra moins dans le fichier objet./ 
 
 ** Valeurs negative
 
