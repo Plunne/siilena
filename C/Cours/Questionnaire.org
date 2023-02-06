@@ -94,29 +94,29 @@ Quelles sont les lignes avec :
 
 1. Quelle est a difference avec une variable entiere et une variable a virgule flottante?
    #+begin_example
-Une variable flottante a une virgule alors qu'une valeur entiere ne peux pas avoir de virgule.
+   Une variable flottante a une virgule alors qu'une valeur entiere ne peux pas avoir de virgule.
    #+end_example
 
 2. Donner deux raisons d'utiliser une variable a virgule flottante double precision plutot que le meme variable simple precision?
    #+begin_example
-La double sera plus precise, les valeurs pourront etre plus grandes avant et apres la virgule.
+   La double sera plus precise, les valeurs pourront etre plus grandes avant et apres la virgule.
    #+end_example
 
 3. Quels sont les deux avantages a utiliser une constante symbolique plutot qu'une constante litterale?
    #+begin_example
-La place en memoire (pas de variable declaree) et l'interpretation (3.14 dans un int -> 3; 3.14 dans un float -> 3.14) 
+   La place en memoire (pas de variable declaree) et l'interpretation (3.14 dans un int -> 3; 3.14 dans un float -> 3.14) 
    #+end_example
 
 4. Trouver deux methodes pour definir une constante appelee MAXIMUM qui aurait une valeur de 100.
    #+begin_src c
-#define MAXIMUM 100
-const char MAXIMUM = 100;
+   #define MAXIMUM 100
+   const char MAXIMUM = 100;
    #+end_src
 
 5. Quels sont les characters autorises dans le nom d'une variable en C?
-- Lettres et Chiffres uniquement
-- Commence par une lettre minuscule
-- Sensible a la casse (Majuscule != Minuscule)
-- Pas de mot cle
+ - Lettres et Chiffres uniquement
+ - Commence par une lettre minuscule
+ - Sensible a la casse (Majuscule != Minuscule)
+ - Pas de mot cle
 
 6.
