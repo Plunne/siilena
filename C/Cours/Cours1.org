@@ -199,9 +199,9 @@ Pour un char :
 
 ** Flottant
 
-1 bit - Signe : Positif ou Negatif
-8 bits - Exposant : Valeur de l'exposant de la puissance 10 (emplacement de la virgule)
-23 bits - Mantisse : Valeur a afficher
+- 1 bit - Signe : Positif ou Negatif
+- 8 bits - Exposant : Valeur de l'exposant de la puissance 10 (emplacement de la virgule)
+- 23 bits - Mantisse : Valeur a afficher
 
 * OPERATEURS
 
