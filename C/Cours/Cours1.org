@@ -3,7 +3,38 @@
 
 Formateur : Paul ERNEST
 
-* 1. INSTALLATION DES OUTILS
+* TABLE OF CONTENT :toc:
+- [[#installation-des-outils][INSTALLATION DES OUTILS]]
+  - [[#cmake][CMake]]
+  - [[#visual-studio-community][Visual Studio Community]]
+- [[#codages-numeriques][CODAGES NUMERIQUES]]
+- [[#etapes-de-la-realisation-dun-programme][ETAPES DE LA REALISATION D'UN PROGRAMME]]
+- [[#structure-dun-programme][STRUCTURE D'UN PROGRAMME]]
+- [[#les-fonctions-en-3-etapes][LES FONCTIONS EN 3 ETAPES]]
+  - [[#declaration][Declaration]]
+  - [[#definition][Definition]]
+  - [[#appel][Appel]]
+- [[#cl-equivalent-de-make-sur-windows][CL (equivalent de make sur windows)]]
+  - [[#compilation][Compilation]]
+  - [[#execution][Execution]]
+  - [[#recompiler][Recompiler]]
+- [[#3-types-derreur][3 TYPES D'ERREUR]]
+- [[#pourquoi-le-langage-c-][POURQUOI LE LANGAGE C ?]]
+- [[#variables-et-premieres-instructions][VARIABLES ET PREMIERES INSTRUCTIONS]]
+  - [[#ram-random-acces-memory][RAM (Random Acces Memory)]]
+  - [[#les-tailles-en-binaire][Les tailles en binaire]]
+  - [[#variable][Variable]]
+  - [[#regles-de-nommage][Regles de nommage]]
+  - [[#syntaxe][Syntaxe]]
+  - [[#bases-numeriques][Bases numeriques]]
+  - [[#constantes][Constantes]]
+  - [[#valeurs-negative][Valeurs negative]]
+  - [[#flottant][Flottant]]
+- [[#operateurs][OPERATEURS]]
+  - [[#operateurs-arithmetiques][Operateurs arithmetiques]]
+- [[#lexique][LEXIQUE]]
+
+* INSTALLATION DES OUTILS
 
 ** CMake
 
@@ -22,9 +53,9 @@ IDE
 - Lors de l'installation, cocher la suite Developpement C/C++.
 - Ajouter =cl= aux variables d'environement.
 
-* 2. CODAGES NUMERIQUES
+* CODAGES NUMERIQUES
 
-* 3. ETAPES DE LA REALISATION D'UN PROGRAMME 
+* ETAPES DE LA REALISATION D'UN PROGRAMME 
 
 =(1) DEVELOPPEMENT= -> =(2) COMPILATION= -> =(3) LINKAGE= -> =(4) EXECUTION=
 
@@ -44,7 +75,7 @@ Cherche les fichiers objets contenant les fonctions externes utlisees dans le pr
 
 Application executable.
 
-* 4. STRUCTURE D'UN PROGRAMME
+* STRUCTURE D'UN PROGRAMME
 
 *** Inclusions
 
