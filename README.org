@@ -6,6 +6,7 @@ Depot regroupant toutes mes notes concernant la formation.
 * TABLE OF CONTENT :toc:
 - [[#c][C]]
   - [[#algorithmie][Algorithmie]]
+  - [[#cours][Cours]]
   - [[#memo][MEMO]]
 - [[#gestion-de-projets][Gestion de projets]]
   - [[#git][Git]]
@@ -15,6 +16,10 @@ Depot regroupant toutes mes notes concernant la formation.
 ** Algorithmie
 
 [[https://github.com/Plunne/siilena/tree/main/C/Exo/Algorithmie][Exercices C]]
+
+** Cours
+
+[[https://github.com/Plunne/siilena/tree/main/C/Cours][Cours C]]
 
 ** MEMO
 

@@ -207,7 +207,7 @@ Pour un char :
 
 ** Operateurs arithmetiques
 
-*** Classique
+*** Classiques
 
 - Somme =+=
 - Difference =-=
