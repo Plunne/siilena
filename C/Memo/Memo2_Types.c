@@ -11,6 +11,11 @@
 
 int main(void) {
 
+    /*
+        Syntaxe
+        <typename> <name>;
+    */
+
     /* Entiers */
     char unOctet = 123;             // 1 Octet = 8 bits
     short deuxOctets = 1234;        // 2 Octet = 16 bits

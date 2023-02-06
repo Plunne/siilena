@@ -1,0 +1,317 @@
+#+TITLE: COURS 1 - Les bases du langage C
+#+AUTHOR: Lena SAVY-LARIGALDIE
+
+Formatteur : Paul ERNEST
+
+* 1. INSTALLATION DES OUTILS
+
+** CMake
+
+Metalanguage
+
+Permet de generer une chaine de compilation.
+
+- Installer CMake (cmake.org)
+- Lors de l'installation, ajouter la variable d'environnement (System PATH)
+
+** Visual Studio Community
+
+IDE
+
+- Installer Visual Studio Community
+- Lors de l'installation, cocher la suite Developpement C/C++.
+- Ajouter =cl= aux variables d'environement.
+
+* 2. LES BASES DU LANGAGE C
+
+** Codages Numeriques
+
+** Etapes de realisation d'un programme
+
+*** Creation
+
+Developpement du programme en code interpretable par l'humain.
+
+*** Compilation
+
+Convertir le code interpretable (ASM, C, C++, etc.) a un code machine (binaire, fichiers objet ".o").
+
+*** Linkage
+
+Trouver le code objet non defini dans notre programme.
+
+*** Execution
+
+Application executable.
+
+** Structure d'un programme
+
+*** Inclusions de bibliotheque
+
+Importation de bibliotheque.
+
+*** Declaration de fonction 
+
+Prototype de fonction.
+
+*** La fonction main()
+
+Entree du programme.
+
+- Il y en a obligatoirement 1!
+- Il faut une accolade ouvrant et une fermante.
+
+*** Accolades, blocs d'instruction
+
+Code
+
+*** Declaration de variable
+
+Allocation memoire pour stocker une valeur.
+
+*** Definition de fonction
+
+Portion de code independante (sous-programme).
+
+*** Commentaires
+
+Code non interprete a la compilation.
+
+** Les fonctions en 3 Etapes
+
+- Declaration :
+- Definition :
+- Appel : 
+
+** CL (equivalent de make sur windows)
+
+*** Compilation
+
+Creer un fichier objet de =HelloWorld.c= en =HelloWorld.obj= .
+Cree aussi un executable =HelloWorld.exe= .
+
+#+begin_src
+cl HelloWorld.c
+#+end_src
+
+*** Execution
+
+Executer l'application =HelloWorld.exe= .
+
+#+begin_src
+HelloWorld.exe
+#+end_src
+
+*** Recompiler
+
+*IMPORTANT!* Il est important de recompiler le code apres chaque modification afin de verifier le bon fonctionnement.
+
+** 3 Types d'Erreur
+
+- Erreur de code
+- Erreur de compilation
+- Erreur de linkage
+
+** Pourquoi le langage C ?
+
+- Voir diapo
+
+** LEXIQUE
+
+- API : Ensemble d'outils
+- IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur, Compilateur et plein d'outils, notre environement de travail)
+
+
+** Questionnaire
+
+*** Partie 1
+
+1. Donnez 3 raisons d'apprendre le C : Langage bas niveau, souple, puissant, tres rependu dans le hardware, syntaxe legere
+2. Role du compilateur : Convertir le langage C (interpretable) en langage machine (objet)
+3. Que faut-il faire en cas d'erreurs ? : Lire les erreurs sinon relire le code pour trouver les erreurs
+4. Qu'est ce que le langage machine? : Langage binaire representant le signal electrique (Etat haut/Etat bas)
+5. Que fait l'editeur de liens ? : Cherche les fichiers objets contenant les fonctions externes utlisees dans le programme
+
+*** Partie 2
+
+1. Comment appelle-t-on un groupe d'une ou plusieurs instructions entre accolades?
+Bloc de code
+
+2. Quel element obligatoire d'un programme en C?
+Fonction main()
+
+3. Pour quelles raisons commenter?
+Se retrouver, revenir sur un programme plus tard, comprendre le code pour soi et pour les autres.
+
+4. Qu'est-ce qu'une fonction?
+Portion de code independante (sous-programme).
+
+5. Quels sont les deux types de fonctions disponibles en langage C et quelles sont leurs difference?
+Fonctions internes (Fonctions de l'utilisateur) et externes (Fonctions de bibliotheque).
+
+6. A quoi sert l'appel #include ?
+Importer une bibliotheque qui permettent d'avoir acces a des declarations externes.
+
+7. Qu'est-ce au'un fichier inclus?
+Une bibliotheque (La ou on declare des fonctions ou variables).
+
+8. Quelle est la difference entre une instruction et un bloc de code?
+Un bloc de code contient des instructions.
+
+
+*** Partie 3
+
+Exercice:
+
+Quelles sont les lignes avec :
+
+- Instructions? 5,6,7,8,13,14,15
+- Definition de variable? 13
+- Declaration de fonction? 1(indirectement), 2
+- Commentaires? 10
+- Definition de fonction? 3 -> 9 et 11 -> 16
+
+
+** Variables et premieres instructions
+
+*** RAM (Random Acces Memory)
+
+Partie de la memoire de l'ordinateur ou l'on peut stocker des informations temporaires (variables par exemple).
+Decompose en adresses.
+
+*** Les tailles en binaire
+
+Voir Memo 2 - Les Types en C.
+
+*** Variable
+
+Une variable est un emplacement memoire reserve pour stocker une valeur.
+
+*** Regles de nommage
+
+- Lettres et Chiffres uniquement
+- Commence par une lettre minuscule
+- Sensible a la casse (Majuscule != Minuscule)
+- Pas de mot cle
+
+*** Syntaxe
+
+#+begin_src
+type nom = valeur;
+#+end_src
+
+*** Bases numeriques
+
+Les bases numeriques lors de l'affectation d'une variable.
+
+*** Constantes symboliques
+
+Evite de declarer une variable pour une valeur reutilisee.
+
+#+begin_src
+#define NOM valeur 
+#+end_src
+
+*** Constantes litterales
+
+Empeche la modification.
+
+- Pour la securite, s'assurer que personne puisse l'affecter.
+- Par convention, pour ameliorer la comprehension du code.
+
+#+begin_src
+const type nom = valeur;
+#+end_src
+
+*** Valeurs negative
+
+0 -> 127 -> -128 -> -1
+
+*** Flottant
+
+1 bit - Signe : Positif ou Negatif
+8 bits - Exposant : Valeur de l'exposant de la puissance 10 (emplacement de la virgule)
+23 bits - Mantisse : Valeur a afficher
+
+** Questionnaire
+
+*** Partie 4
+
+1. Quelle est a difference avec une variable entiere et une variable a virgule flottante?
+Une variable flottante a une virgule alors qu'une valeur entiere ne peux pas avoir de virgule.
+
+2. Donner deux raisons d'utiliser une variable a virgule flottante double precision plutot que le meme variable simple precision?
+La double sera plus precise, les valeurs pourront etre plus grandes avant et apres la virgule.
+
+3. Quels sont les deux avantages a utiliser une constante symbolique plutot qu'une constante litterale?
+La place en memoire (pas de variable declaree) et l'interpretation (3.14 dans un int -> 3; 3.14 dans un float -> 3.14) 
+
+4. Trouver deux methodes pour definir une constante appelee MAXIMUM qui aurait une valeur de 100.
+#+begin_src c
+#define MAXIMUM 100
+const char MAXIMUM = 100;
+#+end_src
+
+5. Quels sont les characters autorises dans le nom d'une variable en C?
+- Lettres et Chiffres uniquement
+- Commence par une lettre minuscule
+- Sensible a la casse (Majuscule != Minuscule)
+- Pas de mot cle
+
+6. 
+
+** Operateurs
+*** Operateurs arithmetiques
+
+- Somme =+=
+- Difference =-=
+- Multiplication =*=
+- Division : =/=
+- Modulo : =%=
+
+*** Operateurs d'affectation
+
+**** Unitaire
+
+- Incrementation :
+
+=i++= -> instruction puis i + 1 
+=++i= -> i + 1 puis instruction
+
+- Decremenation :
+
+=i--= -> instruction puis i - 1 
+=--i= -> i - 1 puis instruction 
+
+Exemple :
+
+#+begin_src c
+int a, b;
+a = b = 5;
+printf("%d %d", --i, i++);
+printf("%d %d", --i, i++);
+printf("%d %d", --i, i++);
+printf("%d %d", --i, i++);
+printf("%d %d", --i, i++);
+#+end_src
+
+-> =5 4=
+4 4
+
+-> =4 3=
+3 3
+
+-> =3 2=
+2 2
+
+-> =2 1=
+1 1
+
+-> =1 0=
+0 0
+
+ 
+
+*** Operateurs de comparaison
+*** Operateurs logiques
+
