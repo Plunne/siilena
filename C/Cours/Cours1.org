@@ -1,7 +1,7 @@
 #+TITLE: COURS 1 - Les bases du langage C
 #+AUTHOR: Lena SAVY-LARIGALDIE
 
-Formatteur : Paul ERNEST
+Formateur : Paul ERNEST
 
 * 1. INSTALLATION DES OUTILS
 
@@ -22,29 +22,27 @@ IDE
 - Lors de l'installation, cocher la suite Developpement C/C++.
 - Ajouter =cl= aux variables d'environement.
 
-* 2. LES BASES DU LANGAGE C
+* 2. CODAGES NUMERIQUES
 
-** Codages Numeriques
+* 3. ETAPES DE LA REALISATION D'UN PROGRAMME 
 
-** Etapes de realisation d'un programme
-
-*** Creation
+*** Developpement
 
 Developpement du programme en code interpretable par l'humain.
 
 *** Compilation
 
-Convertir le code interpretable (ASM, C, C++, etc.) a un code machine (binaire, fichiers objet ".o").
+Convertir le code interpretable (ASM, C, C++, etc.) en un code machine (binaire, fichiers objet ".o").
 
 *** Linkage
 
-Trouver le code objet non defini dans notre programme.
+Cherche les fichiers objets contenant les fonctions externes utlisees dans le programme.
 
 *** Execution
 
 Application executable.
 
-** Structure d'un programme
+* 4. STRUCTURE D'UN PROGRAMME
 
 *** Inclusions de bibliotheque
 
@@ -77,15 +75,15 @@ Portion de code independante (sous-programme).
 
 Code non interprete a la compilation.
 
-** Les fonctions en 3 Etapes
+* LES FONCTIONS EN 3 ETAPES
 
 - Declaration :
 - Definition :
 - Appel : 
 
-** CL (equivalent de make sur windows)
+* CL (equivalent de make sur windows)
 
-*** Compilation
+** Compilation
 
 Creer un fichier objet de =HelloWorld.c= en =HelloWorld.obj= .
 Cree aussi un executable =HelloWorld.exe= .
@@ -94,7 +92,7 @@ Cree aussi un executable =HelloWorld.exe= .
 cl HelloWorld.c
 #+end_src
 
-*** Execution
+** Execution
 
 Executer l'application =HelloWorld.exe= .
 
@@ -102,58 +100,53 @@ Executer l'application =HelloWorld.exe= .
 HelloWorld.exe
 #+end_src
 
-*** Recompiler
+** Recompiler
 
 *IMPORTANT!* Il est important de recompiler le code apres chaque modification afin de verifier le bon fonctionnement.
 
-** 3 Types d'Erreur
+* 3 TYPES D'ERREUR
 
 - Erreur de code
 - Erreur de compilation
 - Erreur de linkage
 
-** Pourquoi le langage C ?
+* POURQUOI LE LANGAGE C ?
 
 - Voir diapo
 
-** LEXIQUE
+* VARIABLES ET PREMIERES INSTRUCTIONS
 
-- API : Ensemble d'outils
-- IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur, Compilateur et plein d'outils, notre environement de travail)
-
-** Variables et premieres instructions
-
-*** RAM (Random Acces Memory)
+** RAM (Random Acces Memory)
 
 Partie de la memoire de l'ordinateur ou l'on peut stocker des informations temporaires (variables par exemple).
 Decompose en adresses.
 
-*** Les tailles en binaire
+** Les tailles en binaire
 
 Voir Memo 2 - Les Types en C.
 
-*** Variable
+** Variable
 
 Une variable est un emplacement memoire reserve pour stocker une valeur.
 
-*** Regles de nommage
+** Regles de nommage
 
 - Lettres et Chiffres uniquement
 - Commence par une lettre minuscule
 - Sensible a la casse (Majuscule != Minuscule)
 - Pas de mot cle
 
-*** Syntaxe
+** Syntaxe
 
 #+begin_src c
 type nom = valeur;
 #+end_src
 
-*** Bases numeriques
+** Bases numeriques
 
 Les bases numeriques lors de l'affectation d'une variable.
 
-*** Constantes symboliques
+** Constantes symboliques
 
 Evite de declarer une variable pour une valeur reutilisee.
 
@@ -161,7 +154,7 @@ Evite de declarer une variable pour une valeur reutilisee.
 #define NOM valeur 
 #+end_src
 
-*** Constantes litterales
+** Constantes litterales
 
 Empeche la modification.
 
@@ -172,48 +165,23 @@ Empeche la modification.
 const type nom = valeur;
 #+end_src
 
-*** Valeurs negative
+** Valeurs negative
 
-0 -> 127 -> -128 -> -1
+Pour un char :
 
-*** Flottant
+=0= -> =127= -> =-128= -> =-1=
+
+** Flottant
 
 1 bit - Signe : Positif ou Negatif
 8 bits - Exposant : Valeur de l'exposant de la puissance 10 (emplacement de la virgule)
 23 bits - Mantisse : Valeur a afficher
 
-** Questionnaire
+* OPERATEURS
 
-*** Partie 4
+** Operateurs arithmetiques
 
-1. Quelle est a difference avec une variable entiere et une variable a virgule flottante?
-Une variable flottante a une virgule alors qu'une valeur entiere ne peux pas avoir de virgule.
-
-2. Donner deux raisons d'utiliser une variable a virgule flottante double precision plutot que le meme variable simple precision?
-La double sera plus precise, les valeurs pourront etre plus grandes avant et apres la virgule.
-
-3. Quels sont les deux avantages a utiliser une constante symbolique plutot qu'une constante litterale?
-La place en memoire (pas de variable declaree) et l'interpretation (3.14 dans un int -> 3; 3.14 dans un float -> 3.14) 
-
-4. Trouver deux methodes pour definir une constante appelee MAXIMUM qui aurait une valeur de 100.
-#+begin_src c
-#define MAXIMUM 100
-const char MAXIMUM = 100;
-#+end_src
-
-5. Quels sont les characters autorises dans le nom d'une variable en C?
-- Lettres et Chiffres uniquement
-- Commence par une lettre minuscule
-- Sensible a la casse (Majuscule != Minuscule)
-- Pas de mot cle
-
-6. 
-
-** Operateurs
-
-*** Operateurs arithmetiques
-
-**** Classique
+*** Classique
 
 - Somme =+=
 - Difference =-=
@@ -221,21 +189,21 @@ const char MAXIMUM = 100;
 - Division : =/=
 - Modulo : =%=
 
-**** Incrementation/Decrementation
+*** Incrementation/Decrementation
   
-***** Incrementation :
+**** Incrementation :
 
 =i++= -> instruction puis i+1
 
 =++i= -> i+1 puis instruction
 
-***** Decremenation :
+**** Decremenation :
 
 =i--= -> instruction puis i-1
 
 =--i= -> i-1 puis instruction 
 
-***** Exemple :
+**** Exemple :
 
 #+begin_src c
 int a, b;
@@ -271,3 +239,7 @@ a=0, b=0
 *** Operateurs logiques
 *** Operateurs d'affectation
 
+* LEXIQUE
+
+- API : Ensemble d'outils
+- IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur, Compilateur et plein d'outils, notre environement de travail)
