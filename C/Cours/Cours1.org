@@ -160,17 +160,24 @@ type nom = valeur;
 
 ** Bases numeriques
 
-Les bases numeriques lors de l'affectation d'une variable.
+Prefixes des bases numeriques lors de l'affectation d'une variable.
 
-** Constantes symboliques
+- Decimal : =par defaut=
+- Hexadecimal : =0x=
+- Binaire : =0b=
+- Octal : =0=
 
-Evite de declarer une variable pour une valeur reutilisee.
+** Constantes
+
+*** Constantes symboliques
+
+Evite de declarer une variable pour une valeur reutilisee qui ne changera pas a l'execution.
 
 #+begin_src c
 #define NOM valeur 
 #+end_src
 
-** Constantes litterales
+*** Constantes litterales
 
 Empeche la modification.
 
@@ -180,6 +187,9 @@ Empeche la modification.
 #+begin_src c
 const type nom = valeur;
 #+end_src
+
+/Une constante symbolique prendra moins de place dans la pile mais en prendra plus dans le fichier objet
+ tandis qu'une constante litterale prendra plus de place dans la pile mais en prendra moins dans le fichier objet./ 
 
 ** Valeurs negative
 
