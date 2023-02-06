@@ -234,11 +234,11 @@ Pour un char :
 #+begin_src c
 int a, b;
 a = b = 5;
-printf("%d %d", --i, i++);
-printf("%d %d", --i, i++);
-printf("%d %d", --i, i++);
-printf("%d %d", --i, i++);
-printf("%d %d", --i, i++);
+printf("%d %d", --i, i--);
+printf("%d %d", --i, i--);
+printf("%d %d", --i, i--);
+printf("%d %d", --i, i--);
+printf("%d %d", --i, i--);
 #+end_src
 
 -> =5 4=
