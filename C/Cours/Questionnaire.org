@@ -12,71 +12,71 @@ Formateur : Paul ERNEST
 * Partie 1
 
 1. Donnez 3 raisons d'apprendre le C :
-   #+begin_src
+   #+begin_example
    Langage bas niveau, souple, puissant, tres rependu dans le hardware, syntaxe legere
-   #+end_src
+   #+end_example
 
 2. Role du compilateur :
-   #+begin_src
+   #+begin_example
    Convertir le langage C (interpretable) en langage machine (objet)
-   #+end_src
+   #+end_example
 
 3. Que faut-il faire en cas d'erreurs ? :
-   #+begin_src
+   #+begin_example
    Lire les erreurs sinon relire le code pour trouver les erreurs
-   #+end_src
+   #+end_example
 
 4. Qu'est ce que le langage machine? :
-   #+begin_src
+   #+begin_example
    Langage binaire representant le signal electrique (Etat haut/Etat bas)
-   #+end_src
+   #+end_example
 
 5. Que fait l'editeur de liens ? :
-   #+begin_src
+   #+begin_example
    Cherche les fichiers objets contenant les fonctions externes utlisees dans le programme
-   #+end_src
+   #+end_example
 
 * Partie 2
 
 1. Comment appelle-t-on un groupe d'une ou plusieurs instructions entre accolades?
-   #+begin_src
+   #+begin_example
    Bloc de code
-   #+end_src
+   #+end_example
 
 2. Quel element obligatoire d'un programme en C?
-   #+begin_src
+   #+begin_example
    Fonction main()
-   #+end_src
+   #+end_example
 
 3. Pour quelles raisons commenter?
-   #+begin_src
+   #+begin_example
    Se retrouver, revenir sur un programme plus tard, comprendre le code pour soi et pour les autres.
-   #+end_src
+   #+end_example
 
 4. Qu'est-ce qu'une fonction?
-   #+begin_src
+   #+begin_example
    Portion de code independante (sous-programme).
-   #+end_src
+   #+end_example
 
 5. Quels sont les deux types de fonctions disponibles en langage C et quelles sont leurs difference?
-   #+begin_src
+   #+begin_example
    Fonctions internes (Fonctions de l'utilisateur) et externes (Fonctions de bibliotheque).
-   #+end_src
+   #+end_example
 
 6. A quoi sert l'appel #include ?
-   #+begin_src
+   #+begin_example
    Importer une bibliotheque qui permettent d'avoir acces a des declarations externes.
-   #+end_src
+   #+end_example
 
 7. Qu'est-ce au'un fichier inclus?
-   #+begin_src
+   #+begin_example
    Une bibliotheque (La ou on declare des fonctions ou variables).
-   #+end_src
+   #+end_example
 
 8. Quelle est la difference entre une instruction et un bloc de code?
-   #+begin_src
+   #+begin_example
    Un bloc de code contient des instructions.
-   #+end_src
+   #+end_example
 
 * Partie 3
 
@@ -93,19 +93,19 @@ Quelles sont les lignes avec :
 * Partie 4
 
 1. Quelle est a difference avec une variable entiere et une variable a virgule flottante?
-   #+begin_src
+   #+begin_example
 Une variable flottante a une virgule alors qu'une valeur entiere ne peux pas avoir de virgule.
-   #+end_src
+   #+end_example
 
 2. Donner deux raisons d'utiliser une variable a virgule flottante double precision plutot que le meme variable simple precision?
-   #+begin_src
+   #+begin_example
 La double sera plus precise, les valeurs pourront etre plus grandes avant et apres la virgule.
-   #+end_src
+   #+end_example
 
 3. Quels sont les deux avantages a utiliser une constante symbolique plutot qu'une constante litterale?
-   #+begin_src
+   #+begin_example
 La place en memoire (pas de variable declaree) et l'interpretation (3.14 dans un int -> 3; 3.14 dans un float -> 3.14) 
-   #+end_src
+   #+end_example
 
 4. Trouver deux methodes pour definir une constante appelee MAXIMUM qui aurait une valeur de 100.
 #+begin_src c
@@ -114,10 +114,9 @@ const char MAXIMUM = 100;
 #+end_src
 
 5. Quels sont les characters autorises dans le nom d'une variable en C?
-
-- Lettres et Chiffres uniquement
-- Commence par une lettre minuscule
-- Sensible a la casse (Majuscule != Minuscule)
-- Pas de mot cle
+ - Lettres et Chiffres uniquement
+ - Commence par une lettre minuscule
+ - Sensible a la casse (Majuscule != Minuscule)
+ - Pas de mot cle
 
 6.
