@@ -1,5 +1,6 @@
 #+TITLE: COURS 1 - Les bases du langage C
 #+AUTHOR: Lena SAVY-LARIGALDIE
+#+OPTIONS: \n:t
 
 Formatteur : Paul ERNEST
 
@@ -121,57 +122,6 @@ HelloWorld.exe
 - API : Ensemble d'outils
 - IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur, Compilateur et plein d'outils, notre environement de travail)
 
-
-** Questionnaire
-
-*** Partie 1
-
-1. Donnez 3 raisons d'apprendre le C : Langage bas niveau, souple, puissant, tres rependu dans le hardware, syntaxe legere
-2. Role du compilateur : Convertir le langage C (interpretable) en langage machine (objet)
-3. Que faut-il faire en cas d'erreurs ? : Lire les erreurs sinon relire le code pour trouver les erreurs
-4. Qu'est ce que le langage machine? : Langage binaire representant le signal electrique (Etat haut/Etat bas)
-5. Que fait l'editeur de liens ? : Cherche les fichiers objets contenant les fonctions externes utlisees dans le programme
-
-*** Partie 2
-
-1. Comment appelle-t-on un groupe d'une ou plusieurs instructions entre accolades?
-Bloc de code
-
-2. Quel element obligatoire d'un programme en C?
-Fonction main()
-
-3. Pour quelles raisons commenter?
-Se retrouver, revenir sur un programme plus tard, comprendre le code pour soi et pour les autres.
-
-4. Qu'est-ce qu'une fonction?
-Portion de code independante (sous-programme).
-
-5. Quels sont les deux types de fonctions disponibles en langage C et quelles sont leurs difference?
-Fonctions internes (Fonctions de l'utilisateur) et externes (Fonctions de bibliotheque).
-
-6. A quoi sert l'appel #include ?
-Importer une bibliotheque qui permettent d'avoir acces a des declarations externes.
-
-7. Qu'est-ce au'un fichier inclus?
-Une bibliotheque (La ou on declare des fonctions ou variables).
-
-8. Quelle est la difference entre une instruction et un bloc de code?
-Un bloc de code contient des instructions.
-
-
-*** Partie 3
-
-Exercice:
-
-Quelles sont les lignes avec :
-
-- Instructions? 5,6,7,8,13,14,15
-- Definition de variable? 13
-- Declaration de fonction? 1(indirectement), 2
-- Commentaires? 10
-- Definition de fonction? 3 -> 9 et 11 -> 16
-
-
 ** Variables et premieres instructions
 
 *** RAM (Random Acces Memory)
@@ -196,7 +146,7 @@ Une variable est un emplacement memoire reserve pour stocker une valeur.
 
 *** Syntaxe
 
-#+begin_src
+#+begin_src c
 type nom = valeur;
 #+end_src
 
@@ -208,7 +158,7 @@ Les bases numeriques lors de l'affectation d'une variable.
 
 Evite de declarer une variable pour une valeur reutilisee.
 
-#+begin_src
+#+begin_src c
 #define NOM valeur 
 #+end_src
 
@@ -219,7 +169,7 @@ Empeche la modification.
 - Pour la securite, s'assurer que personne puisse l'affecter.
 - Par convention, pour ameliorer la comprehension du code.
 
-#+begin_src
+#+begin_src c
 const type nom = valeur;
 #+end_src
 
@@ -295,22 +245,11 @@ printf("%d %d", --i, i++);
 printf("%d %d", --i, i++);
 #+end_src
 
--> =5 4=
-4 4
-
--> =4 3=
-3 3
-
--> =3 2=
-2 2
-
--> =2 1=
-1 1
-
--> =1 0=
-0 0
-
- 
+-> =5 4=  a=4, b=4
+-> =4 3=  a=3, b=3
+-> =3 2=  a=2, b=2
+-> =2 1=  a=1, b=1
+-> =1 0=  a=0, b=0
 
 *** Operateurs de comparaison
 *** Operateurs logiques
