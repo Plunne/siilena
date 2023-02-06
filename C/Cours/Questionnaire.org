@@ -114,9 +114,9 @@ const char MAXIMUM = 100;
 #+end_src
 
 5. Quels sont les characters autorises dans le nom d'une variable en C?
- - Lettres et Chiffres uniquement
- - Commence par une lettre minuscule
- - Sensible a la casse (Majuscule != Minuscule)
- - Pas de mot cle
+- Lettres et Chiffres uniquement
+- Commence par une lettre minuscule
+- Sensible a la casse (Majuscule != Minuscule)
+- Pas de mot cle
 
 6.
