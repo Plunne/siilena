@@ -268,5 +268,4 @@ a=0, b=0
 * LEXIQUE
 
 - API : Ensemble d'outils qui permettent de faire l'interface avec un service.
-- IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur,
-   Compilateur et plein d'outils, notre environement de travail)
+- IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur, Compilateur et plein d'outils, notre environement de travail)
