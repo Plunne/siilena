@@ -213,16 +213,14 @@ const char MAXIMUM = 100;
 ** Operateurs
 *** Operateurs arithmetiques
 
-- Somme =+=
-- Difference =-=
-- Multiplication =*=
-- Division : =/=
-- Modulo : =%=
+**** Somme =+=
+**** Difference =-=
+**** Multiplication =*=
+**** Division : =/=
+**** Modulo : =%=
 
-*** Operateurs d'affectation
-
-**** Unitaire
-
+**** Incrementation/Decrementation
+  
 ***** Incrementation :
 
 =i++= -> instruction puis i + 1
@@ -269,4 +267,5 @@ a=0, b=0
 
 *** Operateurs de comparaison
 *** Operateurs logiques
+*** Operateurs d'affectation
 
