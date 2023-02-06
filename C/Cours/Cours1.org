@@ -235,7 +235,7 @@ const char MAXIMUM = 100;
 
 =--i= -> i - 1 puis instruction 
 
-Exemple :
+***** Exemple :
 
 #+begin_src c
 int a, b;
