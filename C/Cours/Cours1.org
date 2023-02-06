@@ -46,9 +46,9 @@ Application executable.
 
 * 4. STRUCTURE D'UN PROGRAMME
 
-*** Inclusions de bibliotheque
+*** Inclusions
 
-Importation de bibliotheque.
+Importation de fichiers d'en-tete. Ces fichiers contiennent des declarations de fonctions et variables externes.
 
 *** Declaration de fonction 
 
@@ -61,13 +61,13 @@ Entree du programme.
 - Il y en a obligatoirement 1!
 - Il faut une accolade ouvrant et une fermante.
 
-*** Accolades, blocs d'instruction
+*** Accolades, blocs d'instructions
 
-Code
+Les instructions se codent dans des accolades.
 
 *** Declaration de variable
 
-Allocation memoire pour stocker une valeur.
+Allocation memoire pour stocker une valeur et attribution de son alias.
 
 *** Definition de fonction
 
@@ -75,13 +75,27 @@ Portion de code independante (sous-programme).
 
 *** Commentaires
 
-Code non interprete a la compilation.
+Code non interprete a la compilation aidant a la comprehension d'un programme.
 
 * LES FONCTIONS EN 3 ETAPES
 
-- Declaration :
-- Definition :
-- Appel : 
+=(1) Declaration= -> =(2) Definition= -> =(3) Appel=
+
+** Declaration
+
+Creation du prototype qui determine :
+
+- Le Nom
+- Le Type de sa valeur de retour
+- Les parametres qu'elle prendra
+
+** Definition
+
+Implementation du code de la fonction.
+
+** Appel
+
+Utilisation de la fonction.
 
 * CL (equivalent de make sur windows)
 
