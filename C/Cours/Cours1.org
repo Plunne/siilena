@@ -311,8 +311,37 @@ a=0, b=0
 - Egalite : ~==~
 - Difference : ~!=~
 
+*** Comparaisons multiples
+
+- ET : ~&&~
+- OU : ~||~
+- NON : ~!~
+
 ** Operateurs logiques
+
 ** Operateurs d'affectation
+
+Affecte directement lors de l'operation.
+
+- Addition : ~+=~
+- Soustraction : ~-=~
+- Multiplication : ~*=~
+- Division : ~/=~
+- Modulo : ~%=~
+
+** Operateur ternaire
+
+#+begin_src c
+exp1 ? exp2 : exp3
+#+end_src
+
+Equivaut a :
+#+begin_src c
+if (x > y)
+  z=x;
+else
+  z=y;
+#+end_src
 
 * LES INSTRUCTIONS
 
@@ -365,6 +394,16 @@ else
     // instructions
 }
 #+end_src
+
+* ENTREE/SORTIE
+
+** Affichage (printf)
+
+Afficher du texte et/ou des valeurs.
+
+** Insertion (scanf)
+
+Inserer des valeurs.
 
 * CMAKE
 

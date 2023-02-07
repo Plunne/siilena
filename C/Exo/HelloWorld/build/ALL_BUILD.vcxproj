@@ -173,6 +173,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\Comparaison.vcxproj">
+      <Project>{6153E0EE-1D8E-3809-A727-31865E2D1858}</Project>
+      <Name>Comparaison</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\Condition.vcxproj">
       <Project>{0CF21C4F-B15B-377D-A207-E33DE64E13B9}</Project>
       <Name>Condition</Name>

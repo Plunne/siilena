@@ -6,3 +6,4 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(HelloWorld HelloWorld.c)
 add_executable(Condition Condition.c)
+add_executable(Comparaison Comparaison.c)
