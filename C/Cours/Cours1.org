@@ -302,7 +302,7 @@ a=0, b=0
 
 *** Egalite/Difference
 
-- Egalite : =X===
+- Egalite : ====
 - Difference : =!==
 
 ** Operateurs logiques
