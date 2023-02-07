@@ -293,6 +293,12 @@ a=1, b=1
 a=0, b=0
 
 *** Operateurs de comparaison
+
+- Inferieur : =<=
+- Superieur : =>=
+- Inferieur ou egal : =<==
+- Superieur ou egal : =>==
+
 *** Operateurs logiques
 *** Operateurs d'affectation
 
