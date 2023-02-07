@@ -407,6 +407,16 @@ Afficher du texte et/ou des valeurs.
 
 Inserer des valeurs.
 
+* LES FONCTIONS
+
+Comme vu plus haut... (WIP)
+
+** Prototype
+
+** Implementation
+
+** Appel
+
 * CMAKE
 
 Cree un environement pour developper sur n'importe quel systeme d'exploitation.

@@ -181,9 +181,21 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{0CF21C4F-B15B-377D-A207-E33DE64E13B9}</Project>
       <Name>Condition</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\DevinerNombre.vcxproj">
+      <Project>{5EE2C27C-7D66-31EA-9A6F-2D5CDA6FA2A8}</Project>
+      <Name>DevinerNombre</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\Fonctions.vcxproj">
+      <Project>{DA3BA603-EB56-3DDA-BE0B-70FF6F73B7BD}</Project>
+      <Name>Fonctions</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\HelloWorld.vcxproj">
       <Project>{369160D0-F37B-36FC-B8B0-458CB622299A}</Project>
       <Name>HelloWorld</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\ParametreArgument.vcxproj">
+      <Project>{255EBFAF-6314-3A8C-960B-3043C3E4B588}</Project>
+      <Name>ParametreArgument</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
