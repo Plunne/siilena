@@ -321,7 +321,7 @@ a=0, b=0
 
 ** Operateurs d'affectation
 
-Affecte directement lors de l'operation.
+Affecte une variable en realisant une operation sur elle meme.
 
 - Addition : ~+=~
 - Soustraction : ~-=~
