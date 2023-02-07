@@ -4,5 +4,6 @@ C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/Comparais
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/DevinerNombre.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/Fonctions.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/ParametreArgument.dir
+C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/Recurrence.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/ZERO_CHECK.dir

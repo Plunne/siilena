@@ -121,3 +121,82 @@ Quelles sont les lignes avec :
  - Pas de mot cle
 
 6. A Venir...
+
+
+* PARTIE ?
+
+1. Comment fonctionne la programmation structuree et pourquoi ?
+   #+begin_example
+   Avec les fonctions, cela permet de reutiliser du code definit qu'a un seul endroit pour eviter la repetition de code.
+   #+end_example
+
+2. Quelle est la premiere ligne de la definition de fonction et quelles informations contient-elle ?
+   #+begin_example
+   L'en-tete : prototype sans point virgule.
+   #+end_example
+
+3. Combien de valeurs peut retourner une fonction.
+   #+begin_example
+   0 ou 1 seule.
+   #+end_example
+
+4. Si une fonction pas de valeur, quel type doit elle avoir dans la declaration.
+   #+begin_example
+   void
+   #+end_example
+
+5. Quelle est la difference entre la definition et le prototype d'une fonction?
+   #+begin_example
+   La definition est la ou l'on definit le corps de la fonction et le prototype la ou on declare la fonction.   
+   #+end_example
+
+6. Quelle est la particularite des variables locales.
+   #+begin_example
+   D'etre locale.   
+   #+end_example
+
+* PARTIE ?
+
+1.
+   #+begin_src c
+   float fais_le(char val1, char val2, char val3);
+   #+end_src
+
+2.
+   #+begin_src c
+   void affiche_un_nombre(int n);
+   #+end_src
+
+3.
+   a) ~int~
+   b) ~long~
+
+* PARTIE ?
+
+1.
+   #+begin_src c
+   int produit(int a, int b) {
+      return a * b;
+   }
+   #+end_src
+
+2.
+   #+begin_src c
+   int division(int a, int b) {
+      return (b != 0) ? a/b : 0;
+   }
+   #+end_src
+
+3.
+   #+begin_src c
+   int moyenne(int a, int b) {
+      return (a + b) / 2;
+   }
+   #+end_src
+
+4.
+   #+begin_src c
+   float recurrence(int n) {
+      return (n == 0) 1 : 3 * recurrence(--n);
+   }
+   #+end_src

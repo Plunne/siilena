@@ -417,6 +417,12 @@ Comme vu plus haut... (WIP)
 
 ** Appel
 
+* RECURSIVITE
+
+Les fonctions recurrentes : fonction qui s'appelle elle-meme.
+
+Dans une fonction recurrente il faut une condition d'arret.
+
 * CMAKE
 
 Cree un environement pour developper sur n'importe quel systeme d'exploitation.
