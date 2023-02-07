@@ -240,9 +240,9 @@ Pour un char :
 
 *** Classiques
 
-- Somme =+=
-- Difference =-=
-- Multiplication =*=
+- Addition : =+=
+- Soustraction : =-=
+- Multiplication : =*=
 - Division : =/=
 - Modulo : =%=
 
@@ -292,15 +292,21 @@ a=1, b=1
 
 a=0, b=0
 
-*** Operateurs de comparaison
+** Operateurs de comparaison
 
+*** Inferieur/Superieur
 - Inferieur : =<=
 - Superieur : =>=
 - Inferieur ou egal : =<==
 - Superieur ou egal : =>==
 
-*** Operateurs logiques
-*** Operateurs d'affectation
+*** Egalite/Difference
+
+- Egalite : ====
+- Difference : =!==
+
+** Operateurs logiques
+** Operateurs d'affectation
 
 * LEXIQUE
 
