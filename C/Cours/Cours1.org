@@ -292,21 +292,83 @@ a=1, b=1
 
 a=0, b=0
 
+*** Hierarchie des operateurs
+
+1. Incrementation, Decrementation
+2. Produit, Division, Modulo
+3. Addition, SOustraction
+
 ** Operateurs de comparaison
 
 *** Inferieur/Superieur
-- Inferieur : =<=
-- Superieur : =>=
-- Inferieur ou egal : =<==
-- Superieur ou egal : =>==
+- Inferieur : ~<~
+- Superieur : ~>~
+- Inferieur ou egal : ~<=~
+- Superieur ou egal : ~>=~
 
 *** Egalite/Difference
 
 - Egalite : ~==~
-- Difference : =!==
+- Difference : ~!=~
 
 ** Operateurs logiques
 ** Operateurs d'affectation
+
+* LES INSTRUCTIONS
+
+** IF, ELSE, ELSE IF
+
+*** IF
+
+*SI* expression *ALORS* instructions
+
+#+begin_src c
+if (expression)
+{
+    // instructions
+}
+#+end_src
+
+*** ELSE
+
+*SI* expression *ALORS* instructions
+*SINON* instructions
+
+#+begin_src c
+if (expression)
+{
+    // instructions
+}
+else
+{
+    // instructions
+}
+#+end_src
+
+*** ELSE IF
+
+*SI* expression *ALORS* instructions
+*SINON SI* expression *ALORS* instructions
+*SINON* instructions
+
+#+begin_src c
+if (expression)
+{
+    // instructions
+}
+else if (expression)
+{
+    // instructions
+}
+else
+{
+    // instructions
+}
+#+end_src
+
+* CMAKE
+
+Cree un environement pour developper sur n'importe quel systeme d'exploitation.
 
 * LEXIQUE
 
