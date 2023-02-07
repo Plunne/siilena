@@ -180,7 +180,7 @@ Prototype de fonction.
 
 Entree du programme.
 
-- Il y en a obligatoirement 1!
+- Il y en a *obligatoirement 1!*
 - Il faut une accolade ouvrant et une fermante.
 
 *** Accolades, blocs d'instructions
@@ -201,9 +201,11 @@ Code non interprete a la compilation aidant a la comprehension d'un programme.
 
 * POURQUOI LE LANGAGE C ?
 
-- Voir diapo
+A venir...
 
 * CODAGES NUMERIQUES
+
+A venir...
 
 * VARIABLES ET PREMIERES INSTRUCTIONS
 
