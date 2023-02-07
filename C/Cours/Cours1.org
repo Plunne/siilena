@@ -396,7 +396,7 @@ Creer un dossier =build= .
 
 ** Generer le projet
 
-Voir Image.
+[[https://raw.githubusercontent.com/Plunne/siilena/main/C/Cours/images/cmake1.PNG]]
 
 ** Ouvrir le projet dans Visual Studio
 
