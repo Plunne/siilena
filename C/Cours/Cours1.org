@@ -331,16 +331,18 @@ Affecte une variable en realisant une operation sur elle meme.
 
 ** Operateur ternaire
 
+=variable= = =expression= ? =si= : =sinon=
+
 #+begin_src c
-exp1 ? exp2 : exp3
+z = (x > y) ? x : y
 #+end_src
 
 Equivaut a :
 #+begin_src c
 if (x > y)
-  z=x;
+    z=x;
 else
-  z=y;
+    z=y;
 #+end_src
 
 * LES INSTRUCTIONS
