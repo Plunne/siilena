@@ -4,22 +4,20 @@
 Formateur : Paul ERNEST
 
 * TABLE OF CONTENT :toc:
-- [[#installation-des-outils][INSTALLATION DES OUTILS]]
-  - [[#cmake][CMake]]
-  - [[#visual-studio-community][Visual Studio Community]]
-- [[#codages-numeriques][CODAGES NUMERIQUES]]
+- [[#environement-de-travail][ENVIRONEMENT DE TRAVAIL]]
+  - [[#installation-des-outils][INSTALLATION DES OUTILS]]
+  - [[#cl-equivalent-de-make-sur-windows][CL (equivalent de make sur windows)]]
+  - [[#cmake][CMAKE]]
 - [[#etapes-de-la-realisation-dun-programme][ETAPES DE LA REALISATION D'UN PROGRAMME]]
-- [[#structure-dun-programme][STRUCTURE D'UN PROGRAMME]]
-- [[#les-fonctions-en-3-etapes][LES FONCTIONS EN 3 ETAPES]]
-  - [[#declaration][Declaration]]
-  - [[#definition][Definition]]
-  - [[#appel][Appel]]
-- [[#cl-equivalent-de-make-sur-windows][CL (equivalent de make sur windows)]]
+  - [[#developpement][Developpement]]
   - [[#compilation][Compilation]]
+  - [[#linkage][Linkage]]
   - [[#execution][Execution]]
-  - [[#recompiler][Recompiler]]
 - [[#3-types-derreur][3 TYPES D'ERREUR]]
+- [[#debug--release][DEBUG & RELEASE]]
+- [[#structure-dun-programme][STRUCTURE D'UN PROGRAMME]]
 - [[#pourquoi-le-langage-c-][POURQUOI LE LANGAGE C ?]]
+- [[#codages-numeriques][CODAGES NUMERIQUES]]
 - [[#variables-et-premieres-instructions][VARIABLES ET PREMIERES INSTRUCTIONS]]
   - [[#ram-random-acces-memory][RAM (Random Acces Memory)]]
   - [[#les-tailles-en-binaire][Les tailles en binaire]]
@@ -32,11 +30,26 @@ Formateur : Paul ERNEST
   - [[#flottant][Flottant]]
 - [[#operateurs][OPERATEURS]]
   - [[#operateurs-arithmetiques][Operateurs arithmetiques]]
+  - [[#operateurs-de-comparaison][Operateurs de comparaison]]
+  - [[#operateurs-logiques][Operateurs logiques]]
+  - [[#operateurs-daffectation][Operateurs d'affectation]]
+  - [[#operateur-ternaire][Operateur ternaire]]
+- [[#entreesortie][ENTREE/SORTIE]]
+  - [[#insertion-scanf][Insertion (scanf)]]
+  - [[#affichage-printf][Affichage (printf)]]
+- [[#les-fonctions][LES FONCTIONS]]
+  - [[#les-fonctions-en-3-etapes][LES FONCTIONS EN 3 ETAPES]]
+  - [[#les-fonctions-void][LES FONCTIONS VOID]]
+  - [[#recursivite][RECURSIVITE]]
+- [[#les-structures-conditionnelles][LES STRUCTURES CONDITIONNELLES]]
+  - [[#if-else-else-if][IF, ELSE, ELSE IF]]
 - [[#lexique][LEXIQUE]]
 
-* INSTALLATION DES OUTILS
+* ENVIRONEMENT DE TRAVAIL
 
-** CMake
+** INSTALLATION DES OUTILS
+
+*** CMake
 
 Metalanguage
 
@@ -45,35 +58,113 @@ Permet de generer une chaine de compilation.
 - Installer CMake (cmake.org)
 - Lors de l'installation, ajouter la variable d'environnement (System PATH)
 
-** Visual Studio Community
+*** Visual Studio Community
 
 IDE
 
 - Installer Visual Studio Community
 - Lors de l'installation, cocher la suite Developpement C/C++.
 - Ajouter =cl= aux variables d'environement.
+  
+** CL (equivalent de make sur windows)
 
-* CODAGES NUMERIQUES
+*** Compilation
+
+Creer un fichier objet de =HelloWorld.c= en =HelloWorld.obj= .
+Cree aussi un executable =HelloWorld.exe= .
+
+#+begin_src
+cl HelloWorld.c
+#+end_src
+
+*** Execution
+
+Executer l'application =HelloWorld.exe= .
+
+#+begin_src
+HelloWorld.exe
+#+end_src
+
+*** Recompiler
+
+*IMPORTANT!* Il est important de recompiler le code apres chaque modification afin de verifier le bon fonctionnement.
+
+
+** CMAKE
+
+Cree un environement pour developper sur n'importe quel systeme d'exploitation.
+
+*** CMakeLists.txt
+
+Fichier de configuration minimaliste.
+
+#+begin_src
+cmake_minimum_required(VERSION 3.14)
+
+project(Projet_Langage_C)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(HelloWorld HelloWorld.c)
+#+end_src
+
+Le code ci-dessus :
+- Choisit la version de CMake
+- Choisit le nom du projet
+- Choisit le langage
+- Choisit le nom de l'executable et le fichier source
+
+*** Dossier build
+
+Creer un dossier =build= .
+
+*** Generer le projet
+
+[[https://raw.githubusercontent.com/Plunne/siilena/main/C/Cours/images/cmake1.PNG]]
+
+*** Ouvrir le projet dans Visual Studio
+
+Les projets Visual Studio ont comme extension =.slm= .
+
+Aller dans le dossier build et lancer avec Visual Studio le fichier =Projet_Langage_C.sln= .
+
 
 * ETAPES DE LA REALISATION D'UN PROGRAMME 
 
 =(1) DEVELOPPEMENT= -> =(2) COMPILATION= -> =(3) LINKAGE= -> =(4) EXECUTION=
 
-*** Developpement
+** Developpement
 
 Developpement du programme en code interpretable par l'humain.
 
-*** Compilation
+** Compilation
 
 Convertir le code interpretable (ASM, C, C++, etc.) en un code machine (binaire, fichiers objet ".o").
 
-*** Linkage
+** Linkage
 
 Cherche les fichiers objets contenant les fonctions externes utlisees dans le programme.
 
-*** Execution
+** Execution
 
 Application executable.
+
+* 3 TYPES D'ERREUR
+
+- Erreur de code
+- Erreur de compilation
+- Erreur de linkage
+
+* DEBUG & RELEASE
+
+*** Debug
+
+Le mode Debug permet de debugguer l'executable. Pour cela, l'executable doit contenir les informations supplementaires necessaires au debug et donc l'executable est plus lourd.
+
+*** Release
+
+A contrariot, le mode release ne permet pas de debugguer, en revanche ne contenant pas les informations de debug il est beaucoup leger.
+C'est le mode que l'on utilise pour le deploiement final de notre executable car plus optimise.
 
 * STRUCTURE D'UN PROGRAMME
 
@@ -108,58 +199,11 @@ Portion de code independante (sous-programme).
 
 Code non interprete a la compilation aidant a la comprehension d'un programme.
 
-* LES FONCTIONS EN 3 ETAPES
-
-=(1) Declaration= -> =(2) Definition= -> =(3) Appel=
-
-** Declaration
-
-Creation du prototype qui determine :
-
-- Le Nom
-- Le Type de sa valeur de retour
-- Les parametres qu'elle prendra
-
-** Definition
-
-Implementation du code de la fonction.
-
-** Appel
-
-Utilisation de la fonction.
-
-* CL (equivalent de make sur windows)
-
-** Compilation
-
-Creer un fichier objet de =HelloWorld.c= en =HelloWorld.obj= .
-Cree aussi un executable =HelloWorld.exe= .
-
-#+begin_src
-cl HelloWorld.c
-#+end_src
-
-** Execution
-
-Executer l'application =HelloWorld.exe= .
-
-#+begin_src
-HelloWorld.exe
-#+end_src
-
-** Recompiler
-
-*IMPORTANT!* Il est important de recompiler le code apres chaque modification afin de verifier le bon fonctionnement.
-
-* 3 TYPES D'ERREUR
-
-- Erreur de code
-- Erreur de compilation
-- Erreur de linkage
-
 * POURQUOI LE LANGAGE C ?
 
 - Voir diapo
+
+* CODAGES NUMERIQUES
 
 * VARIABLES ET PREMIERES INSTRUCTIONS
 
@@ -296,11 +340,16 @@ a=0, b=0
 
 1. Incrementation, Decrementation
 2. Produit, Division, Modulo
-3. Addition, SOustraction
+3. Addition, Soustraction
 
 ** Operateurs de comparaison
 
+Operateurs pour comparer 2 valeurs.
+
+Retourne =1= si la comparaison est *vraie* sinon retourne =0= .
+
 *** Inferieur/Superieur
+
 - Inferieur : ~<~
 - Superieur : ~>~
 - Inferieur ou egal : ~<=~
@@ -311,10 +360,17 @@ a=0, b=0
 - Egalite : ~==~
 - Difference : ~!=~
 
-*** Comparaisons multiples
+*** ET & OU Logique
 
-- ET : ~&&~
-- OU : ~||~
+Operateurs logiques permettant de comparer 2 condtions.
+
+- ET : ~&&~ (SI *les 2 conditions* sont vraies ALORS retourne 1)
+- OU : ~||~ (SI *au moins une* condition est vraie ALORS retourne 1)
+
+*** NON Logique
+
+Retourne =1= si la condtion est fausse ou le resultat ~=0~ .
+
 - NON : ~!~
 
 ** Operateurs logiques
@@ -345,7 +401,145 @@ else
     z=y;
 #+end_src
 
-* LES INSTRUCTIONS
+* ENTREE/SORTIE
+
+** Insertion (scanf)
+
+Inserer des valeurs.
+
+*Exemple :*
+
+#+begin_src c
+int variable1, variable2;               // Declaration de 2 variables
+scanf("%d %d", &variable1, &variable2); // Insersion de la valeur de chaque variable au clavier 
+#+end_src
+
+** Affichage (printf)
+
+Afficher du texte et/ou des valeurs.
+
+*Exemple :*
+
+- En reprennant les 2 variables que l'on a insere ci-dessus.
+- En admettant que nous avons insere les valeurs =10= puis =20= .
+
+#+begin_src c
+printf("Deux nombres : %d %d", variable1, variable2); // Affichage des 2 variables
+#+end_src
+
+-> =Deux nombres : 10 20= 
+
+* LES FONCTIONS
+
+Les fonctions sont des portions de code independantes (Sous-programmes).
+
+/main(), printf() et scanf() sont des fonctions./ 
+
+** LES FONCTIONS EN 3 ETAPES
+
+=(1) Declaration= -> =(2) Definition= -> =(3) Appel=
+
+*** Declaration
+
+Creation du prototype qui determine :
+
+- Le Nom
+- Le Type de sa valeur de retour
+- Les parametres qu'elle prendra
+
+#+begin_src c
+type_retour nomFonction(type_arg1 arg1, ..., type_arg2 arg2);
+#+end_src
+
+*** Definition
+
+Implementation du code de la fonction.
+
+#+begin_src c
+type_retour nomFonction(type_arg1 arg1, ..., type_arg2 arg2)
+{
+    /* Instructions */
+
+    return valeur_retour; // Valeur de retour de meme type que la fonction (ici : type_retour)
+}
+#+end_src
+
+*** Appel
+
+Utilisation de la fonction.
+
+/Elles doivent imperativement affecter un emplacement memoire du meme type qu'elles./
+
+#+begin_src c
+type_retour variable = nomFonction(argument1, ..., argument2);
+#+end_src
+
+** LES FONCTIONS VOID
+
+Les fonctions void sont des fonctions qui ne retournent aucune valeur, elle servent uniquement a executer des instructions.
+
+*** Declaration
+
+#+begin_src c
+void nomFonction(type_arg1 arg1, ..., type_arg2 arg2);
+#+end_src
+
+*** Definition
+
+Il n'y a donc pas besoin de retourner une valeur.
+
+#+begin_src c
+void nomFonction(type_arg1 arg1, ..., type_arg2 arg2)
+{
+    /* Instructions */
+}
+#+end_src
+
+Mais il arrive cependant des fois ou l'on souhaite forcer la sortie d'une fonction void.
+
+#+begin_src c
+void nomFonction(type_arg1 arg1, ..., type_arg2 arg2)
+{
+    /* Instructions */
+
+    return; // Alors dans ce cas on fait un return sans aucune valeur
+}
+#+end_src
+
+*** Appel
+
+Utilisation de la fonction.
+
+/Elles s'utilisent seules et ne peuvent affecter un emplacement memoire./
+
+#+begin_src c
+nomFonction(argument1, ..., argument2);
+#+end_src
+
+** RECURSIVITE
+
+Les fonctions recurrentes : fonction qui s'appelle elle-meme.
+
+*IMPORTANT!* Dans une fonction recurrente il faut une condition d'arret.
+
+*** Exemple :
+
+   #+begin_src c
+   float recurrence(int n) {
+      if (n == 0) return 1;         // Condition d'arret
+      return n * recurrence(--1);   // Recurrence
+   }
+   #+end_src
+
+*** Avec operateur ternaire :
+
+   #+begin_src c
+   float recurrence(int n) {
+      return (n == 0) ? 1 : n * recurrence(--n);
+   }
+   #+end_src
+
+* LES STRUCTURES CONDITIONNELLES
 
 ** IF, ELSE, ELSE IF
 
@@ -396,81 +590,6 @@ else
     // instructions
 }
 #+end_src
-
-* ENTREE/SORTIE
-
-** Affichage (printf)
-
-Afficher du texte et/ou des valeurs.
-
-** Insertion (scanf)
-
-Inserer des valeurs.
-
-* LES FONCTIONS
-
-Comme vu plus haut... (WIP)
-
-** Prototype
-
-** Implementation
-
-** Appel
-
-* RECURSIVITE
-
-Les fonctions recurrentes : fonction qui s'appelle elle-meme.
-
-Dans une fonction recurrente il faut une condition d'arret.
-
-* CMAKE
-
-Cree un environement pour developper sur n'importe quel systeme d'exploitation.
-
-** CMakeLists.txt
-
-Fichier de configuration minimaliste.
-
-#+begin_src
-cmake_minimum_required(VERSION 3.14)
-
-project(Projet_Langage_C)
-
-set(CMAKE_C_STANDARD 11)
-
-add_executable(HelloWorld HelloWorld.c)
-#+end_src
-
-Le code ci-dessus :
-- Choisit la version de CMake
-- Choisit le nom du projet
-- Choisit le langage
-- Choisit le nom de l'executable et le fichier source
-
-** Dossier build
-
-Creer un dossier =build= .
-
-** Generer le projet
-
-[[https://raw.githubusercontent.com/Plunne/siilena/main/C/Cours/images/cmake1.PNG]]
-
-** Ouvrir le projet dans Visual Studio
-
-Les projets Visual Studio ont comme extension =.slm= .
-
-Aller dans le dossier build et lancer avec Visual Studio le fichier =Projet_Langage_C.sln= .
-
-* DEBUG & RELEASE
-
-** Debug
-
-Le mode Debug permet de debugguer l'executable. Pour cela, l'executable doit contenir les informations supplementaires necessaires au debug et donc l'executable est plus lourd.
-
-** Release
-
-A contrariot, le mode release ne permet pas de debugguer, en revanche ne contenant pas les informations de debug il est beaucoup leger.
-C'est le mode que l'on utilise pour le deploiement final de notre executable car plus optimise.
 
 * LEXIQUE
 
