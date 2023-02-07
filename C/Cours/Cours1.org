@@ -404,6 +404,16 @@ Les projets Visual Studio ont comme extension =.slm= .
 
 Aller dans le dossier build et lancer avec Visual Studio le fichier =Projet_Langage_C.sln= .
 
+* DEBUG & RELEASE
+
+** Debug
+
+Le mode Debug permet de debugguer l'executable. Pour cela, l'executable doit contenir les informations supplementaires necessaires au debug et donc l'executable est plus lourd.
+
+** Release
+
+A contrariot, le mode release ne permet pas de debugguer, en revanche ne contenant pas les informations de debug il est beaucoup leger.
+C'est le mode que l'on utilise pour le deploiement final de notre executable car plus optimise.
 
 * LEXIQUE
 
