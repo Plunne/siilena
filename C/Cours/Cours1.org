@@ -370,6 +370,22 @@ else
 
 Cree un environement pour developper sur n'importe quel systeme d'exploitation.
 
+** CMakeLists.txt
+
+Fichier de configuration minimaliste.
+
+#+begin_src
+project(Projet_Langage_C)
+
+cmake_minimum_required(VERSION 3.14)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(HelloWorld HelloWorld.c)
+#+end_src
+
+** Dossier build
+
 * LEXIQUE
 
 - API : Ensemble d'outils qui permettent de faire l'interface avec un service.
