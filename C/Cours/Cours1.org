@@ -375,9 +375,9 @@ Cree un environement pour developper sur n'importe quel systeme d'exploitation.
 Fichier de configuration minimaliste.
 
 #+begin_src
-project(Projet_Langage_C)
-
 cmake_minimum_required(VERSION 3.14)
+
+project(Projet_Langage_C)
 
 set(CMAKE_C_STANDARD 11)
 
