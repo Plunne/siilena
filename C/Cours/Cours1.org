@@ -384,7 +384,26 @@ set(CMAKE_C_STANDARD 11)
 add_executable(HelloWorld HelloWorld.c)
 #+end_src
 
+Le code ci-dessus :
+- Choisit la version de CMake
+- Choisit le nom du projet
+- Choisit le langage
+- Choisit le nom de l'executable et le fichier source
+
 ** Dossier build
+
+Creer un dossier =build= .
+
+** Generer le projet
+
+Voir Image.
+
+** Ouvrir le projet dans Visual Studio
+
+Les projets Visual Studio ont comme extension =.slm= .
+
+Aller dans le dossier build et lancer avec Visual Studio le fichier =Projet_Langage_C.sln= .
+
 
 * LEXIQUE
 
