@@ -623,6 +623,8 @@ Elle necessitent une condition d'arret. Celle ci est definie dans la syntaxe.
 
 Boucle qui se repetent *TANT QUE* sa condition est vrai.
 
+*Declaration :*
+
 - *TANT QUE* l'expression =expression= est vraie
 - *FAIRE* les instructions
 
@@ -668,6 +670,8 @@ Fonctionne comme un while mais permet aussi de :
 - Realiser une instruction a l'entree de la boucle (generalement pour declarer ou definir un compteur)
 - Une expression
 - Une instruction de fin de boucle (generalement pour incrementer le compteur)
+
+*Declaration :*
 
 - *POUR* un compteur nomme =compteur= de type =type_cpt= ayant pour valeur de depart =valeur=
 - *TANT QUE* l'expression =expression= est vrai
