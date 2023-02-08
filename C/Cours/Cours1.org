@@ -658,8 +658,6 @@ while (i < 5) {
 
 -> =4=
 
--> =5=
-
 ** DO WHILE
 
 Boucle qui se repetent *TANT QUE* sa condition est vrai mais qui execute son code avant tout.
