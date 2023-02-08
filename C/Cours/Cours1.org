@@ -621,7 +621,7 @@ Elle necessitent une condition d'arret. Celle ci est definie dans la syntaxe.
 
 ** WHILE
 
-Boucle qui se repetent *TANT QUE* sa condition est vrai.
+Boucle d'instructions qui se repetent *TANT QUE* sa condition est vrai.
 
 *Declaration :*
 
@@ -660,8 +660,44 @@ while (i < 5) {
 
 ** DO WHILE
 
-Boucle qui se repetent *TANT QUE* sa condition est vrai mais qui execute son code avant tout.
+Boucle d'instructions qui se repetent *TANT QUE* sa condition est vrai mais qui execute son code avant tout.
 
+*Declaration :*
+
+- *FAIRE* les instructions
+- *PUIS TANT QUE* l'expression =expression= est vraie
+- *FAIRE* les instructions
+
+#+begin_src c
+do {
+
+    /* Instructions */
+
+}
+while (expression)
+#+end_src
+
+/Si l'on souhaite sortir de la boucle a un moment donne en fonction de la valeur d'une variable,
+ il faut declarer avec une valeur cette derniere en amont de la boucle./
+
+*Exemple :*
+
+#+begin_src c
+int i = 0;
+while (i < 5) {
+    printf("i : %d\n", i++);
+}
+#+end_src
+
+-> =0=
+
+-> =1=
+
+-> =2=
+
+-> =3=
+
+-> =4=
 ** FOR
 
 Fonctionne comme un while mais permet aussi de :
@@ -674,6 +710,8 @@ Fonctionne comme un while mais permet aussi de :
 - *POUR* un compteur nomme =compteur= de type =type_cpt= ayant pour valeur de depart =valeur=
 - *TANT QUE* l'expression =expression= est vrai
 - *ALORS EN FIN DE BOUCLE* executer l'instruction =instruction_de_fin_boucle=
+
+/Exception : Il est aussi possible d'ajouter plusieurs instructions separees par une virgule dans le for./
 
 #+begin_src c
 for (type_cpt compteur = valeur; expression; instruction_de_fin_boucle) {
