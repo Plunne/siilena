@@ -201,7 +201,10 @@ Code non interprete a la compilation aidant a la comprehension d'un programme.
 
 * POURQUOI LE LANGAGE C ?
 
-A venir...
+- Souple et Puissant
+- Facile a porter d'une plateforme a l'autre
+- Syntaxe legere (contient peu de mots-cles)
+- Langage modulaire
 
 * CODAGES NUMERIQUES
 
@@ -403,6 +406,18 @@ else
     z=y;
 #+end_src
 
+* CHAINES DE CARACTERES
+
+A Venir...
+
+** Ordres de controle
+
+(Relatif diapo 71)
+
+** Specificateurs de conversion
+
+(Relatif diapo 72)
+
 * ENTREE/SORTIE
 
 ** Insertion (scanf)
@@ -431,11 +446,27 @@ printf("Deux nombres : %d %d", variable1, variable2); // Affichage des 2 variabl
 
 -> =Deux nombres : 10 20= 
 
+** Affichage (puts)
+
+Pour afficher seulement du texte, puts est preferable car :
+
+- Utilise moins de ressources
+- Retour a la ligne automatique
+
+Cependant il n'accepte pas de valeurs en arguments.
+
+#+begin_src c
+puts("Chaine de texte uniquement.");
+#+end_src
+
 * LES TABLEAUX
 
 Un tableau contient des elements d'un type definit.
 
-** Declaration
+
+** A simple dimension
+
+*** Declaration
 
 Creation d'un tableau
 
@@ -445,11 +476,64 @@ Creation d'un tableau
 type tableau[TAILLE];
 #+end_src
 
-** Affectation a l'initialisation
+*** Affectation a l'initialisation
 
-** Index
+#+begin_src c
+type tableau[TAILLE] = { valeur0, valeur1, valeur2, ... };
+#+end_src
 
-** Affectation a l'index
+*** Index
+
+#+begin_src c
+tableau[index];
+#+end_src
+
+*** Affectation a l'index
+
+#+begin_src c
+tableau[index] = valeur;
+#+end_src
+
+** A double dimensions
+
+Un tableau qui contient 2 dimensions.
+
+*** Declaration
+
+Creation d'un tableau a 2 dimensions
+
+*Tous comme le simple dimension, a l'initialisation il faut imperativement une valeur constante (qui ne doit pas changer)!*
+
+#+begin_src c
+type tableau[NOMBRE_LIGNES][NOMBRE_COLONNES];
+#+end_src
+
+*** Affectation a l'initialisation
+
+En prennant pour exemple un tableau a 2 lignes et 3 colonnes.
+
+#+begin_src c
+type tableau[2][3] = { valeur00, valeur01, valeur02, valeur10, valeur11, valeur12 };
+#+end_src
+
+L'ideal reste tout de meme d'initialiser avec une 2 boucles for imbriquees.
+
+*** Index
+
+#+begin_src c
+tableau[x][y];
+#+end_src
+
+
+*** Affectation a l'index
+
+#+begin_src c
+tableau[x][y] = valeur;
+#+end_src
+
+*** Passer de double dimension a simple dimension
+
+=Ligne= * =Taille de la ligne= + =Colonne=
 
 * LES FONCTIONS
 
