@@ -431,6 +431,26 @@ printf("Deux nombres : %d %d", variable1, variable2); // Affichage des 2 variabl
 
 -> =Deux nombres : 10 20= 
 
+* LES TABLEAUX
+
+Un tableau contient des elements d'un type definit.
+
+** Declaration
+
+Creation d'un tableau
+
+*A l'initialisation il faut imperativement une valeur constante (qui ne doit pas changer)!*
+
+#+begin_src c
+type tableau[TAILLE];
+#+end_src
+
+** Affectation a l'initialisation
+
+** Index
+
+** Affectation a l'index
+
 * LES FONCTIONS
 
 Les fonctions sont des portions de code independantes (Sous-programmes).
@@ -592,6 +612,59 @@ else
     // instructions
 }
 #+end_src
+
+* LES BOUCLES CONDITIONNELLES
+
+Les boucles sont des blocs de code qui se repetent.
+
+Elle necessitent une condition d'arret. Celle ci est definie dans la syntaxe.
+
+** WHILE
+
+Boucle qui se repetent *TANT QUE* sa condition est vrai.
+
+** DO WHILE
+
+Boucle qui se repetent *TANT QUE* sa condition est vrai mais qui execute son code avant tout.
+
+** FOR
+
+Fonctionne comme un while mais permet de definir directement un compteur, une condition et une instruction de fin de boucle.
+
+*POUR* un compteur nomme =compteur= de type =type_cpt= ayant pour valeur de depart =valeur=
+*TANT QUE* l'expression =expression= est vrai
+*ALORS EN FIN DE BOUCLE* executer l'instruction =instruction_de_fin_boucle=
+
+#+begin_src c
+for (type_cpt compteur = valeur; expression; instruction_de_fin_boucle) {
+
+    /* Instructions */
+
+}
+#+end_src
+
+*Exemple :*
+
+#+begin_src c
+for (int i = 0; i < 10; i++) {
+    printf("i : %d\n", i);
+}
+#+end_src
+
+-> =0=
+-> =1=
+-> =2=
+-> =3=
+-> =4=
+-> =5=
+-> =6=
+-> =7=
+-> =8=
+-> =9=
+
+** BREAK
+
+Permet de sortir d'une boucle pendant son execution.
 
 * LEXIQUE
 
