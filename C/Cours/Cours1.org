@@ -684,12 +684,14 @@ while (expression)
 
 #+begin_src c
 int i = 0;
-while (i < 5) {
+do
+{
     printf("i : %d\n", i++);
 }
+while (i < 5)
 #+end_src
 
--> =0=
+-> =0= (Se passe avant de lire la condition)
 
 -> =1=
 
@@ -698,6 +700,7 @@ while (i < 5) {
 -> =3=
 
 -> =4=
+
 ** FOR
 
 Fonctionne comme un while mais permet aussi de :
