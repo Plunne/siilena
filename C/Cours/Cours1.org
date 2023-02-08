@@ -567,7 +567,7 @@ Les fonctions recurrentes : fonction qui s'appelle elle-meme.
 
 *** IF
 
-*SI* expression *ALORS* instructions
+- *SI* expression *ALORS* instructions
 
 #+begin_src c
 if (expression)
@@ -578,8 +578,8 @@ if (expression)
 
 *** ELSE
 
-*SI* expression *ALORS* instructions
-*SINON* instructions
+- *SI* expression *ALORS* instructions
+- *SINON* instructions
 
 #+begin_src c
 if (expression)
@@ -594,9 +594,9 @@ else
 
 *** ELSE IF
 
-*SI* expression *ALORS* instructions
-*SINON SI* expression *ALORS* instructions
-*SINON* instructions
+- *SI* expression *ALORS* instructions
+- *SINON SI* expression *ALORS* instructions
+- *SINON* instructions
 
 #+begin_src c
 if (expression)
