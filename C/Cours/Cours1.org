@@ -669,12 +669,13 @@ Boucle d'instructions qui se repetent *TANT QUE* sa condition est vrai mais qui 
 - *FAIRE* les instructions
 
 #+begin_src c
-do {
+do
+{
 
     /* Instructions */
 
 }
-while (expression)
+while (expression);
 #+end_src
 
 /Si l'on souhaite sortir de la boucle a un moment donne en fonction de la valeur d'une variable,
@@ -688,7 +689,7 @@ do
 {
     printf("i : %d\n", i++);
 }
-while (i < 5)
+while (i < 5);
 #+end_src
 
 -> =0= (Se passe avant de lire la condition)
@@ -783,6 +784,21 @@ for (;;) {
 
 }
 #+end_src
+
+*** Vides
+
+*Avec WHILE :*
+
+#+begin_src c
+while (1);
+#+end_src
+
+*Avec FOR :*
+
+#+begin_src c
+for (;;);
+#+end_src
+
 
 * LEXIQUE
 
