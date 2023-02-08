@@ -8,9 +8,9 @@ Formateur : Paul ERNEST
 - [[#partie-2][Partie 2]]
 - [[#partie-3][Partie 3]]
 - [[#partie-4][Partie 4]]
-- [[#partie-][PARTIE ?]]
-- [[#partie--1][PARTIE ?]]
-- [[#partie--2][PARTIE ?]]
+- [[#partie-5][PARTIE 5]]
+- [[#partie-6][PARTIE 6]]
+- [[#partie-7][PARTIE 7]]
 
 * PARTIE 1
 
