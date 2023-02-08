@@ -631,9 +631,9 @@ Boucle qui se repetent *TANT QUE* sa condition est vrai mais qui execute son cod
 
 Fonctionne comme un while mais permet de definir directement un compteur, une condition et une instruction de fin de boucle.
 
-*POUR* un compteur nomme =compteur= de type =type_cpt= ayant pour valeur de depart =valeur=
-*TANT QUE* l'expression =expression= est vrai
-*ALORS EN FIN DE BOUCLE* executer l'instruction =instruction_de_fin_boucle=
+- *POUR* un compteur nomme =compteur= de type =type_cpt= ayant pour valeur de depart =valeur=
+- *TANT QUE* l'expression =expression= est vrai
+- *ALORS EN FIN DE BOUCLE* executer l'instruction =instruction_de_fin_boucle=
 
 #+begin_src c
 for (type_cpt compteur = valeur; expression; instruction_de_fin_boucle) {
