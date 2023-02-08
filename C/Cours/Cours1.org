@@ -623,13 +623,51 @@ Elle necessitent une condition d'arret. Celle ci est definie dans la syntaxe.
 
 Boucle qui se repetent *TANT QUE* sa condition est vrai.
 
+- *TANT QUE* l'expression =expression= est vraie
+- *FAIRE* les instructions
+
+#+begin_src c
+while (expression) {
+
+    /* Instructions */
+
+}
+#+end_src
+
+/Si l'on souhaite sortir de la boucle a un moment donne en fonction de la valeur d'une variable,
+ il faut declarer avec une valeur cette derniere en amont de la boucle./
+
+*Exemple :*
+
+#+begin_src c
+int i = 0;
+while (i < 5) {
+    printf("i : %d\n", i++);
+}
+#+end_src
+
+-> =0=
+
+-> =1=
+
+-> =2=
+
+-> =3=
+
+-> =4=
+
+-> =5=
+
 ** DO WHILE
 
 Boucle qui se repetent *TANT QUE* sa condition est vrai mais qui execute son code avant tout.
 
 ** FOR
 
-Fonctionne comme un while mais permet de definir directement un compteur, une condition et une instruction de fin de boucle.
+Fonctionne comme un while mais permet aussi de :
+- Realiser une instruction a l'entree de la boucle (generalement pour declarer ou definir un compteur)
+- Une expression
+- Une instruction de fin de boucle (generalement pour incrementer le compteur)
 
 - *POUR* un compteur nomme =compteur= de type =type_cpt= ayant pour valeur de depart =valeur=
 - *TANT QUE* l'expression =expression= est vrai
@@ -677,6 +715,30 @@ Permet de sortir d'une boucle pendant son execution.
 
 #+begin_src c
 break;
+#+end_src
+
+** LES BOUCLES INFINIES
+
+Les boucles infinies sont des boucles dont l'on ne sort jamais jusqu'a la fin de l'execution du programme.
+
+*** Avec WHILE
+
+#+begin_src c
+while (1) {
+
+    /* Instructions a l'infinie */
+
+}
+#+end_src
+
+*** Avec FOR
+
+#+begin_src c
+for (;;) {
+
+    /* Instructions a l'infinie */
+
+}
 #+end_src
 
 * LEXIQUE
