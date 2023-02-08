@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/CMakeLists.txt
+  DoWhile.c
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\DoWhile.c(17,49): error C2143: erreur de syntaxe : absence de ';' avant '{'
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\DoWhile.c(3): fatal  error C1075: '{' : jeton correspondant introuvable

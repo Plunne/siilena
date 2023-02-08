@@ -613,6 +613,20 @@ else
 }
 #+end_src
 
+** BREAK
+
+Permet de sortir d'une structure conditionnelle pendant son execution.
+
+#+begin_src c
+break;
+#+end_src
+
+** SWITCH
+
+Lorsque l'on a un choix a valeur multiple, il est preferable d'utiliser un =switch= .
+
+A venir...
+
 * LES BOUCLES CONDITIONNELLES
 
 Les boucles sont des blocs de code qui se repetent.
@@ -755,7 +769,7 @@ for (int i = 0; i < 10; i++) {
 
 ** BREAK
 
-Permet de sortir d'une boucle pendant son execution.
+Tout comme pour les structures conditionnelles, permet de sortir d'une boucle pendant son execution.
 
 #+begin_src c
 break;

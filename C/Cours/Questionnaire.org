@@ -261,3 +261,58 @@ Quelles sont les lignes avec :
       return (n == 0) ? 1 : 3 * recurrence(--n);
    }
    #+end_src
+
+* PARTIE 8
+
+1. Ecrivez la declaration correspondant a un tableau qui contiendra 50 valeurs de type long.
+   #+begin_src c
+   long tableau[50];
+   #+end_src
+
+2. Quelle est la valeur de x apres l'execution de l'instruction suivante? ~for (x=0; x < 100; x++);~
+   #+begin_src
+   100
+   #+end_src
+
+3. Quelle est la valeur de ctr apres l'execution de l'instruction suivante? ~for (ctr=0; ctr < 10; ctr+=3);~
+   #+begin_src
+   12
+   #+end_src
+
+4. Combien de caracteres X la boucle for suivante affiche-t-elle?
+   #+begin_src c
+   for (x=0; x < 10; x++)
+       for (y=5; y > 0; y--)
+          puts("X");
+   #+end_src
+   
+   #+begin_src
+   1ere boucle 10
+   2eme boucle 5
+   10 * 5 = 50
+   #+end_src
+
+5. Comptez de 1 a 100 de 3 en 3 avec une boucle for, une boucle while, et une boucle do while.
+   
+   Avec for :
+   #+begin_src c
+   for (int ctr=1; ctr <= 100; ctr += 3);
+   #+end_src
+   
+   Avec while :
+   #+begin_src c
+   int ctr = 1;
+   while (ctr <= 100) {
+      ctr += 3;
+   }
+   #+end_src
+
+   Avec do while :
+   #+begin_src c
+   int ctr = 1;
+   do
+   {
+      ctr += 3;
+   }
+   while (ctr <= 100)
+   #+end_src

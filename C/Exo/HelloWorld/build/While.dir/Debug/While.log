@@ -1,0 +1,4 @@
+﻿  While.c
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\While.c(18,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\While.c(38,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  While.vcxproj -> C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\Debug\While.exe
