@@ -675,6 +675,10 @@ for (int i = 0; i < 10; i++) {
 
 Permet de sortir d'une boucle pendant son execution.
 
+#+begin_src c
+break;
+#+end_src
+
 * LEXIQUE
 
 - API : Ensemble d'outils qui permettent de faire l'interface avec un service.
