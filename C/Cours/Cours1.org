@@ -357,7 +357,7 @@ const type nom = valeur;
 
 La valeur d'une variable evolue d'un maniere speciale.
 
-Elle part de =0= jusqu'a la valeur maximale puis redescend d'un coup a la valeur minimal jusqu'a rejoindre =-1=.
+Elle part de =0= jusqu'a la valeur =maximale= puis redescend d'un coup a la valeur =minimale= jusqu'a rejoindre =-1=.
 
 Pour un char :
 
