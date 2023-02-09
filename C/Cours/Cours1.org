@@ -914,14 +914,14 @@ Variable contenant l'adresse d'une autre variable d'un type donne.
 
 *Syntaxe :*
 
-| Variable | Syntaxe | Valeur         |
-|----------+---------+----------------|
-| var      | var     | Valeur de var  |
-| var      | &var    | Adresse de var |
-|----------+---------+----------------|
-| ptr      | ptr     | Adresse de var |
-| ptr      | *ptr    | Valeur de var  |
-| ptr      | &ptr    | Adresse de ptr |
+| Syntaxe | Valeur         |
+|---------+----------------|
+| var     | Valeur de var  |
+| &var    | Adresse de var |
+|---------+----------------|
+| ptr     | Adresse de var |
+| *ptr    | Valeur de var  |
+| &ptr    | Adresse de ptr |
 
 ** Declaration
 
