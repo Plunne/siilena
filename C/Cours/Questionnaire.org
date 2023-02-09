@@ -422,3 +422,9 @@ Quelles sont les lignes avec :
    #+begin_example
    Comme une sequence de code ASCII correspondant suivi d'un '\0'.
    #+end_example
+
+* PARTIE 12
+
+1. Qu'est ce que la portee ?
+   #+begin_example
+   #+end_example

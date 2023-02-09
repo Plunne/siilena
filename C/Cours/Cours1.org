@@ -969,11 +969,23 @@ A venir...
 
 ** Soustraction d'adresses
 
+* PORTEE DES VARIABLES
+
+Une variable a une duree de vie, cette duree de vie est definie par sa portee, il s'agit de la zone dans laquelle une variable existe.
+
+** Variables Globales
+** Variables Locales
+** Variables Externes
+
 * ALLOCATION DYNAMIQUE
 
 ** Malloc
 
 ** Free
+
+Malloc ne libere pas la memoire de lui meme la ou une allocation manuelle locale libere son emplacement a la fin de son bloc d'instructions. 
+
+Free sert donc a liberer celle-ci.
 
 * LEXIQUE
 
