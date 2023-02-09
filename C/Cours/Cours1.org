@@ -45,7 +45,8 @@ Formateur : Paul ERNEST
   - [[#operateur-ternaire][Operateur ternaire]]
 - [[#chaines-de-caracteres][CHAINES DE CARACTERES]]
   - [[#table-ascii][Table ASCII]]
-  - [[#ordres-de-controle][Ordres de controle]]
+  - [[#caracteres-de-controle][Caracteres de controle]]
+  - [[#echappement-de-caractere][Echappement de caractere]]
   - [[#specificateurs-de-conversion][Specificateurs de conversion]]
 - [[#entreesortie][ENTREE/SORTIE]]
   - [[#insertion-scanf][Insertion (scanf)]]
@@ -454,15 +455,32 @@ A Venir...
 
 A Venir...
 
-** Ordres de controle
+** Caracteres de controle
 
-A Venir...
-(Relatif diapo 71)
+Les ordres de controle sont des caracteres predefinis pour controler des chaines de caracteres.
+
+| Caractere | Utilite                                    |
+|-----------+--------------------------------------------|
+| ~\n~        | Retour a la ligne                          |
+| ~\t~        | Tabulation                                 |
+| ~\b~        | Retour arriere (Backspace)                 |
+| ~\0~        | Fin de chaine                              |
+| ~\r~        | Retour chariot (deplace en debut de ligne) |
+
+** Echappement de caractere
+
+Les caracteres speciaux relatifs aux chaines doivent etre echapes avec un ~\~ .
+
+| Caractere | Caractere a afficher    | Affiche |
+|-----------+-------------------------+---------|
+| ~\\~        | Antislash               | ~\~       |
+| ~\"~        | Guillemet               | ~"~       |
+| ~\'~        | Apostrophe              | ~'~       |
+| ~\?~        | Point d'interrogation   | ~?~       |
 
 ** Specificateurs de conversion
 
-A Venir...
-(Relatif diapo 72)
+
 
 * ENTREE/SORTIE
 
