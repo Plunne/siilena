@@ -27,16 +27,14 @@ Formateur : Paul ERNEST
   - [[#commentaires][Commentaires]]
 - [[#pourquoi-le-langage-c-][POURQUOI LE LANGAGE C ?]]
 - [[#codages-numeriques][CODAGES NUMERIQUES]]
-- [[#variables-et-premieres-instructions][VARIABLES ET PREMIERES INSTRUCTIONS]]
+- [[#variables][VARIABLES]]
   - [[#ram-random-acces-memory][RAM (Random Acces Memory)]]
-  - [[#les-tailles-en-binaire][Les tailles en binaire]]
-  - [[#variable][Variable]]
   - [[#regles-de-nommage][Regles de nommage]]
   - [[#syntaxe][Syntaxe]]
+  - [[#les-types][Les Types]]
   - [[#bases-numeriques][Bases numeriques]]
   - [[#constantes][Constantes]]
   - [[#valeurs-negative][Valeurs negative]]
-  - [[#flottant][Flottant]]
 - [[#operateurs][OPERATEURS]]
   - [[#operateurs-arithmetiques][Operateurs arithmetiques]]
   - [[#operateurs-de-comparaison][Operateurs de comparaison]]
@@ -251,20 +249,14 @@ Code non interprete a la compilation aidant a la comprehension d'un programme.
 
 A venir...
 
-* VARIABLES ET PREMIERES INSTRUCTIONS
+* VARIABLES
+
+Une variable est un emplacement memoire de la RAM reserve pour stocker une valeur.
 
 ** RAM (Random Acces Memory)
 
 Partie de la memoire de l'ordinateur ou l'on peut stocker des informations temporaires (variables par exemple).
-Decompose en adresses.
-
-** Les tailles en binaire
-
-Voir Memo 2 - Les Types en C.
-
-** Variable
-
-Une variable est un emplacement memoire reserve pour stocker une valeur.
+Les donnees/informations sont rangees/organisees avec un systeme d'adresses.
 
 ** Regles de nommage
 
@@ -279,9 +271,58 @@ Une variable est un emplacement memoire reserve pour stocker une valeur.
 type nom = valeur;
 #+end_src
 
+** Les Types
+
+Les types determinent le type et la taille du contenu des variables.
+
+*** Le signe
+
+Le signe determine l'interpretation de la valeur, si on la veut strictement positive ou si l'on a besoin de valeurs negatives.
+
+- ~signed~ : valeur signee, le signe +/- est determine grace au MSB (bit de poids fort)
+- ~unsigned~ : valeur non-signee, le nombre se determine sur l'entierete des bits
+
+**** Types signed
+
+| Type                         | Octets | Valeur Minimale -> Valeur Maximale                       |
+|------------------------------+--------+----------------------------------------------------------|
+| ~signed char~                  | 1      | ~-128~ -> ~127~                                              |
+| ~signed short~                 | 2      | ~-32 768~ -> ~32 767~                                        |
+| ~signed int~ (>=16 bits)       | 2      | ~-32 768~ -> ~32 767~                                        |
+| ~signed int~ (>=32 bits)       | 4      | ~-2 147 483 648~ -> ~-2 147 483 647~                         |
+| ~signed long~ (>=32 bits)      | 4      | ~-2 147 483 648~ -> ~-2 147 483 647~                         |
+| ~signed long long~ (>=64 bits) | 8      | ~−9 223 372 036 854 776 000~ -> ~9 223 372 036 854 776 000~  |
+
+**** Types unsigned
+
+| Type                           | Octets | Valeur Minimale -> Valeur Maximale   |
+|--------------------------------+--------+--------------------------------------|
+| ~unsigned char~                  | 1      | ~0~ -> ~255~                             |
+| ~unsigned short~                 | 2      | ~0~ -> ~65 535~                          |
+| ~unsigned int~ (>=16 bits)       | 2      | ~0~ -> ~65 535~                          |
+| ~unsigned int~ (>=32 bits)       | 4      | ~0~ -> ~4 294 967 295~                   |
+| ~unsigned long~ (>=32 bits)      | 4      | ~0~ -> ~4 294 967 295~                   |
+| ~unsigned long long~ (>=64 bits) | 8      | ~0~ -> ~18 446 744 073 709 552 000~      |
+
+*** Types flottants
+
+Les types flottants permettent d'utiliser de stocker des valeurs a virgule.
+
+| Type        | Octets | Precision                  |
+|-------------+--------+----------------------------|
+| ~float~       | 4      | Simple precision           |
+| ~double~      | 8      | Double precision           |
+| ~long double~ | 10     | Double precision etendue   |
+
+Precisions sur la structure d'un ~float~ :
+
+- 1 bit - Signe : Positif ou Negatif
+- 8 bits - Exposant : Valeur de l'exposant de la puissance 10 (emplacement de la virgule)
+- 23 bits - Mantisse : Valeur a afficher
+
 ** Bases numeriques
 
-Prefixes des bases numeriques lors de l'affectation d'une variable.
+Prefixes des bases numeriques lors de l'affectation d'une valeur a une variable.
 
 - Decimal (par defaut) : =0d=
 - Hexadecimal : =0x=
@@ -314,15 +355,13 @@ const type nom = valeur;
 
 ** Valeurs negative
 
+La valeur d'une variable evolue d'un maniere speciale.
+
+Elle part de =0= jusqu'a la valeur maximale puis redescend d'un coup a la valeur minimal jusqu'a rejoindre =-1=.
+
 Pour un char :
 
 =0= -> =127= -> =-128= -> =-1=
-
-** Flottant
-
-- 1 bit - Signe : Positif ou Negatif
-- 8 bits - Exposant : Valeur de l'exposant de la puissance 10 (emplacement de la virgule)
-- 23 bits - Mantisse : Valeur a afficher
 
 * OPERATEURS
 
