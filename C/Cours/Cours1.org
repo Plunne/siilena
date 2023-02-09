@@ -3,7 +3,7 @@
 
 Formateur : Paul ERNEST
 
-* TABLE OF CONTENT :toc:
+* TABLE DES MATIERES :toc:
 - [[#environement-de-travail][ENVIRONEMENT DE TRAVAIL]]
   - [[#installation-des-outils][INSTALLATION DES OUTILS]]
   - [[#cl-equivalent-de-make-sur-windows][CL (equivalent de make sur windows)]]
@@ -163,7 +163,7 @@ Creer un dossier =build= .
 
 *** Ouvrir le projet dans Visual Studio
 
-Les projets Visual Studio ont comme extension =.slm= .
+Les projets Visual Studio ont comme extension =.sln= .
 
 Aller dans le dossier build et lancer avec Visual Studio le fichier =Projet_Langage_C.sln= .
 
