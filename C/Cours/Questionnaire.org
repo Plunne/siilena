@@ -320,14 +320,15 @@ Quelles sont les lignes avec :
 * PARTIE 9
 
 1. Quel operateur faut-il utiliser pour obtenir l'adresse d'une variable?
-   #+begin_example
+   #+begin_src c
    &
-   #+end_example
+   #+end_src
 
 2. Quel operateur faut-il utiliser pour obtenir la valeur de la variable pointee?
    #+begin_example
+   #+begin_src c
    *
-   #+end_example
+   #+end_src
 
 3. Qu'est ce qu'un pointeur?
    #+begin_example
@@ -345,10 +346,10 @@ Quelles sont les lignes avec :
    #+end_example
 
 6. Trouver deux methodes pour obtenir l'adresse du premier element du tableau data[].
-   #+begin_example
+   #+begin_src c
    tableau[0]
    *tableau   
-   #+end_example
+   #+end_src
 
 7. Trouver deux methodes pour passer un tableau en argument d'une fonction.
    #+begin_src c
