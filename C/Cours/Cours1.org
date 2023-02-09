@@ -909,8 +909,19 @@ Variable contenant l'adresse d'une autre variable d'un type donne.
 
 | Variable | Emplacement Memoire | Valeur         |
 |----------+---------------------+----------------|
-| var      | Adresse de var      | Valeur         |
+| var      | Adresse de var      | Valeur de var  |
 | ptr      | Adresse de ptr      | Adresse de var |
+
+*Syntaxe :*
+
+| Variable | Syntaxe | Valeur         |
+|----------+---------+----------------|
+| var      | var     | Valeur de var  |
+| var      | &var    | Adresse de var |
+|----------+---------+----------------|
+| ptr      | ptr     | Adresse de var |
+| ptr      | *ptr    | Valeur de var  |
+| ptr      | &ptr    | Adresse de ptr |
 
 ** Declaration
 
