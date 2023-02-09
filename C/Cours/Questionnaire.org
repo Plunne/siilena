@@ -351,7 +351,7 @@ Quelles sont les lignes avec :
    #+end_example
 
 7. Trouver deux methodes pour passer un tableau en argument d'une fonction.
-   #+begin_example
+   #+begin_src c
    int * tableau, int taille_tableau // Il faut absolument passer le nombre d'elements du tableau
    int tableau[], int taille_tableau // Il faut absolument passer le nombre d'elements du tableau
-   #+end_example
+   #+end_src
