@@ -474,7 +474,7 @@ Les caracteres speciaux relatifs aux chaines doivent etre echapes avec un ~\~ .
 | Caractere | Caractere a afficher    | Affiche |
 |-----------+-------------------------+---------|
 | ~\\~        | Antislash               | ~\~       |
-| ="=         | Guillemet               | ="=              |
+| ~\"~     | Guillemet               | ="=              |
 | ='=         | Apostrophe              | ='=              |
 | ~\?~        | Point d'interrogation   | ~?~       |
 
