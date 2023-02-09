@@ -352,6 +352,6 @@ Quelles sont les lignes avec :
 
 7. Trouver deux methodes pour passer un tableau en argument d'une fonction.
    #+begin_src c
-   void fonction(int * tableau, int taille_tableau); // Il faut absolument passer le nombre d'elements du tableau
-   void fonction(int tableau[], int taille_tableau); // Il faut absolument passer le nombre d'elements du tableau
+   type_fonction fonction(type_tableau * tableau, type_tableau taille_tableau); // Il faut absolument passer le nombre d'elements du tableau
+   type_fonction fonction(type_tableau tableau[], type_tableau taille_tableau); // Il faut absolument passer le nombre d'elements du tableau
    #+end_src
