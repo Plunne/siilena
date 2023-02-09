@@ -969,7 +969,11 @@ A venir...
 
 ** Soustraction d'adresses
 
+* ALLOCATION DYNAMIQUE
 
+** Malloc
+
+** Free
 
 * LEXIQUE
 

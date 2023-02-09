@@ -390,3 +390,35 @@ Quelles sont les lignes avec :
       }
    }
    #+end_src
+
+* PARTIE 11
+
+1. Quelles sont les valeurs numeriques correspondant aux caracteres ASCII?
+   #+begin_example
+   0 a 255
+   #+end_example
+
+2. Comment le compilateur C interprete-t-il un caractere entoure de guillemets simples?
+   #+begin_example
+   Un char
+   #+end_example
+
+3. Quelle est la definition C d'une chaine? 
+   #+begin_src c
+   char chaine[] = "chaine de caracteres";
+   #+end_src
+
+4. Qu'est-ce qu'une chaine litterale?
+   #+begin_example
+   Un tableau de caracteres.
+   #+end_example
+
+5. Pourquoi faut-il declarer un tableau de n + 1 elements pour stocker une chaine de longueur n?
+   #+begin_example
+   Car il y a le caractere nul '\0' de fin de chaine.
+   #+end_example
+
+6. Comment le compilateur C interprete-t-il une chaine litterale?
+   #+begin_example
+   Comme une sequence de code ASCII correspondant suivi d'un '\0'.
+   #+end_example

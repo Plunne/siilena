@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/CMakeLists.txt
+  TroisTableaux.c
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\TroisTableaux.c(14): warning C4716: 'modification' : doit retourner une valeur
+  TroisTableaux.vcxproj -> C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\Debug\TroisTableaux.exe
