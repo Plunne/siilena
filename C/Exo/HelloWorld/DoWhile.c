@@ -14,7 +14,7 @@ int main() {
 			printf("Entier : ");
 			scanf("%d", &entiers[i]);
 		}
-		while ((entiers[i] < 1) || (entiers[i] > 10)) {
+		while ((entiers[i] < 1) || (entiers[i] > 10));
 		// Affichage
 		printf("%d : %d\n\n", i+1, entiers[i]);
 	}

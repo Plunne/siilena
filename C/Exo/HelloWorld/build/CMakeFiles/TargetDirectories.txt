@@ -8,5 +8,6 @@ C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/ForRectan
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/While.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/DoWhile.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/CLI.dir
+C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/PointeursTableaux.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/build/CMakeFiles/ZERO_CHECK.dir

@@ -17,6 +17,7 @@ int main(void) {
         %x : hexadecimal
         %X : HEXADECIMAL
         %o : Octal
+        %p : Adresse
     */
 
     /*

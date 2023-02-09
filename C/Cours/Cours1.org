@@ -410,12 +410,18 @@ else
 
 A Venir...
 
+** Table ASCII
+
+A Venir...
+
 ** Ordres de controle
 
+A Venir...
 (Relatif diapo 71)
 
 ** Specificateurs de conversion
 
+A Venir...
 (Relatif diapo 72)
 
 * ENTREE/SORTIE
@@ -896,6 +902,54 @@ while (1);
 #+begin_src c
 for (;;);
 #+end_src
+
+* LES POINTEURS
+
+Un pointeur contient une adresse et permet d'intervenir sur la memoire. (WIP)
+
+** Declaration
+
+Declaration d'une variable pointeur qui pointe sur l'adresse d'une variable.
+
+#+begin_src c
+type *pointeur = &addresseVariable;
+#+end_src
+
+** Valeur de la variable
+
+Valeur de la variable pointee.
+
+#+begin_src c
+*pointeur
+#+end_src
+
+** Adresse de la variable
+
+Adresse de la variable pointee.
+
+#+begin_src c
+pointeur
+#+end_src
+
+** Adresse du pointeur
+
+Adresse du pointeur.
+
+#+begin_src c
+&pointeur
+#+end_src
+
+** Incrementation
+
+A venir...
+
+** Equivalence avec les crochets de tableau
+
+~tableau[n]~ = ~*(tableau + n)~
+
+*Attention aux parentheses!*
+
+~tableau[n]~ != ~*tableau + n~ (Ici on interagit avec la valeur de l'element (0) du tableau)
 
 * LEXIQUE
 
