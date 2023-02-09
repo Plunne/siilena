@@ -951,6 +951,10 @@ A venir...
 
 ~tableau[n]~ != ~*tableau + n~ (Ici on interagit avec la valeur de l'element (0) du tableau)
 
+** Soustraction d'adresses
+
+
+
 * LEXIQUE
 
 - API : Ensemble d'outils qui permettent de faire l'interface avec un service.

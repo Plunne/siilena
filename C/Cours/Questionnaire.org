@@ -355,3 +355,38 @@ Quelles sont les lignes avec :
    void fonction(int * tableau, int taille_tableau); // Il faut absolument passer le nombre d'elements du tableau
    void fonction(int tableau[], int taille_tableau); // Il faut absolument passer le nombre d'elements du tableau
    #+end_src
+
+* PARTIE 10
+
+1. Supposons que l'on ait deux pointeurs. Le premier pointe sur le 3eme element et le second sur le 4eme.
+   Quelle valeur obtiendrez-vous en soustrayant le premier pointeur du second? (En prennant int comme type d'exemple)
+   #+begin_example
+   -1
+   #+end_example
+
+2. Meme question en remplacant le type int par le type double.
+   #+begin_example
+   -1
+   #+end_example
+
+3. Ecrivez l'instruction qui attribue l'adresse de la variable radius de type float a un pointeur.
+   #+begin_src c
+   float *ptr = &radius;
+   #+end_src
+
+4. Trouvez deux methodes pour attribuer la valeur 100 au troisieme element du tableau data[].
+   #+begin_src c
+   data[2] = 100;
+   *(data + 2) = 100;
+   #+end_src
+
+5. Ecrivez la fonction somtabs() qui, recevant deux tableaux en argument, additionne la valeur des elements des deux tableaux,
+   puis qui renvoie le resultat au programme appelant
+   #+begin_src c
+   void sumtabs(int *tableau1, int *tableau2, int taille) {
+      for (int i=0; i < taille; i++) {
+         tableau1[i] += tableau2[i];
+         print("%d", tableau1[i]);
+      }
+   }
+   #+end_src
