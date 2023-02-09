@@ -449,7 +449,9 @@ else
 
 * CHAINES DE CARACTERES
 
-A Venir...
+Une chaine de caracteres est un tableau de caracteres (char) pour gerer du texte aisement.
+
+*IMPORTANT!* Elles se finissent toujours (dernier element du tableau) par le caractere ~\0~ .
 
 ** Table ASCII
 
@@ -480,6 +482,36 @@ Les caracteres speciaux relatifs aux chaines doivent etre echapes avec un ~\~ .
 
 ** Specificateurs de conversion
 
+Pour prendre en compte des donnees de variables dans une chaine de caracteres il nous faut specifier le type de celles-ci.
+
+*** Types de donnees
+
+| Caractere | Type/Format                    |
+|-----------+--------------------------------|
+| ~%d~        | Entier signe                   |
+| ~%u~        | Entier non-signe (unsigned)    |
+| ~%f~        | Flottant                       |
+| ~%c~        | Caractere (char)               |
+| ~%s~        | Chaine de caractere (string)   |
+| ~%x~        | hexadecimal (minuscules)       |
+| ~%X~        | HEXADECIMAL (MAJUSCULES)       |
+| ~%o~        | Octal                          |
+| ~%p~        | Adresse (pointer)              |
+
+*** Prefixes de tailles
+
+Certains types sont plus longs et juste des extensions de types ci-dessus.
+
+Alors il existe des prefixes de taille a rajouter entre le ~%~ et le type de la donnee.
+
+| Prefixe   | Taille     |
+|-----------+------------|
+| ~l~         | long       |
+| ~ll~        | long long  |
+
+*Exemple :*
+
+Pour un entier long signe le specificateur sera ~%ld~ , pour un long long non-signe ~%llu~ .
 
 
 * ENTREE/SORTIE
