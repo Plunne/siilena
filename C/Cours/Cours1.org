@@ -907,6 +907,11 @@ for (;;);
 
 Variable contenant l'adresse d'une autre variable d'un type donne.
 
+| Variable | Emplacement Memoire | Valeur         |
+|----------+---------------------+----------------|
+| var      | Adresse de var      | Valeur         |
+| ptr      | Adresse de ptr      | Adresse de var |
+
 ** Declaration
 
 Declaration d'une variable pointeur qui pointe sur l'adresse d'une variable.

@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/Lena.savylarigaldie/siilena/C/Exo/HelloWorld/CMakeLists.txt
+  PointeursTableaux.c
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\PointeursTableaux.c(10,37): warning C4244: 'initialisation' : conversion de '__int64' en 'int', perte possible de données
+  PointeursTableaux.vcxproj -> C:\Users\Lena.savylarigaldie\siilena\C\Exo\HelloWorld\build\Debug\PointeursTableaux.exe

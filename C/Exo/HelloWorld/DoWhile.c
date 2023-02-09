@@ -20,9 +20,9 @@ int main() {
 	}
 
 	/* Demo de cas d'utilisation */
+	char choix = 0;
 	do
 	{
-		char choix = 0;
 		printf("***** Menu *****\n\n");
 		printf("1 - Choix A\n");
 		printf("2 - Choix B\n");
