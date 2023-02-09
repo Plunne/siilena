@@ -15,7 +15,16 @@ Formateur : Paul ERNEST
   - [[#execution][Execution]]
 - [[#3-types-derreur][3 TYPES D'ERREUR]]
 - [[#debug--release][DEBUG & RELEASE]]
+  - [[#debug][Debug]]
+  - [[#release][Release]]
 - [[#structure-dun-programme][STRUCTURE D'UN PROGRAMME]]
+  - [[#inclusions][Inclusions]]
+  - [[#declaration-de-fonction][Declaration de fonction]]
+  - [[#la-fonction-main][La fonction main()]]
+  - [[#accolades-blocs-dinstructions][Accolades, blocs d'instructions]]
+  - [[#declaration-de-variable][Declaration de variable]]
+  - [[#definition-de-fonction][Definition de fonction]]
+  - [[#commentaires][Commentaires]]
 - [[#pourquoi-le-langage-c-][POURQUOI LE LANGAGE C ?]]
 - [[#codages-numeriques][CODAGES NUMERIQUES]]
 - [[#variables-et-premieres-instructions][VARIABLES ET PREMIERES INSTRUCTIONS]]
@@ -188,45 +197,45 @@ Application executable.
 
 * DEBUG & RELEASE
 
-*** Debug
+** Debug
 
 Le mode Debug permet de debugguer l'executable. Pour cela, l'executable doit contenir les informations supplementaires necessaires au debug et donc l'executable est plus lourd.
 
-*** Release
+** Release
 
 A contrariot, le mode release ne permet pas de debugguer, en revanche ne contenant pas les informations de debug il est beaucoup leger.
 C'est le mode que l'on utilise pour le deploiement final de notre executable car plus optimise.
 
 * STRUCTURE D'UN PROGRAMME
 
-*** Inclusions
+** Inclusions
 
 Importation de fichiers d'en-tete. Ces fichiers contiennent des declarations de fonctions et variables externes.
 
-*** Declaration de fonction 
+** Declaration de fonction 
 
 Prototype de fonction.
 
-*** La fonction main()
+** La fonction main()
 
 Entree du programme.
 
 - Il y en a *obligatoirement 1!*
 - Il faut une accolade ouvrant et une fermante.
 
-*** Accolades, blocs d'instructions
+** Accolades, blocs d'instructions
 
 Les instructions se codent dans des accolades.
 
-*** Declaration de variable
+** Declaration de variable
 
 Allocation memoire pour stocker une valeur et attribution de son alias.
 
-*** Definition de fonction
+** Definition de fonction
 
 Portion de code independante (sous-programme).
 
-*** Commentaires
+** Commentaires
 
 Code non interprete a la compilation aidant a la comprehension d'un programme.
 
