@@ -325,7 +325,6 @@ Quelles sont les lignes avec :
    #+end_src
 
 2. Quel operateur faut-il utiliser pour obtenir la valeur de la variable pointee?
-   #+begin_example
    #+begin_src c
    *
    #+end_src
