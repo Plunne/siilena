@@ -905,7 +905,7 @@ for (;;);
 
 * LES POINTEURS
 
-Un pointeur contient une adresse et permet d'intervenir sur la memoire. (WIP)
+Variable contenant l'adresse d'une autre variable d'un type donne.
 
 ** Declaration
 

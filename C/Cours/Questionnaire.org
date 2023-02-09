@@ -316,3 +316,42 @@ Quelles sont les lignes avec :
    }
    while (ctr <= 100)
    #+end_src
+
+* PARTIE 9
+
+1. Quel operateur faut-il utiliser pour obtenir l'adresse d'une variable?
+   #+begin_example
+   &
+   #+end_example
+
+2. Quel operateur faut-il utiliser pour obtenir la valeur de la variable pointee?
+   #+begin_example
+   *
+   #+end_example
+
+3. Qu'est ce qu'un pointeur?
+   #+begin_example
+   Variable contenant l'adresse d'une autre variable d'un type donne.
+   #+end_example
+
+4. Qu'est ce qu'un acces indirect?
+   #+begin_example
+   Acceder a la valeur en passant par une variable pointeur.
+   #+end_example
+
+5. Commment les element d'un tableau sont-ils stockes en memoire?
+   #+begin_example
+   Sequetiellement/A la suite.
+   #+end_example
+
+6. Trouver deux methodes pour obtenir l'adresse du premier element du tableau data[].
+   #+begin_example
+   tableau[0]
+   *tableau   
+   #+end_example
+
+7. Trouver deux methodes pour passer un tableau en argument d'une fonction.
+   #+begin_example
+   int * tableau, int taille_tableau // Il faut absolument passer le nombre d'elements du tableau
+   int tableau[], int taille_tableau // Il faut absolument passer le nombre d'elements du tableau
+   #+end_example
