@@ -587,11 +587,16 @@ Pour afficher seulement du texte, puts est preferable car :
 
 - Utilise moins de ressources
 - Retour a la ligne automatique
+- Peut inserer un tableau de caracteres finissant par =\0= .
 
 Cependant il n'accepte pas de valeurs en arguments.
 
 #+begin_src c
 puts("Chaine de texte uniquement.");
+#+end_src
+
+#+begin_src c
+puts(chaine);
 #+end_src
 
 * LES TABLEAUX
@@ -1113,6 +1118,22 @@ Les variables locales ne sont accessibles qu'a l'interieur du bloc d'instruction
 ** Variables Externes
 
 Les variables externes sont declarees dans un autre fichier, leur fichier doit etre importe pour qu'elles soient utilisees.
+
+* VARIABLES STATIQUES
+
+Lorsqu'un bloc d'instruction se termine, toutes ses variables locales sont detruites.
+
+Pour palier a cela dans le cas ou l'on veuille conserver la valeur d'une variable au prochain appel de la fonction, il existe le mot-cle ~static~ .
+
+Ce mot-cle permet a une variable locale de :
+- persister en memoire a la fin du bloc
+- initialiser la variable qu'au premier appel de la fonction
+
+*Declaration :*
+
+#+begin_src c
+static type variable = valeur;
+#+end_src
 
 * ALLOCATION DYNAMIQUE
 
