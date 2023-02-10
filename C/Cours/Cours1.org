@@ -1126,6 +1126,7 @@ Lorsqu'un bloc d'instruction se termine, toutes ses variables locales sont detru
 Pour palier a cela dans le cas ou l'on veuille conserver la valeur d'une variable au prochain appel de la fonction, il existe le mot-cle ~static~ .
 
 Ce mot-cle permet a une variable locale de :
+
 - persister en memoire a la fin du bloc
 - initialiser la variable qu'au premier appel de la fonction
 
