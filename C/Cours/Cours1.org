@@ -1140,11 +1140,23 @@ static type variable = valeur;
 
 ** Malloc
 
+Dans certains cas on ne connait pas la place que va prendre notre variable en memoire,
+ alors on utilise malloc qui va nous trouver puis retourner l'adresse d'un emplacement memoire adapte.
+
+#+begin_src c
+int n = taille_dynamique;
+type *pointeur = (type *) malloc(n * sizeof(type));
+#+end_src
+
 ** Free
 
 Malloc ne libere pas la memoire de lui meme la ou une allocation manuelle locale libere son emplacement a la fin de son bloc d'instructions. 
 
 Free sert donc a liberer celle-ci.
+
+#+begin_src c
+free(pointeur);
+#+end_src
 
 * LEXIQUE
 
