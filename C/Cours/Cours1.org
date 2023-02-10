@@ -1100,11 +1100,19 @@ A venir...
 
 * PORTEE DES VARIABLES
 
-Une variable a une duree de vie, cette duree de vie est definie par sa portee, il s'agit de la zone dans laquelle une variable existe.
+Une variable a une duree de vie, cette duree de vie est definie par sa portee, il s'agit de la zone dans laquelle elle existe.
 
 ** Variables Globales
+
+Les variables globales sont accessibles dans l'entierete d'un fichier a partir de la ligne ou elle est declaree.
+
 ** Variables Locales
+
+Les variables locales ne sont accessibles qu'a l'interieur du bloc d'instructions et a partir de la ligne ou elles sont declarees.
+
 ** Variables Externes
+
+Les variables externes sont declarees dans un autre fichier, leur fichier doit etre importe pour qu'elles soient utilisees.
 
 * ALLOCATION DYNAMIQUE
 
