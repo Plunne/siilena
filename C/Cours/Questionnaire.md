@@ -3,9 +3,13 @@ author: Lena SAVY-LARIGALDIE
 title: Questionnaire Cours C
 ---
 
+# Questionnaire Cours C
+
 Formateur : Paul ERNEST
 
 ## TABLE DES MATIERES
+- [Questionnaire Cours C](#questionnaire-cours-c)
+  - [TABLE DES MATIERES](#table-des-matieres)
 - [PARTIE 1](#partie-1)
 - [PARTIE 2](#partie-2)
 - [PARTIE 3](#partie-3)
