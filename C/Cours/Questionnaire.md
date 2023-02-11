@@ -1,6 +1,6 @@
 ---
-title: QUESTIONNAIRE
 author: Lena SAVY-LARIGALDIE
+title: Questionnaire Cours C
 ---
 
 Formateur : Paul ERNEST
@@ -8,6 +8,17 @@ Formateur : Paul ERNEST
 ## TABLE DES MATIERES
 - [PARTIE 1](#partie-1)
 - [PARTIE 2](#partie-2)
+- [PARTIE 3](#partie-3)
+- [PARTIE 4](#partie-4)
+- [PARTIE 5](#partie-5)
+- [PARTIE 6](#partie-6)
+- [PARTIE 7](#partie-7)
+- [PARTIE 8](#partie-8)
+- [PARTIE 9](#partie-9)
+- [PARTIE 10](#partie-10)
+- [PARTIE 11](#partie-11)
+- [PARTIE 12](#partie-12)
+- [PARTIE 13](#partie-13)
 
 # PARTIE 1
 
