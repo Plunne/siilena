@@ -461,7 +461,7 @@ Operateurs logiques permettant de comparer 2 condtions.
 
 ### NON Logique
 
-Retourne =1= si la condtion est fausse ou le resultat ~=0~ .
+Retourne `1` si la condtion est `fausse` ou le resultat `=0` .
 
 - NON : `!`
 
