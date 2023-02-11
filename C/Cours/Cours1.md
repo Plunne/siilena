@@ -550,7 +550,7 @@ Une chaine de caracteres est un tableau de caracteres (char) pour gerer du texte
 ## Table ASCII
 
 | Caractere                   | DEC | HEX  | Caractere | DEC | HEX  | Caractere | DEC | HEX  | Caractere | DEC | HEX  |
-|:----------------------------|----:|-----:|:----------|----:|-----:|:----------|----:|-----:|:----------|----:|-----:|
+|:----------------------------|----:|-----:|----------:|----:|-----:|----------:|----:|-----:|----------:|----:|-----:|
 | `NUL` (null)                | 0   | 0x00 | `Space`   | 32  | 0x20 | `@`       | 64  | 0x40 | `         | 96  | 0x60 |
 | `SOH` (start of heading)    | 1   | 0x01 | `!`       | 33  | 0x21 | `A`       | 65  | 0x41 | `a`       | 97  | 0x61 |
 | `STX` (start of text)       | 2   | 0x02 | `"`       | 34  | 0x22 | `B`       | 66  | 0x42 | `b`       | 98  | 0x62 |
