@@ -5,7 +5,7 @@ title: COURS 1 - Les bases du langage C
 
 # COURS 1 - Les bases du langage C
 
-Formateur : Paul ERNEST
+Formateur : PAUL-ERNEST Martin
 
 ## TABLE DES MATIERES
 - [COURS 1 - Les bases du langage C](#cours-1---les-bases-du-langage-c)
@@ -133,7 +133,9 @@ HelloWorld.exe
 
 ### Recompiler
 
-**IMPORTANT!** Il est important de recompiler le code apres chaque modification afin de verifier le bon fonctionnement.
+> **IMPORTANT!**
+> 
+> Il est important de recompiler le code apres chaque modification afin de verifier le bon fonctionnement.
 
 
 ## CMAKE
