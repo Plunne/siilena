@@ -1,3 +1,8 @@
+---
+author: Lena SAVY-LARIGALDIE
+title: COURS 1 - Les bases du langage C
+---
+
 # COURS 1 - Les bases du langage C
 
 Formateur : Paul ERNEST
@@ -85,7 +90,6 @@ Formateur : Paul ERNEST
   - [Malloc](#malloc)
   - [Free](#free)
 - [LEXIQUE](#lexique)
-  - [title: COURS 1 - Les bases du langage C](#title-cours-1---les-bases-du-langage-c)
 
 # ENVIRONEMENT DE TRAVAIL
 
@@ -1165,8 +1169,3 @@ free(pointeur);
 
 - API : Ensemble d'outils qui permettent de faire l'interface avec un service.
 - IDE : Integrated Development Environnement (Environnement de Developpement Integre : Editeur de code avec Debogueur, Compilateur et plein d'outils, c'est notre environement de travail)
-
----
-author: Lena SAVY-LARIGALDIE
-title: COURS 1 - Les bases du langage C
----
