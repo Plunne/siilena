@@ -1,0 +1,10 @@
+^C:\USERS\LENA.SAVYLARIGALDIE\SIILENA\C\EXO\COMPILATION\BUILD\CMAKEFILES\9FA4E473C2D9020BBB4C5257F6BC87B2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Lena.savylarigaldie/siilena/C/Exo/Compilation -BC:/Users/Lena.savylarigaldie/siilena/C/Exo/Compilation/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Lena.savylarigaldie/siilena/C/Exo/Compilation/build/Projet_Langage_C.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,3 @@
+﻿  HelloWorld.c
+HelloWorld.obj : error LNK2019: symbole externe non résolu print référencé dans la fonction main
+C:\Users\Lena.savylarigaldie\siilena\C\Exo\Compilation\build\Debug\HelloWorld.exe : fatal error LNK1120: 1 externes non résolus
