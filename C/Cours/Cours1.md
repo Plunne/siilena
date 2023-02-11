@@ -412,11 +412,13 @@ Pour un char :
 
 ### Classiques
 
-- Addition : `+`
-- Soustraction : `-`
-- Multiplication : `*`
-- Division : `!=`
-- Modulo : `%`
+| Operateur | Nom            | Syntaxe | Valeur de retour                     |
+|:---------:|:--------------:|:-------:|:-------------------------------------|
+| `+`       | Addition       | `a + b` | Somme de `a` et `b`                  |
+| `-`       | Soustraction   | `a - b` | Difference de `a` par `b`            |
+| `*`       | Multiplication | `a * b` | Produit de `a` et `b`                |
+| `/`       | Division       | `a / b` | Quotient de `a` par `b`              |
+| `%`       | Modulo         | `a % b` | Reste de la division de `a` par `b`  |
 
 ### Incrementation/Decrementation
   
@@ -478,28 +480,36 @@ Retourne `1` si la comparaison est `vraie` sinon retourne `0` .
 
 ### Inferieur/Superieur
 
-- Inferieur : `<`
-- Superieur : `>`
-- Inferieur ou egal : `<=`
-- Superieur ou egal : `>=`
+| Operateur | Nom                   | Syntaxe  | Valeur de retour                                       |
+|:---------:|:---------------------:|:--------:|:-------------------------------------------------------|
+| `<`       | Strictement Inferieur | `a < b`  | `1` si `a` est strictement inferieur a `b` , sinon `0` |
+| `>`       | Strictement Superieur | `a > b`  | `1` si `a` est strictement superieur a `b` , sinon `0` |
+| `<=`      | Inferieur ou Egal     | `a <= b` | `1` si `a` est inferieur ou egal a `b` , sinon `0`     |
+| `>=`      | Superieur ou Egal     | `a >= b` | `1` si `a` est superieur ou egal a `b` , sinon `0`     |
 
 ### Egalite/Difference
 
-- Egalite : `==`
-- Difference : `!=`
+| Operateur | Nom         | Syntaxe  | Valeur de retour                             |
+|:---------:|:-----------:|:--------:|:---------------------------------------------|
+| `==`      | Egalite     | `a == b` | `1` si `a` est egal a `b` , sinon `0`        |
+| `!=`      | Difference  | `a != b` | `1` si `a` est different de `b` , sinon `0`  |
 
 ### ET & OU Logique
 
 Operateurs logiques permettant de comparer 2 condtions.
 
-- ET : `&&` (SI **les 2 conditions** sont vraies ALORS retourne 1)
-- OU : `||` (SI **au moins une** condition est vraie ALORS retourne 1)
+| Operateur | Nom  | Syntaxe    | Valeur de retour                                              |
+|:---------:|:----:|:----------:|:--------------------------------------------------------------|
+| `&&`      | ET   | `a && b`   | `1` si les expressions `a` et `b` sont `vraies` , sinon `0`   |
+| `\|\|`    | OU   | `a \|\| b` | `1` si une des expressions `a` ou `b` est `vraie` , sinon `0` |
 
 ### NON Logique
 
 Retourne `1` si la condtion est `fausse` ou le resultat `=0` .
 
-- NON : `!`
+| Operateur | Nom  | Syntaxe | Valeur de retour                                              |
+|:---------:|:----:|:-------:|:--------------------------------------------------------------|
+| `!`       | NON  | `!a`    | `1` si le contenu de l'expression `a` est `faux` , sinon `0`  |
 
 ## Operateurs logiques
 
@@ -507,11 +517,13 @@ Retourne `1` si la condtion est `fausse` ou le resultat `=0` .
 
 Affecte une variable en realisant une operation sur elle meme.
 
-- Addition : `+=`
-- Soustraction : `-=`
-- Multiplication : `*=`
-- Division : `/=`
-- Modulo : `%=`
+| Operateur  | Nom            | Syntaxe  | Equivalence | Valeur de retour                                         |
+|:----------:|:--------------:|:--------:|:-----------:|:---------------------------------------------------------|
+| `+=`       | Addition       | `a += b` | `a = a + b` | Affecte `a` avec la Somme de `a` et `b`                  |
+| `-=`       | Soustraction   | `a -= b` | `a = a - b` | Affecte `a` avec la Difference de `a` par `b`            |
+| `*=`       | Multiplication | `a *= b` | `a = a * b` | Affecte `a` avec la Produit de `a` et `b`                |
+| `/=`       | Division       | `a /= b` | `a = a / b` | Affecte `a` avec la Quotient de `a` par `b`              |
+| `%=`       | Modulo         | `a %= b` | `a = a % b` | Affecte `a` avec la Reste de la division de `a` par `b`  |
 
 ## Operateur ternaire
 
@@ -537,7 +549,22 @@ Une chaine de caracteres est un tableau de caracteres (char) pour gerer du texte
 
 ## Table ASCII
 
-A Venir...
+| Caractere                   | DEC | HEX  | Caractere | DEC | HEX  | Caractere | DEC | HEX  | Caractere | DEC | HEX  |
+|:----------------------------|----:|-----:|:----------|----:|-----:|:----------|----:|-----:|:----------|----:|-----:|
+| `NUL` (null)                | 0   | 0x00 | `Space`   | 32  | 0x20 | `@`       | 64  | 0x40 | ` ` `     | 96  | 0x60 |
+| `SOH` (start of heading)    | 1   | 0x01 | `!`       | 33  | 0x21 | `A`       | 65  | 0x41 | `a`       | 97  | 0x61 |
+| `STX` (start of text)       | 2   | 0x02 | `"`       | 34  | 0x22 | `B`       | 66  | 0x42 | `b`       | 98  | 0x62 |
+| `ETX` (end of text)         | 3   | 0x03 | `#`       | 35  | 0x23 | `C`       | 67  | 0x43 | `c`       | 99  | 0x63 |
+| `EOT` (end of transmission) | 4   | 0x04 | `$`       | 36  | 0x24 | `D`       | 68  | 0x44 | `d`       | 100 | 0x64 |
+| `ENQ` (enquiry)             | 5   | 0x05 | `%`       | 37  | 0x25 | `E`       | 69  | 0x45 | `e`       | 101 | 0x65 |
+| `ACK` (acknowledge)         | 6   | 0x06 | `&`       | 38  | 0x26 | `F`       | 70  | 0x46 | `f`       | 103 | 0x66 |
+| `BEL` (bell)                | 7   | 0x07 | `'`       | 39  | 0x27 | `G`       | 71  | 0x47 | `g`       | 104 | 0x67 |
+| `BS`  (backspace)           | 8   | 0x08 | `(`       | 40  | 0x28 | `H`       | 72  | 0x48 | `h`       | 105 | 0x68 |
+| `TAB` (horizontal tab)      | 9   | 0x09 | `)`       | 41  | 0x29 | `I`       | 73  | 0x49 | `i`       | 106 | 0x69 |
+| `LF`  (line feed)           | 10  | 0x0A | `*`       | 42  | 0x2A | `J`       | 74  | 0x4A | `j`       | 107 | 0x6A |
+| `VT`  (vertical tab)        | 11  | 0x0B | `+`       | 43  | 0x2B | `K`       | 75  | 0x4B | `k`       | 108 | 0x6B |
+
+En cours...
 
 ## Caracteres de controle
 
