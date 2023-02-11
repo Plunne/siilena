@@ -825,9 +825,9 @@ else
 
 ### ELSE IF
 
-- *SI* expression *ALORS* instructions
-- *SINON SI* expression *ALORS* instructions
-- *SINON* instructions
+- **SI** expression **ALORS** instructions
+- **SINON SI** expression **ALORS** instructions
+- **SINON** instructions
 
 ``` c
 if (expression)
@@ -870,7 +870,7 @@ Boucle d'instructions qui se repetent **TANT QUE** sa condition est vrai.
 
 **Declaration :**
 
-- **TANT QUE** l'expression =expression= est vraie
+- **TANT QUE** l'expression `expression` est vraie
 - **FAIRE** les instructions
 
 ``` c
