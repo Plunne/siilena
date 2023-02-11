@@ -563,6 +563,11 @@ Une chaine de caracteres est un tableau de caracteres (char) pour gerer du texte
 | `TAB` (horizontal tab)      | 9   | 0x09 | `)`       | 41  | 0x29 | `I`       | 73  | 0x49 | `i`       | 106 | 0x69 |
 | `LF`  (line feed)           | 10  | 0x0A | `*`       | 42  | 0x2A | `J`       | 74  | 0x4A | `j`       | 107 | 0x6A |
 | `VT`  (vertical tab)        | 11  | 0x0B | `+`       | 43  | 0x2B | `K`       | 75  | 0x4B | `k`       | 108 | 0x6B |
+| `FF`  (form feed)           | 12  | 0x0C | `,`       | 44  | 0x2C | `L`       | 76  | 0x4C | `l`       | 109 | 0x6C |
+| `CR`  (carriage return)     | 13  | 0x0D | `-`       | 45  | 0x2D | `M`       | 77  | 0x4D | `m`       | 110 | 0x6D |
+| `SO`  (shift out)           | 14  | 0x0E | `.`       | 46  | 0x2E | `N`       | 78  | 0x4E | `n`       | 111 | 0x6E |
+| `SI`  (shift in)            | 15  | 0x0F | `/`       | 47  | 0x2F | `O`       | 79  | 0x4F | `o`       | 112 | 0x6F |
+| `DLE` (data link escape)    | 16  | 0x10 | `0`       | 48  | 0x30 | `P`       | 80  | 0x50 | `p`       | 113 | 0x70 |
 
 En cours...
 
