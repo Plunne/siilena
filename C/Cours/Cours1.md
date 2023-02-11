@@ -142,9 +142,10 @@ Cree un environement pour developper sur n'importe quel systeme d'exploitation.
 
 ### CMakeLists.txt
 
-Fichier de configuration minimaliste.
+Fichier de configuration permettant la generation d'un projet avec CMake.
 
-```
+**Version Minimaliste :**
+``` cmake
 cmake_minimum_required(VERSION 3.14)
 
 project(Projet_Langage_C)
@@ -154,11 +155,44 @@ set(CMAKE_C_STANDARD 11)
 add_executable(HelloWorld HelloWorld.c)
 ```
 
-Le code ci-dessus :
-- Choisit la version de CMake
-- Choisit le nom du projet
-- Choisit le langage
-- Choisit le nom de l'executable et le fichier source
+> Le code ci-dessus :
+> - Choisit la version de CMake
+> - Choisit le nom du projet
+> - Choisit le langage
+> - Choisit le nom de l'executable et le fichier source
+
+**Version Avancee :**
+``` cmake
+# CMake Version
+cmake_minimum_required(VERSION 3.14)
+
+# Project Name
+project(MyProjectName)
+
+# Language Version
+set(CMAKE_C_STANDARD 11)
+
+# MyLibrary Files
+set (MY_LIB MyLibrary.h MyLibrary.c)
+
+# Create MyLibrary
+add_library(MyLibraryName ${MY_LIB})
+
+# Create my program with some source files
+add_executable(prog main.c)
+
+# Link object libraries to executable
+target_link_libraries(prog PUBLIC MyLibraryName)
+```
+
+> Le code ci-dessus :
+> - Choisit la version de CMake
+> - Choisit le nom du projet
+> - Choisit le langage
+> - Cree une variable regroupant des fichiers source
+> - Cree une bibliotheque objet avec les fichiers source
+> - Choisit le nom de l'executable et le fichier source
+> - Lit la bibliotheque objet a l'executable pour qu'il puisse acceder a ses fonctions
 
 ### Dossier build
 
