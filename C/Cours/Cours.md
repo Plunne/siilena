@@ -579,7 +579,7 @@ Afficher du texte et/ou des valeurs.
 **Exemple :**
 
 - En reprennant les 2 variables que l'on a insere ci-dessus.
-- En admettant que nous avons insere les valeurs =10= puis =20= .
+- En admettant que nous avons insere les valeurs `10` puis `20` .
 
 ``` c
 printf("Deux nombres : %d %d", variable1, variable2); // Affichage des 2 variables
