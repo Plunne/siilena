@@ -545,7 +545,9 @@ else
 
 Une chaine de caracteres est un tableau de caracteres (char) pour gerer du texte aisement.
 
-**IMPORTANT!** Elles se finissent toujours (dernier element du tableau) par le caractere `\0` .
+> **IMPORTANT!**
+> 
+> Elles se finissent toujours (dernier element du tableau) par le caractere `\0` .
 
 ## Table ASCII
 
