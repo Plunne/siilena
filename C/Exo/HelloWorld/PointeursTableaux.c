@@ -2,7 +2,7 @@
 
 int main() {
 
-	int tableau_int[5] = {0, 1, 2, 3, 4};
+	int tableau_int[5][2] = {0, 1, 2, 3, 4};
 	int *int_ptr = tableau_int;
 
 	int premier_element = *int_ptr;
