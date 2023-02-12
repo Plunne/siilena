@@ -559,19 +559,32 @@ Une chaine de caracteres est un tableau de caracteres (char) pour gerer du texte
 | `ETX` (end of text)         | 3   | 0x03 | `#`       | 35  | 0x23 | `C`       | 67  | 0x43 | `c`       | 99  | 0x63 |
 | `EOT` (end of transmission) | 4   | 0x04 | `$`       | 36  | 0x24 | `D`       | 68  | 0x44 | `d`       | 100 | 0x64 |
 | `ENQ` (enquiry)             | 5   | 0x05 | `%`       | 37  | 0x25 | `E`       | 69  | 0x45 | `e`       | 101 | 0x65 |
-| `ACK` (acknowledge)         | 6   | 0x06 | `&`       | 38  | 0x26 | `F`       | 70  | 0x46 | `f`       | 103 | 0x66 |
-| `BEL` (bell)                | 7   | 0x07 | `'`       | 39  | 0x27 | `G`       | 71  | 0x47 | `g`       | 104 | 0x67 |
-| `BS`  (backspace)           | 8   | 0x08 | `(`       | 40  | 0x28 | `H`       | 72  | 0x48 | `h`       | 105 | 0x68 |
-| `TAB` (horizontal tab)      | 9   | 0x09 | `)`       | 41  | 0x29 | `I`       | 73  | 0x49 | `i`       | 106 | 0x69 |
-| `LF`  (line feed)           | 10  | 0x0A | `*`       | 42  | 0x2A | `J`       | 74  | 0x4A | `j`       | 107 | 0x6A |
-| `VT`  (vertical tab)        | 11  | 0x0B | `+`       | 43  | 0x2B | `K`       | 75  | 0x4B | `k`       | 108 | 0x6B |
-| `FF`  (form feed)           | 12  | 0x0C | `,`       | 44  | 0x2C | `L`       | 76  | 0x4C | `l`       | 109 | 0x6C |
-| `CR`  (carriage return)     | 13  | 0x0D | `-`       | 45  | 0x2D | `M`       | 77  | 0x4D | `m`       | 110 | 0x6D |
-| `SO`  (shift out)           | 14  | 0x0E | `.`       | 46  | 0x2E | `N`       | 78  | 0x4E | `n`       | 111 | 0x6E |
-| `SI`  (shift in)            | 15  | 0x0F | `/`       | 47  | 0x2F | `O`       | 79  | 0x4F | `o`       | 112 | 0x6F |
-| `DLE` (data link escape)    | 16  | 0x10 | `0`       | 48  | 0x30 | `P`       | 80  | 0x50 | `p`       | 113 | 0x70 |
-
-En cours...
+| `ACK` (acknowledge)         | 6   | 0x06 | `&`       | 38  | 0x26 | `F`       | 70  | 0x46 | `f`       | 102 | 0x66 |
+| `BEL` (bell)                | 7   | 0x07 | `'`       | 39  | 0x27 | `G`       | 71  | 0x47 | `g`       | 103 | 0x67 |
+| `BS`  (backspace)           | 8   | 0x08 | `(`       | 40  | 0x28 | `H`       | 72  | 0x48 | `h`       | 104 | 0x68 |
+| `TAB` (horizontal tab)      | 9   | 0x09 | `)`       | 41  | 0x29 | `I`       | 73  | 0x49 | `i`       | 105 | 0x69 |
+| `LF`  (line feed)           | 10  | 0x0A | `*`       | 42  | 0x2A | `J`       | 74  | 0x4A | `j`       | 106 | 0x6A |
+| `VT`  (vertical tab)        | 11  | 0x0B | `+`       | 43  | 0x2B | `K`       | 75  | 0x4B | `k`       | 107 | 0x6B |
+| `FF`  (form feed)           | 12  | 0x0C | `,`       | 44  | 0x2C | `L`       | 76  | 0x4C | `l`       | 108 | 0x6C |
+| `CR`  (carriage return)     | 13  | 0x0D | `-`       | 45  | 0x2D | `M`       | 77  | 0x4D | `m`       | 109 | 0x6D |
+| `SO`  (shift out)           | 14  | 0x0E | `.`       | 46  | 0x2E | `N`       | 78  | 0x4E | `n`       | 110 | 0x6E |
+| `SI`  (shift in)            | 15  | 0x0F | `/`       | 47  | 0x2F | `O`       | 79  | 0x4F | `o`       | 111 | 0x6F |
+| `DLE` (data link escape)    | 16  | 0x10 | `0`       | 48  | 0x30 | `P`       | 80  | 0x50 | `p`       | 112 | 0x70 |
+| `DC1` (device control 1)    | 17  | 0x11 | `1`       | 49  | 0x31 | `Q`       | 81  | 0x51 | `q`       | 113 | 0x71 |
+| `DC2` (device control 2)    | 18  | 0x12 | `2`       | 50  | 0x32 | `R`       | 82  | 0x52 | `r`       | 114 | 0x72 |
+| `DC3` (device control 3)    | 19  | 0x13 | `3`       | 51  | 0x33 | `S`       | 83  | 0x53 | `s`       | 115 | 0x73 |
+| `DC4` (device control 4)    | 20  | 0x14 | `4`       | 52  | 0x34 | `T`       | 84  | 0x54 | `t`       | 116 | 0x74 |
+| `NAK` (neg. acknowledge)    | 21  | 0x15 | `5`       | 53  | 0x35 | `U`       | 85  | 0x55 | `u`       | 117 | 0x75 |
+| `SYN` (sync. idle)          | 22  | 0x16 | `6`       | 54  | 0x36 | `V`       | 86  | 0x56 | `v`       | 118 | 0x76 |
+| `ETB` (eot block)           | 23  | 0x17 | `7`       | 55  | 0x37 | `W`       | 87  | 0x57 | `w`       | 119 | 0x77 |
+| `CAN` (cancel)              | 24  | 0x18 | `8`       | 56  | 0x38 | `X`       | 88  | 0x58 | `x`       | 120 | 0x78 |
+| `EM`  (end of medium)       | 25  | 0x19 | `9`       | 57  | 0x39 | `Y`       | 89  | 0x59 | `y`       | 121 | 0x79 |
+| `SUB` (substitute)          | 26  | 0x1A | `:`       | 58  | 0x3A | `Z`       | 90  | 0x5A | `z`       | 122 | 0x7A |
+| `ESC` (escape)              | 27  | 0x1B | `;`       | 59  | 0x3B | `[`       | 91  | 0x5B | `{`       | 123 | 0x7B |
+| `FS`  (file separator)      | 28  | 0x1C | `<`       | 60  | 0x3C | `\`       | 92  | 0x5C | `|`       | 124 | 0x7C |
+| `GS`  (group separator)     | 29  | 0x1D | `=`       | 61  | 0x3D | `]`       | 93  | 0x5D | `}`       | 125 | 0x7D |
+| `RS`  (record separator)    | 30  | 0x1E | `>`       | 62  | 0x3E | `^`       | 94  | 0x5E | `~`       | 126 | 0x7E |
+| `US`  (unit separator)      | 31  | 0x1F | `?`       | 63  | 0x3F | `_`       | 95  | 0x5F | `DEL`     | 127 | 0x7F |
 
 ## Caracteres de controle
 
