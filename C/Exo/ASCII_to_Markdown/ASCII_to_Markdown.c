@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define HEIGHT  32
-#define WIDTH   4
+#define HEIGHT  16
+#define WIDTH   8
 
 void fillTableASCII(unsigned char *ascii);
 void getLineTableASCII(unsigned char *ascii, char line);
 unsigned char getCellTableASCII(unsigned char *ascii, char line, char column);
+void asciiTableHeader(FILE *f);
 void asciiToMarkdown(FILE *f, char *ascii);
 
 int main(int argc, char const *argv[])
@@ -18,14 +19,10 @@ int main(int argc, char const *argv[])
     fillTableASCII(tableASCII);
     
     /* Init Output File */
-    FILE *outfile = fopen("ASCII_Table.md", "w");
+    FILE *outfile = fopen("ASCII_Table2.md", "w");
 
     /* If not output file, exit program */
     if (!outfile) exit(1);
-
-    /* ASCII Table Markdown header */
-    fputs("| Char | DEC | HEX | Char | DEC | HEX | Char | DEC | HEX | Char | DEC | HEX |\n", outfile);
-    fputs("|:----:|----:|----:|:----:|----:|----:|:----:|----:|----:|:----:|----:|----:|\n", outfile);
 
     /* ASCII to Markdown Generator */
     asciiToMarkdown(outfile, tableASCII);
@@ -50,8 +47,23 @@ unsigned char getCellTableASCII(unsigned char *ascii, char line, char column)
     return ascii[HEIGHT * column + line];
 }
 
+void asciiTableHeader(FILE *f) {
+
+    fputc('|', f);
+    for (unsigned char i=0; i < WIDTH; i++) fputs(" Char | DEC | HEX |", f);
+    fputc('\n', f);
+    
+    fputc('|', f);
+    for (unsigned char i=0; i < WIDTH; i++) fputs(":----:|----:|----:|", f);
+    fputc('\n', f);
+}
+
 void asciiToMarkdown(FILE *f, char *ascii) {
-       
+
+    // ASCII Table Markdown Header
+    asciiTableHeader(f);
+
+    // ASCII Table Generation
     for (unsigned char i=0; i < HEIGHT; i++)
     {
         // New line
