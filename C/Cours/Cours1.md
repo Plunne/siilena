@@ -762,7 +762,7 @@ tableau[x][y] = valeur;
 
 ### Passer de double dimension a simple dimension
 
-`Taille Colonnes - 1` * `Index Colonne` + `Index Ligne`
+`Taille Colonnes` * `Index Colonne` + `Index Ligne`
 
 # LES FONCTIONS
 
