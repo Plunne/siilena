@@ -5,52 +5,15 @@ title: COURS 1 - Le Scripting
 
 Formateur : COLIN Matthias
 
-# COURS SCRIPTING
-
-## TABLE DES MATIERES
-
-# SCRIPTING
-
-Un script permet de :
-- Automatiser des taches
-- Manipuler le systeme de fichiers
-
-> *Il est generalement protable d'une plateforme a l'autre.*
-
-# TACHES A AUTOMATISER
-
-- Lancer des programmes
-- CI (Continuous Intergration) :  Compiler & Effectuer des test
-- Gerer des parametres, l'environnement
-- Administration (Base de donnees, Machines)
-- Installation/Deploiement (OS, Applications)
-
-> *En soit, un script ne fait pas de calculs.*
-
-# LANGAGES
-
-Un script est generalement ecrit en langage interprete.
-
-## Langage Compile
-
-Un langage compile est compile pour creer un executable utilisable sur une plateforme en particulier.
-
-> **IMPORTANT!** Il necessite d'etre compile sur chaque plateforme.
-
-## Langage Interprete
-
-Un langage interprete n'est pas compile, le script est le programme lui meme ce qui le rend plus portable.
-
-## Quelques langages
-
-- Python
-- Shell
-- Batch
-- Powershell
-
 # PYTHON
 
 Python est un langage interprete Open Source cree en 1989 par Guido Van Rossum.
+
+## TABLE DES MATIERES
+
+- [LANCER UN SCRIPT](#lancer-un-script)
+- [AFFICHER DU TEXTE](#afficher-du-texte)
+- [TRAITER DES ARGUMENTS](#traiter-des-arguments)
 
 # Lancer un script
 
@@ -75,7 +38,7 @@ print("test")
 > print("test", end=' ')
 > ```
 
-# Traiter des argument
+# Traiter des arguments
 
 1. Importer la bibliotheque `sys`
     ``` python
