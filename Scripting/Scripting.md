@@ -52,7 +52,7 @@ Un langage interprete n'est pas compile, le script est le programme lui meme ce 
 
 Python est un langage interprete Open Source cree en 1989 par Guido Van Rossum.
 
-## Lancer un script
+# Lancer un script
 
 ```sh
 python script.py
@@ -64,14 +64,18 @@ python script.py
 python script.py arg1 arg2 arg3
 ```
 
-## Afficher du texte
-
+# Afficher du texte
 
 ``` python
 print("test")
 ```
 
-## Traiter des argument
+> **On peut aussi eviter de revenir a la ligne.**
+> ``` python
+> print("test", end=' ')
+> ```
+
+# Traiter des argument
 
 1. Importer la bibliotheque `sys`
     ``` python
@@ -97,23 +101,185 @@ print("test")
 > Arguments ['.\\script.py', 'un', 'deux', 'trois']
 > ```
 
-## Tableaux (listes)
+# Tableaux (listes)
 
 Les listes en python sont l'equivalent des tableaux en C, en revanche, les listes ont l'avantage d'etre extensibles.
 
-### Acces aux elements
+## Acces aux elements
 
-| Syntaxe   | Valeur de retour              |
-|:---------:|:------------------------------|
-| `tab[0]`  | Premier element               |
-| `tab[n]`  | Element n+1                   |
-| `tab[-1]` | Dernier element               |
-| `tab[-n]` | Element n a partir de la fin  |
+| Syntaxe      | Valeur de retour                         |
+|:------------:|:-----------------------------------------|
+| `tab[0]`     | Premier element                          |
+| `tab[n]`     | Element n+1                              |
+| `tab[-1]`    | Dernier element                          |
+| `tab[-n]`    | Element n a partir de la fin             |
+| `tab[:]`     | Liste tous les elements                  |
+| `tab[n1:n2]` | Liste les elements de l'element n1 a n2  |
 
-## CLI en fin de Script
+# CLI en fin de Script
 
 Entrer dans l'interprete de commande a la fin de l'execution de notre print.
 
 ```sh
 python -i script.py
+```
+
+# Booleen
+
+Le booleen est un type a deux etats vrai/faux.
+
+**Syntaxe :**
+
+| Syntaxe | Valeur |
+|:-------:|:------:|
+| `True`  | 1      |
+| `False` | 0      |
+
+# None
+
+Le type `None` est une constante attribuee pour une variable a valeur nulle.
+
+# INDENTATION
+
+> **IMPORTANT!**
+>
+> **En python l'indentation est cruciale, chaque bloc d'instructions est indente precisement d'une tabulation de 4 espaces.**
+
+# STRUCTURES CONDITIONNELLES
+
+## IF, ELSE, ELIF
+
+### IF
+
+- **SI** l'expression `expression` est vraie
+- **FAIRE** les instructions
+
+```python
+if expression:
+    # Instructions
+```
+
+### ELSE
+
+- **SI** l'expression `expression` est vraie
+- **FAIRE** les instructions
+- **SINON**
+- **FAIRE** les instructions
+
+```python
+if expression:
+    # Instructions
+else:
+    # Instructions
+```
+
+### ELIF
+
+- **SI** l'expression `expression` est vraie
+- **FAIRE** les instructions
+- **SINON SI** l'expression `expression` est vraie
+- **FAIRE** les instructions
+- **SINON**
+- **FAIRE** les instructions
+
+```python
+if expression:
+    # Instructions
+elif:
+    # Instructions
+else:
+    # Instructions
+```
+
+## MATCH CASE
+
+```python
+match variable:
+    case valeur:
+        # Instructions
+    case _:
+        # Instructions par defaut
+```
+
+# BOUCLES CONDITIONNELLES
+
+## FOR EACH
+
+- **POUR** Chaque `element`
+- **DANS** la variable parcourue `liste`
+- **FAIRE** les instructions
+
+```python
+for element in liste:
+    # Instructions
+```
+
+## WHILE
+
+- **TANT QUE** l'expression `expression` est vraie
+- **FAIRE** les instructions
+
+```python
+while expression:
+    # Instructions
+```
+
+# OPERATEURS
+
+## Arithmetiques
+
+| Operateur | Description       |
+|:---------:|-------------------|
+| `+`       | Addition          |
+| `-`       | Soustraction      |
+| `*`       | Multiplication    |
+| `/`       | Division          |
+| `//`      | Division entiere  |
+| `%`       | Modulo            |
+| `**`      | Puissance         |
+
+## Comparaison
+
+| Operateur  | Description         |
+|:----------:|---------------------|
+| `==`       | Egalite             |
+| `!=`       | Difference          |
+| `is`       | Meme adresse        |
+| `is not`   | Adresse differente  |
+| `>`        | Superieur           |
+| `<`        | Inferieur           |
+| `>=`       | Superieur ou egal   |
+| `<=`       | Inferieur ou egal   |
+| `in`       | Est dedans?         |
+| `not in`   | N'est pas dedans?   |
+| `and`      | ET Logique          |
+| `or`       | OU Logique          |
+| `not`      | NON Logique         |
+
+# BREAK & CONTINUE
+
+## Break
+
+Sortir d'une boucle en cours.
+
+```python
+break
+```
+
+## Continue
+
+Ne rien faire et continuer la boucle
+
+```python
+continue
+```
+
+# PASS
+
+Instruction vide.
+
+En python, il est necessaire de marquer le passage dans un bloc avec `pass` .
+
+```python
+pass
 ```
