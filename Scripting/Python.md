@@ -1,6 +1,6 @@
 ---
 author: Lena SAVY-LARIGALDIE
-title: COURS 1 - Le Scripting
+title: COURS - Scripting en Python
 ---
 
 # PYTHON
