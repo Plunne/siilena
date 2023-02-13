@@ -14,20 +14,26 @@ Formateur : [COLIN Matthias](https://github.com/matthcol/scripting202302)
 - [PYTHON](#python)
   - [TABLE DES MATIERES](#table-des-matieres)
 - [LANCER UN SCRIPT](#lancer-un-script)
-- [AFFICHER DU TEXTE](#afficher-du-texte)
+- [INDENTATION](#indentation)
+- [ENTREE/SORTIE](#entreesortie)
+  - [Affichage (print)](#affichage-print)
+    - [Declaration](#declaration)
+    - [Chaine formatee](#chaine-formatee)
+    - [Concatenation](#concatenation)
 - [TRAITER DES ARGUMENTS](#traiter-des-arguments)
 - [TABLEAUX (LISTES)](#tableaux-listes)
   - [Acces aux elements](#acces-aux-elements)
 - [CLI EN FIN DE SCRIPT](#cli-en-fin-de-script)
 - [BOOLEEN](#booleen)
 - [NONE](#none)
-- [INDENTATION](#indentation)
 - [STRUCTURES CONDITIONNELLES](#structures-conditionnelles)
   - [IF, ELSE, ELIF](#if-else-elif)
     - [IF](#if)
     - [ELSE](#else)
     - [ELIF](#elif)
   - [MATCH CASE](#match-case)
+    - [Valeur](#valeur)
+    - [Arguments](#arguments)
 - [BOUCLES CONDITIONNELLES](#boucles-conditionnelles)
   - [FOR EACH](#for-each)
   - [WHILE](#while)
@@ -38,6 +44,18 @@ Formateur : [COLIN Matthias](https://github.com/matthcol/scripting202302)
   - [Break](#break)
   - [Continue](#continue)
 - [PASS](#pass)
+- [SYSTEME DE FICHIERS](#systeme-de-fichiers)
+  - [Bibliotheques](#bibliotheques)
+    - [Operations simples](#operations-simples)
+    - [Operations complexes](#operations-complexes)
+  - [Pathlib](#pathlib)
+    - [Importation](#importation)
+    - [Objet Path](#objet-path)
+    - [Creation de Dossiers](#creation-de-dossiers)
+  - [ShUtil](#shutil)
+    - [Importation](#importation-1)
+    - [Copie de dossiers](#copie-de-dossiers)
+    - [Copie de fichiers](#copie-de-fichiers)
 
 # LANCER UN SCRIPT
 
@@ -51,16 +69,46 @@ python script.py
 python script.py arg1 arg2 arg3
 ```
 
-# AFFICHER DU TEXTE
+# INDENTATION
+
+> **IMPORTANT!**
+>
+> **En python l'indentation est cruciale, chaque bloc d'instructions est indente precisement d'une tabulation de 4 espaces.**
+
+# ENTREE/SORTIE
+
+## Affichage (print)
+
+Afficher du texte et/ou des valeurs.
+
+### Declaration
+
+Affichage simple d'une chaine.
 
 ``` python
-print("test")
+print("texte")
 ```
 
 > **On peut aussi eviter de revenir a la ligne.**
 > ``` python
-> print("test", end=' ')
+> print("texte", end=' ')
 > ```
+
+### Chaine formatee
+
+Insere des valeurs en milieu de chaine.
+
+``` python
+print(f"texte : {valeur}")
+```
+
+### Concatenation
+
+Affiche a la suite.
+
+``` python
+print("texte", valeur)
+```
 
 # TRAITER DES ARGUMENTS
 
@@ -126,20 +174,13 @@ Le booleen est un type a deux etats vrai/faux.
 
 Le type `None` est une constante attribuee pour une variable a valeur nulle.
 
-# INDENTATION
-
-> **IMPORTANT!**
->
-> **En python l'indentation est cruciale, chaque bloc d'instructions est indente precisement d'une tabulation de 4 espaces.**
-
 # STRUCTURES CONDITIONNELLES
 
 ## IF, ELSE, ELIF
 
 ### IF
 
-- **SI** l'expression `expression` est vraie
-- **FAIRE** les instructions
+- **SI** expression **ALORS** instructions
 
 ```python
 if expression:
@@ -148,10 +189,8 @@ if expression:
 
 ### ELSE
 
-- **SI** l'expression `expression` est vraie
-- **FAIRE** les instructions
-- **SINON**
-- **FAIRE** les instructions
+- **SI** expression **ALORS** instructions
+- **SINON** instructions
 
 ```python
 if expression:
@@ -162,12 +201,9 @@ else:
 
 ### ELIF
 
-- **SI** l'expression `expression` est vraie
-- **FAIRE** les instructions
-- **SINON SI** l'expression `expression` est vraie
-- **FAIRE** les instructions
-- **SINON**
-- **FAIRE** les instructions
+- **SI** expression **ALORS** instructions
+- **SINON SI** expression **ALORS** instructions
+- **SINON** instructions
 
 ```python
 if expression:
@@ -180,6 +216,10 @@ else:
 
 ## MATCH CASE
 
+### Valeur
+
+Meme utilisation que le `switch` en C.
+
 ```python
 match variable:
     case valeur:
@@ -187,11 +227,28 @@ match variable:
     case _:
         # Instructions par defaut
 ```
-> Il est possible de mettre des expressions dans les cases.
+> Il est egalement possible de mettre des expressions dans les cases.
+
+### Arguments
+
+Match permet aussi de recuperer les arguments pour les affecter dans des variables.
+
+```python
+match sys.argv[1:]:
+    # Affecte l'argument 1 a une variable arg1,
+    # Affecte l'argument 2 a une variable arg2,
+    # etc...
+    case [arg1, arg2, ...]:
+        # Instructions
+    case _:
+        # Instructions par defaut
+```
 
 # BOUCLES CONDITIONNELLES
 
 ## FOR EACH
+
+Boucle permettant de parcourir tous les elements d'une liste.
 
 - **POUR** Chaque `element`
 - **DANS** la variable parcourue `liste`
@@ -203,6 +260,8 @@ for element in liste:
 ```
 
 ## WHILE
+
+Boucle d'instructions qui se repete **TANT QUE** sa condition est vraie.
 
 - **TANT QUE** l'expression `expression` est vraie
 - **FAIRE** les instructions
@@ -216,19 +275,19 @@ while expression:
 
 ## Arithmetiques
 
-| Operateur | Description       |
-|:---------:|-------------------|
-| `+`       | Addition          |
-| `-`       | Soustraction      |
-| `*`       | Multiplication    |
-| `/`       | Division          |
-| `//`      | Division entiere  |
-| `%`       | Modulo            |
-| `**`      | Puissance         |
+| Operateur | Nom               | Syntaxe  | Valeur de retour                     |
+|:---------:|:-----------------:|:--------:|:-------------------------------------|
+| `+`       | Addition          | `a + b`  | Somme de `a` et `b`                  |
+| `-`       | Soustraction      | `a - b`  | Difference de `a` par `b`            |
+| `*`       | Multiplication    | `a * b`  | Produit de `a` et `b`                |
+| `/`       | Division          | `a / b`  | Quotient de `a` par `b`              |
+| `//`      | Division Entiere  | `a // b` | Quotient entier de `a` par `b`       |
+| `%`       | Modulo            | `a % b`  | Reste de la division de `a` par `b`  |
+| `**`      | Puissance         | `a ** b` | `a` puissance `b`                    |
 
 ## Comparaison
 
-| Operateur  | Description         |
+| Operateur  | Nom                 |
 |:----------:|---------------------|
 | `==`       | Egalite             |
 | `!=`       | Difference          |
@@ -266,8 +325,84 @@ continue
 
 Instruction vide.
 
-En python, il est necessaire de marquer le passage dans un bloc avec `pass` .
+En python, il est necessaire de marquer le passage dans un bloc avec `pass` si on ne veut rien faire.
 
 ```python
 pass
+```
+
+# SYSTEME DE FICHIERS
+
+## Bibliotheques
+
+### Operations simples
+
+Navigation, Listing, Existence, Creation, Deplacement/Rename, Suppression...
+
+- `pathlib` : API Objet (`Path`)
+- `os.path` : API a chaine de caracteres
+
+### Operations complexes
+
+Copie, Copie recursive
+
+- `shutil` : API contenant des fonctions
+
+## Pathlib
+
+### Importation
+
+Importer la classe `Path`.
+
+```python
+from pathlib import Path
+```
+
+### Objet Path
+
+Creation d'une instance de `Path` qui permettra de manipuler un chemin de fichier.
+
+```python
+Mon_Chemin = Path("Chemin/Du/Fichier")
+```
+
+### Creation de Dossiers
+
+Creer le dossier `Mon_Chemin` a l'aide de la commande `mkdir` .
+
+```python
+if not Mon_Chemin.exists():
+    Mon_Chemin.mkdir(parents=True, exists_ok=True)
+elif not Mon_Chemin.is_dir():
+    print(f"Error: {Mon_Chemin} n'est pas un répertoire")
+```
+
+## ShUtil
+
+### Importation
+
+Importer la bibliotheque de fonctions `shutil` .
+
+```python
+import shutil
+```
+
+### Copie de dossiers
+
+Copie le contenu d'un repertoire et celui de ses sous-dossiers.
+
+```python
+shutil.copytree(dossier_a_copier, dossier_de_destination, dirs_exist_ok=True)
+```
+
+> **ATTENTION!**
+>
+> Ne copie que le contenu du dossier, pas le dossier lui meme.
+
+### Copie de fichiers
+
+Copie un fichier vers un repertoire.
+
+```python
+shutil.copy(fichier_a_copier, dossier_de_destination)
 ```
