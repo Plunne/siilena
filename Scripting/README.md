@@ -3,9 +3,9 @@ author: Lena SAVY-LARIGALDIE
 title: COURS 1 - Le Scripting
 ---
 
-Formateur : COLIN Matthias
-
 # COURS SCRIPTING
+
+Formateur : [COLIN Matthias](https://github.com/matthcol/scripting202302)
 
 ## TABLE DES MATIERES
 - [COURS SCRIPTING](#cours-scripting)

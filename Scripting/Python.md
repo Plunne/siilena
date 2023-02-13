@@ -3,11 +3,12 @@ author: Lena SAVY-LARIGALDIE
 title: COURS 1 - Le Scripting
 ---
 
-Formateur : [COLIN Matthias](https://github.com/matthcol/scripting202302)
-
 # PYTHON
 
-Python est un langage interprete Open Source cree en 1989 par Guido Van Rossum.
+Formateur : [COLIN Matthias](https://github.com/matthcol/scripting202302)
+
+
+> Python est un langage interprete Open Source cree en 1989 par Guido Van Rossum.
 
 ## TABLE DES MATIERES
 - [PYTHON](#python)
