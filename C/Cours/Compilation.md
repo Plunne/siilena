@@ -13,7 +13,7 @@ Le pre-processeur copie les valeurs des constante symboliques dans le code du pr
 
 ![](https://raw.githubusercontent.com/Plunne/siilena/main/C/Cours/images/preproctest2.PNG)
 
-Il gere egalement les inclusions de headers en remplaceant les chemins relatifs par les chemins absolus.
+> Il gere egalement les inclusions de headers en remplaceant les chemins relatifs par les chemins absolus.
 
 ## Parametres
 
