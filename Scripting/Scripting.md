@@ -200,6 +200,7 @@ match variable:
     case _:
         # Instructions par defaut
 ```
+> Il est possible de mettre des expressions dans les cases.
 
 # BOUCLES CONDITIONNELLES
 
