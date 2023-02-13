@@ -1,6 +1,17 @@
 import sys
 
 print("Hello World!")
-print("Arguments", sys.argv[1])     # Premier argument (case 2)
-print("Arguments", sys.argv[-1])    # Dernier argument (taille -1)
-print("Arguments", sys.argv[-2])    # Avant dernier argument (taille -1)
+
+def getArgs():
+    for arg in sys.argv[1:]:        # Pour chaque arguments en commencant par le 2eme
+        match arg:                  # Si l'argument match avec?
+            case "-a":              # -a
+                print("Lettre A")   # Afficher lettre A
+            case "-b":              # -b
+                print("Lettre B")   # Afficher lettre B
+            case "-c":              # -c
+                print("Lettre C")   # Afficher lettre C
+            case _:                 # Autrement
+                break               # Sortir de la boucle
+
+getArgs()    
