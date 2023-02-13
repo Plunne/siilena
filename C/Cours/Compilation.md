@@ -1,5 +1,7 @@
-#+TITLE: Compilation
-#+AUTHOR: Lena SAVY-LARIGALDIE
+---
+author: Lena SAVY-LARIGALDIE
+title: COURS 1 - Les bases du langage C
+---
 
 # PRE-PROCESSEUR
 
