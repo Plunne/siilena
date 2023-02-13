@@ -15,7 +15,7 @@ Formateur : COLIN Matthias
 - [LANGAGES](#langages)
   - [Langage Compile](#langage-compile)
   - [Langage Interprete](#langage-interprete)
-  - [Quelques Langages](#quelques-langage)
+  - [Quelques Langages](#quelques-langages)
 - [PYTHON](#python)
 
 # SCRIPTING

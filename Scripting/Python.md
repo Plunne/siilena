@@ -10,12 +10,35 @@ Formateur : COLIN Matthias
 Python est un langage interprete Open Source cree en 1989 par Guido Van Rossum.
 
 ## TABLE DES MATIERES
-
+- [PYTHON](#python)
+  - [TABLE DES MATIERES](#table-des-matieres)
 - [LANCER UN SCRIPT](#lancer-un-script)
 - [AFFICHER DU TEXTE](#afficher-du-texte)
 - [TRAITER DES ARGUMENTS](#traiter-des-arguments)
+- [TABLEAUX (LISTES)](#tableaux-listes)
+  - [Acces aux elements](#acces-aux-elements)
+- [CLI EN FIN DE SCRIPT](#cli-en-fin-de-script)
+- [BOOLEEN](#booleen)
+- [NONE](#none)
+- [INDENTATION](#indentation)
+- [STRUCTURES CONDITIONNELLES](#structures-conditionnelles)
+  - [IF, ELSE, ELIF](#if-else-elif)
+    - [IF](#if)
+    - [ELSE](#else)
+    - [ELIF](#elif)
+  - [MATCH CASE](#match-case)
+- [BOUCLES CONDITIONNELLES](#boucles-conditionnelles)
+  - [FOR EACH](#for-each)
+  - [WHILE](#while)
+- [OPERATEURS](#operateurs)
+  - [Arithmetiques](#arithmetiques)
+  - [Comparaison](#comparaison)
+- [BREAK \& CONTINUE](#break--continue)
+  - [Break](#break)
+  - [Continue](#continue)
+- [PASS](#pass)
 
-# Lancer un script
+# LANCER UN SCRIPT
 
 ```sh
 python script.py
@@ -27,7 +50,7 @@ python script.py
 python script.py arg1 arg2 arg3
 ```
 
-# Afficher du texte
+# AFFICHER DU TEXTE
 
 ``` python
 print("test")
@@ -38,7 +61,7 @@ print("test")
 > print("test", end=' ')
 > ```
 
-# Traiter des arguments
+# TRAITER DES ARGUMENTS
 
 1. Importer la bibliotheque `sys`
     ``` python
@@ -64,7 +87,7 @@ print("test")
 > Arguments ['.\\script.py', 'un', 'deux', 'trois']
 > ```
 
-# Tableaux (listes)
+# TABLEAUX (LISTES)
 
 Les listes en python sont l'equivalent des tableaux en C, en revanche, les listes ont l'avantage d'etre extensibles.
 
@@ -79,7 +102,7 @@ Les listes en python sont l'equivalent des tableaux en C, en revanche, les liste
 | `tab[:]`     | Liste tous les elements                  |
 | `tab[n1:n2]` | Liste les elements de l'element n1 a n2  |
 
-# CLI en fin de Script
+# CLI EN FIN DE SCRIPT
 
 Entrer dans l'interprete de commande a la fin de l'execution de notre print.
 
@@ -87,7 +110,7 @@ Entrer dans l'interprete de commande a la fin de l'execution de notre print.
 python -i script.py
 ```
 
-# Booleen
+# BOOLEEN
 
 Le booleen est un type a deux etats vrai/faux.
 
@@ -98,7 +121,7 @@ Le booleen est un type a deux etats vrai/faux.
 | `True`  | 1      |
 | `False` | 0      |
 
-# None
+# NONE
 
 Le type `None` est une constante attribuee pour une variable a valeur nulle.
 
