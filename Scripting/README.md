@@ -17,6 +17,7 @@ Formateur : [COLIN Matthias](https://github.com/matthcol/scripting202302)
   - [Langage Interprete](#langage-interprete)
   - [Quelques Langages](#quelques-langages)
 - [PYTHON](#python)
+- [SHELL](#shell)
 
 # SCRIPTING
 
@@ -61,4 +62,19 @@ Un langage interprete n'est pas compile, le script est le programme lui meme ce 
 
 Python est un langage interprete Open Source cree en 1989 par Guido Van Rossum.
 
-> [Cours Python](https://github.com/Plunne/siilena/blob/main/Scripting/Python.md)
+> [Cours Python](https://github.com/Plunne/siilena/blob/main/Scripting/Python/Python.md)
+
+# SHELL
+
+Interpretes de commandes Linux.
+
+**Liste d'interpretes :**
+- Shell
+- Bash
+- Zsh
+- Fish
+- Csh
+- Ksh
+- ...
+
+> [Cours Shell](https://github.com/Plunne/siilena/blob/main/Scripting/Shell/Shell.md)
