@@ -1,157 +1,172 @@
-* SII Learning - Cours Git
+---
+author: Lena SAVY-LARIGALDIE
+title: MEMO Git
+---
 
-* Installer Git
+# MEMO - Commandes Git
+
+# Installer Git
 
 Installer git normalement en fonction de votre Systeme d'Exploitation (OS).
 
 Puis configurer un compte git global sur la machine locale.
 
-#+begin_src shell
+```shell
 git config --global user.email "<adresse@mail.com>"
 git config --global user.name "<Identifiant>"
-#+end_src
+```
 
-* Initialiser un depot
+# Initialiser un depot
 
 Initialise la mecanique de git dans le repertoire pour qu'il devienne un depot git.
-/Un fichier cache =.git= apparait./
 
-#+begin_src shell
+> *Un fichier cache `.git` apparait.*
+
+```shell
 git init
-#+end_src
+```
 
-* Vers depot distant
+# Vers depot distant
 
-** Ajouter des fichiers (Stage)
+## Ajouter des fichiers (Stage)
 
 Ajouter un/des fichier(s) au depot pour les commit.
 
-#+begin_src shell
+```shell
 git add <fichier(s)>
-#+end_src
+```
 
 Ajouter tous les fichiers au depot pour les commit.
 
-#+begin_src shell
+```shell
 git add .
-#+end_src
+```
 
-** Preparer l'Envoi (Commit)
+## Preparer l'Envoi (Commit)
 
 Preparer les fichiers a l'envoi et assigner une description.
 
-#+begin_src shell
+```shell
 git commit -m "<message>"
-#+end_src
+```
 
-** Envoyer les changements
+## Envoyer les changements
 
 Envoyer les modification sur le depot main distant.
 
-#+begin_src shell
+```shell
 git push -u origin main
-#+end_src
+```
 
-* Depot distant vers local
+# Depot distant vers local
 
-** Cloner un depot
+## Cloner un depot
 
 Recuperer un depot distant non existant sur la machine locale.
 
-#+begin_src shell
+```shell
 git clone <url_du_depot>
-#+end_src
+```
 
-** Recuperer des fichiers
+## Restaurer des fichiers
+
+Restaurer des fichiers supprimes en local, depuis le depot distant.
+
+```shell
+git restore <fichier>
+```
+
+## Recuperer des fichiers
 
 Recuperer des fichiers distants n'ayant pas ete modifies sur le depot local entre-temps (depuis notre dernier push).
 
-#+begin_src shell
+```shell
 git fetch
-#+end_src
+```
 
-** Resolution de conflits
+## Resolution de conflits
 
-/Un conflit se produit lorsque l'on veut pousser des modifications de fichiers ayant ete egalement modifies sur le depot distant entre-temps (depuis notre dernier push)./
+> *Un conflit se produit lorsque l'on veut pousser des modifications de fichiers ayant ete egalement modifies sur le depot distant entre-temps (depuis notre dernier push).*
 
 Merge permet de :
 - Recuperer les modifications distantes pour les fichiers existants.
 - Cela va alors modifier vos fichiers ayant un conflit en rajoutant les modifications distantes.
 - Grace a cela vous pourrez directement dans votre code choisir quoi faire entre les deux modifications afin de resoudre les conflits.
 
-#+begin_src shell
+```shell
 git merge --no-ff
-#+end_src
+```
 
 Meme procedure avec une branche distante specifique.
 
-#+begin_src shell
+```shell
 git merge --no-ff <branche>
-#+end_src
+```
 
-L'argument =--no-ff= est conseille comme bonne pratique pour les utilisateurs plus avances. Il n'est pas necessaire pour des petits projets.
+L'argument `--no-ff` est conseille comme bonne pratique pour les utilisateurs plus avances. Il n'est pas necessaire pour des petits projets.
 
-** Mettre a jour le depot local
+## Mettre a jour le depot local
 
-Fusion de =fetch + merge= .
+Fusion de `fetch + merge` .
 
 Mettre a jour son depot local en se synchronisant avec les modifications distantes.
 
-*/!\ IMPORTANT /!\*
-Toute modification locale sera remplacee pour les donnees distantes.
+> **IMPORTANT!**
+> 
+> Toute modification locale sera remplacee pour les donnees distantes.
 
-#+begin_src shell
+```shell
 git pull
-#+end_src
+```
 
-* Manipulation de branches
+# Manipulation de branches
 
-** Creer une branche
+## Creer une branche
 
 Creer une branche.
 
-#+begin_src shell
+```shell
 git checkout -b <branche>
-#+end_src
+```
 
-** Changer de branche
+## Changer de branche
 
 Passer d'une branche a l'autre.
 
-#+begin_src shell
+```shell
 git checkout <branche>
-#+end_src
+```
 
-** Supprimer une branche
+## Supprimer une branche
 
 Supprimer une branche.
 
-#+begin_src shell
+```shell
 git checkout -d <branche>
-#+end_src
+```
 
-* Monitoring
+# Monitoring
 
-** Voir les log
+## Voir les log
 
 Voir l'historique des commits.
 
-#+begin_src shell
+```shell
 git log
-#+end_src
+```
 
-** Voir l'etat du depot
+## Voir l'etat du depot
 
 Voir l'etat des modifications en cours sur le depot (rien, ajouts, commit a push).
 
-#+begin_src shell
+```shell
 git status
-#+end_src
+```
 
-** Voir les difference
+## Voir les difference
 
 Voir les differences avec le dernier commit.
 
-#+begin_src shell
+```shell
 git diff
-#+end_src
+```
