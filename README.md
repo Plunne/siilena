@@ -43,4 +43,4 @@ Depot regroupant toutes mes notes concernant la formation.
 
 ## Exercices
 
-- [Python](https://github.com/Plunne/siilena/blob/main/Scripting/Python/Exo) (COLIN Matthias)
+- [Scripts Python](https://github.com/Plunne/siilena/blob/main/Scripting/Python/Exo) (COLIN Matthias)
