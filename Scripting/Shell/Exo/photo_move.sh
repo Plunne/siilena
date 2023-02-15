@@ -39,6 +39,7 @@ DEST_DIR=$2
 #
 
 for PHOTO in $SRC_DIR/*.jpg ; do # Pour chaque PHOTO dans le dossier
+    if [ ! ${PHOTO#$SRC_DIR/} =~ ^IMG_[0-9]{8}_.*$ ] # ${PHOTO#$SRC_DIR} Effacer le contenu de SRC_DIR dans la variable PHOTO et si ca match avec l'expression reguliere IMG_[0-9]{8}
     echo "Photo to move: $PHOTO"
     START=${#SRC_DIR}           # ${#SRC_DIR} : Nombre de lettres du dossier
     ((START += 5))              # Rajouter 6 au nombre de caracteres a se deplacer pour recuperer le filtre de l'image  
