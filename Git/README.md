@@ -58,6 +58,12 @@ Envoyer les modification sur le depot main distant.
 git push origin main
 ```
 
+Envoyer les modification sur un depot et une branche specifique a celui-ci.
+
+```shell
+git push <alias_depot_distant> <branche>
+```
+
 # Depot distant vers local
 
 ## Cloner un depot
@@ -66,6 +72,14 @@ Recuperer un depot distant non existant sur la machine locale.
 
 ```shell
 git clone <url_du_depot>
+```
+
+## Pointer vers un depot
+
+Connecter notre depot local vers un depot distant specifique.
+
+```shell
+git remote add <alias_depot_distant> <url_depot_distant>
 ```
 
 ## Restaurer des fichiers
