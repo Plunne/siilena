@@ -55,7 +55,7 @@ git commit -m "<message>"
 Envoyer les modification sur le depot main distant.
 
 ```shell
-git push -u origin main
+git push origin main
 ```
 
 # Depot distant vers local
