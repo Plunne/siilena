@@ -78,13 +78,21 @@ git restore <fichier>
 
 ## Recuperer des fichiers
 
-Recuperer des fichiers distants n'ayant pas ete modifies sur le depot local entre-temps (depuis notre dernier push).
+Recuperer des fichiers distants sur la branche main n'ayant pas ete modifies sur le depot local entre-temps (depuis notre dernier push).
 
 ```shell
 git fetch
 ```
 
+Meme procedur mais avec toutes les branches.
+
+```shell
+git fetch -p
+```
+
 ## Resolution de conflits
+
+### Fusion de branches
 
 > *Un conflit se produit lorsque l'on veut pousser des modifications de fichiers ayant ete egalement modifies sur le depot distant entre-temps (depuis notre dernier push).*
 
@@ -92,6 +100,7 @@ Merge permet de :
 - Recuperer les modifications distantes pour les fichiers existants.
 - Cela va alors modifier vos fichiers ayant un conflit en rajoutant les modifications distantes.
 - Grace a cela vous pourrez directement dans votre code choisir quoi faire entre les deux modifications afin de resoudre les conflits.
+- Fusionne la branche avec le main (Officialise les modifications/resolutions de conflits).
 
 ```shell
 git merge --no-ff
@@ -105,7 +114,21 @@ git merge --no-ff <branche>
 
 L'argument `--no-ff` est conseille comme bonne pratique pour les utilisateurs plus avances. Il n'est pas necessaire pour des petits projets.
 
-## Mettre a jour le depot local
+### Fusion de branche locale
+
+Meme chose que merge sauf que ca ne met pas a jour la branche distante, on ne fusionne que sur la branche locale.
+
+```shell
+git rebase <branche>
+```
+
+Pour le main distant.
+
+```shell
+git rebase origin/main
+```
+
+## Mise a jour radicale du depot local 
 
 Fusion de `fetch + merge` .
 
