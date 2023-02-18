@@ -28,33 +28,6 @@
 #define MORSE_Y		"_.__"
 #define MORSE_Z		"__.."
 
-//static char *MORSE_A = "._";
-//static char *MORSE_B = "_...";
-//static char *MORSE_C = "_._.";
-//static char *MORSE_D = "_..";
-//static char *MORSE_E = ".";
-//static char *MORSE_F = ".._.";
-//static char *MORSE_G = "__.";
-//static char *MORSE_H = "....";
-//static char *MORSE_I = "..";
-//static char *MORSE_J = ".___";
-//static char *MORSE_K = "_._";
-//static char *MORSE_L = "._..";
-//static char *MORSE_M = "__";
-//static char *MORSE_N = "_.";
-//static char *MORSE_O = "___";
-//static char *MORSE_P = ".__.";
-//static char *MORSE_Q = "__._";
-//static char *MORSE_R = "._.";
-//static char *MORSE_S = "...";
-//static char *MORSE_T = "_";
-//static char *MORSE_U = ".._";
-//static char *MORSE_V = "..._";
-//static char *MORSE_W = ".__";
-//static char *MORSE_X = "_.._";
-//static char *MORSE_Y = "_.__";
-//static char *MORSE_Z = "__..";
-
 char * charToMorse(char c);
 
-#endif // _MORSELIB_H
+#endif // _MORSE_CODE_H
