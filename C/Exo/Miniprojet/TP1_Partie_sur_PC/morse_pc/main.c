@@ -7,7 +7,7 @@
 
 int main(int argc, char **argv) {
 
-    printf("%s\n", charToMorse('a'));
+    printf("%s\n", charToMorse('v'));
     
     return 0;
 }

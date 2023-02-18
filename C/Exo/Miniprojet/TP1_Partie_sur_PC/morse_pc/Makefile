@@ -23,7 +23,7 @@ CFLAGS = -Wall -Wextra -I $(INC)
 #######################
 
 # All (default)
-all: $(TARGET) run
+all: clean $(TARGET) run
 
 # Compile
 $(OBJ) : $(SRC)
