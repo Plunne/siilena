@@ -1,17 +1,18 @@
 # Program Output
-TARGET = bin/morse
+NAME = morse
+BINDIR = bin
+TARGET = $(BINDIR)/$(NAME)
 
 # Includes
 INC += 	includes/
 
 # Sources
-#SRC_DIR = src
-SRC = $(wildcard src/*.c)
+SRCDIR = src
+SRC = $(wildcard $(SRCDIR)/*.c)
 
 # Objects
-#OBJ = $(SRC:.c=bin:.o)
-OBJ_DIR = bin
-OBJ = $(patsubst src/%.c,bin/%.o,$(SRC))
+OBJDIR = $(BINDIR)
+OBJ = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 
 # Toolchain
 CC = gcc
@@ -24,22 +25,28 @@ CFLAGS = -Wall -Wextra -I $(INC)
 # All (default)
 all: $(TARGET) run
 
-# Create objects
+# Compile
 $(OBJ) : $(SRC)
-	@echo "Create objects"
-	$(CC) $(CFLAGS) -o $@ -c $< 
-
-# Create executable
-$(TARGET) : $(OBJ)
-	@echo "Create executable"
+	@echo "\n***** Compile program *****"
 	@mkdir -p bin
-	$(CC) $(CFLAGS) -o bin/main.o -c main.c
-	$(CC) $(CFLAGS) -o $@ bin/main.o $^
+	$(CC) $(CFLAGS) -o $@ -c $< 
+	$(CC) $(CFLAGS) -o $(BINDIR)/main.o -c main.c
+
+# Link
+$(TARGET) : $(OBJ)
+	@echo "\n***** Create executable *****"
+	$(CC) $(CFLAGS) -o $@ $(BINDIR)/main.o $^
 
 # Clean objects
 clean:
-	rm -rf $(OBJ)
+	@echo "\n***** Cleaning objects *****"
+	rm -rf bin/*.o
 
 # Run executable
 run:
+	@echo "\n***** Run executable *****"
 	./$(TARGET)
+
+uninstall:
+	@echo "\n***** Uninstall *****"
+	rm -rf bin
