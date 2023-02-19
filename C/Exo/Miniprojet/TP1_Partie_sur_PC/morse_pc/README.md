@@ -21,7 +21,7 @@ Par : Lena SAVY-LARIGALDIE
   - [3.3 - Convertir en morse](#33---convertir-en-morse)
   - [3.4 - Separer le caractere morse](#34---separer-le-caractere-morse)
   - [3.5 - Assigner un timer et etat](#35---assigner-un-timer-et-etat)
-  - [3.5 - Faire Beeper](#35---faire-beeper)
+  - [3.6 - Faire Beeper](#36---faire-beeper)
 
 # I. Objectifs
 
@@ -122,7 +122,7 @@ switch(beep) {
 }
 ```
 
-## 3.5 - Faire Beeper
+## 3.6 - Faire Beeper
 
 ```c
 void beepMorse(char * message);
