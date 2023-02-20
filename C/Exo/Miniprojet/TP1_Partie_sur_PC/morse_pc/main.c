@@ -7,6 +7,7 @@
 
 int main(int argc, char **argv) {
 
+    char * message = "message";
     printf("%c\n", charToMorse('v')[3]);
     
     return 0;
