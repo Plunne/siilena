@@ -42,6 +42,14 @@ Formateur : Paul-Ernest MARTIN
   - [RMA - Rate Monotonic Assignment](#rma---rate-monotonic-assignment)
   - [DMA - Deadline Monotonic priority Assignment](#dma---deadline-monotonic-priority-assignment)
   - [EDF - Earliest Deadline First](#edf---earliest-deadline-first)
+- [MCU \& MPU](#mcu--mpu)
+  - [CPU (Central Process Unit)](#cpu-central-process-unit)
+  - [RAM (Random Acces Memory)](#ram-random-acces-memory)
+  - [ROM (Read Only Memory)](#rom-read-only-memory)
+  - [I/O Ports](#io-ports)
+  - [Timer](#timer)
+  - [Interrupt](#interrupt)
+  - [Serie COM Ports](#serie-com-ports)
 
 # Systemes d'Exploitation en Temps-Reel (RTOS) 
 
@@ -323,3 +331,34 @@ $$
 \leqslant
 1
 $$
+
+# MCU & MPU
+
+## CPU (Central Process Unit)
+
+Point central du systeme.
+
+## RAM (Random Acces Memory)
+
+Stocke des donnees temporairement.
+
+## ROM (Read Only Memory)
+
+Donnees permanentes en lecture seule, principalement pour contenir le programme et l'amorceur.
+
+## I/O Ports
+
+Entrees/Sorties, pour communiquer avec le materiel exterieur au systeme (peripheriques).
+
+## Timer
+
+Avoir acces a une periode, gerer le temps, synchroniser, faire des delays, etc.
+
+## Interrupt
+
+Interruptions, permet de faire des instructions sans passer par le CPU, changement d'etat electronique.
+
+## Serie COM Ports
+
+Autres methodes de communication avec l'exterieur.
+
