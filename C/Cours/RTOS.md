@@ -312,7 +312,11 @@ $$
 
 ## EDF - Earliest Deadline First
 
-Regle : A chaque fois qu'une tache est reveillee, l'ordonnanceur reevalue les taches pretes et prend l'echeance la plus courte.
+**Regle :** A chaque fois qu'une tache est reveillee, l'ordonnanceur reevalue les taches pretes et prend l'echeance la plus courte.
+
+Somme du `Cout` / `Echeance` de chaque tache...
+
+Doit etre <= `1`
 
 $$
 \sum_{i=1}^{n} \frac{C_i}{D_i}
