@@ -39,6 +39,9 @@ Formateur : Paul-Ernest MARTIN
   - [Ordonnanceur (Scheduler)](#ordonnanceur-scheduler)
   - [Repartiteur (Dispatcher)](#repartiteur-dispatcher)
 - [ALGORITHMES D'ORDONNANCEMENT](#algorithmes-dordonnancement)
+  - [RMA - Rate Monotonic Assignment](#rma---rate-monotonic-assignment)
+  - [DMA - Deadline Monotonic priority Assignment](#dma---deadline-monotonic-priority-assignment)
+  - [EDF - Earliest Deadline First](#edf---earliest-deadline-first)
 
 # Systemes d'Exploitation en Temps-Reel (RTOS) 
 
@@ -269,3 +272,50 @@ Change le contexte.
 
 # ALGORITHMES D'ORDONNANCEMENT
 
+n = nombre de taches
+
+C = Temps reel occupation CPU
+
+P = Periode
+
+D = Echeance
+
+## RMA - Rate Monotonic Assignment
+
+**Regle :** Plus la periode est courte, plus la priorite est haute
+
+Somme du `Cout` / `Periode` de chaque tache...
+
+Doit etre <= `nombre de taches` * ( ( `2 ^` ( `1` / `nombre de taches` ) ) `-1`)
+
+$
+\sum_{i=1}^{n} \frac{C_i}{P_i}
+\leqslant
+n(2^{1/n}-1)
+$
+
+## DMA - Deadline Monotonic priority Assignment
+
+**Regle :** Plus l'echeance est courte, plus la priorite est haute
+
+Somme du `Cout` / `Echeance` de chaque tache...
+
+Doit etre <= `nombre de taches` * ( ( `2 ^` ( `1` / `nombre de taches` ) ) `-1`)
+
+$
+\sum_{i=1}^{n} \frac{C_i}{D_i}
+\leqslant
+n(2^{1/n}-1)
+$
+
+> Le cout doit etre strictement superieur a l'echeance.
+
+## EDF - Earliest Deadline First
+
+Regle : A chaque fois qu'une tache est reveillee, l'ordonnanceur reevalue les taches pretes et prend l'echeance la plus courte.
+
+$
+\sum_{i=1}^{n} \frac{C_i}{D_i}
+\leqslant
+1
+$
