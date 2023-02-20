@@ -5,7 +5,7 @@ title: Questionnaire Cours C
 
 # Questionnaire Cours C
 
-Formateur : PAUL-ERNEST Martin
+Formateur : Paul-Ernest MARTIN
 
 ## TABLE DES MATIERES
 - [Questionnaire Cours C](#questionnaire-cours-c)

@@ -5,7 +5,7 @@ title: COURS - Les commandes Linux
 
 # COURS LINUX
 
-Formateur : PAUL-ERNEST Martin
+Formateur : Paul-Ernest MARTIN
 
 ## TABLE DES MATIERES
 - [COURS LINUX](#cours-linux)
