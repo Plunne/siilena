@@ -22,6 +22,17 @@ Formateur : Paul-Ernest MARTIN
   - [RTOS based software](#rtos-based-software)
 - [AVANTAGES](#avantages)
 - [SUPERLOOP VS RTOS](#superloop-vs-rtos)
+- [TACHES](#taches)
+  - [Dans un RTOS](#dans-un-rtos)
+  - [QUEUES](#queues)
+  - [EVENTS](#events)
+  - [SEMAPHORES](#semaphores)
+  - [ARCHITECTURES](#architectures)
+  - [PARAMETRAGE](#parametrage)
+- [CODE](#code)
+- [TYPES DE NOYAUX](#types-de-noyaux)
+  - [Premptif](#premptif)
+  - [Non-Premptif (Collaboratif)](#non-premptif-collaboratif)
 
 # Systemes d'Exploitation en Temps-Reel (RTOS) 
 
@@ -112,4 +123,100 @@ Leur point fort se trouve donc dans la capacite a realiser des systemes tres ava
 Les Threads, Mutex, Semaphores, ...
 
 # SUPERLOOP VS RTOS
+
+La Superloop est une methode qui permet de gerer plusieurs taches sans utiliser un RTOS.
+
+Chaque tache est executee dans la boucle principale de maniere sequentielle.
+
+Ces taches sont generalement ecrites sous forme de fonctions et peuvent etre executees a intervales regulieres ou en reponse a des evenements externes.
+
+Elle requiert peu de puissance et realisable a moindre cout tout en etant efficace.
+
+# TACHES
+
+## Dans un RTOS
+
+- Taches simultanees
+- Independantes (ont leur propre pile et contexte d'execution)
+- Priorisees
+- Planifiees
+- Peuvent communiquer entre-elles (semaphores, evenementiel, file d'attente)
+- Garantit une precision avec fiabilite
+
+## QUEUES
+
+File d'attente (diapo 19)
+
+## EVENTS
+
+Notifications (diapo 20)
+
+## SEMAPHORES
+
+Echanger les infos en ayant une zone de synchronisation en memoire.
+
+Permet a deux taches differentes d'acceder a la meme ressource.
+
+## ARCHITECTURES
+
+- **Mono-tache :** suite de taches
+- **Multi-taches :** taches en parallele, besoin d'un ordonnancement
+
+## PARAMETRAGE
+
+TCB : Task Control Block
+
+- Identifiant
+- Priorite
+- Etat (prete, bloquee, active, ...)
+- Contexte (compteur qui pointe vers le code, pointeur de pile SP : *Pour qu'un programme continue de s'execute il lui faut sa stack/pile pour savoir ou il en est dans la memoire et une sauvegarde de sa derniere execution pour savoir ou reprendre sa prochaine execution.*)
+
+> C'est un peu comme la carte d'identite d'une tache.
+
+# CODE
+
+```c
+#include <RTOS.h>
+
+int x; // Les variables globales sont liees au data segment
+
+void task1(void *pvParameters);
+void task2(void *pvParameters);
+
+void task1(void *pvParameters) {
+    int i; // Les variables locales sont liees a la pile de la tache
+    while(1){
+        /* Tache 1 */
+    }
+}
+
+void task2(void *pvParameters) {
+    while(1){
+        /* Tache 2 */
+    }
+}
+
+int main(void) {
+
+    // Creation de 2 taches 
+    xTaskCreate(task1, "task 1", stack_size, prio1); // Cree un TCB
+    xTaskCreate(task2, "task 2", stack_size, prio1); // Cree un TCB
+
+    vStartScheduler(); // Lance l'ordonnanceur
+
+    while(1);
+
+    return 0;
+}
+```
+
+# TYPES DE NOYAUX
+
+## Premptif
+
+Une tache prioritaire sur l'autre l'interrompt.
+
+## Non-Premptif (Collaboratif)
+
+Une tache prioritaire sur l'autre ne l'interrompt pas mais s'execute aussitot a la suite de celle-ci.
 
