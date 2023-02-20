@@ -7,8 +7,15 @@
 
 int main(int argc, char **argv) {
 
+    /* Create Message */
     char * message = "message";
-    printf("%c\n", charToMorse('v')[3]);
+    timers[0] = 20;
+    timers[1] = 40;
+    timers[2] = 500;
+
+    printf("%c\n", charToMorse('a')[3]);
+    int a;
+    scanf("%d", &a);
     
     return 0;
 }

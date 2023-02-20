@@ -2,10 +2,7 @@
 #define _MORSELIB_H
 
 #include "morse_code.h"
-
-#define MORSE_DOT   '.'
-#define MORSE_LONG  '_'
-#define MORSE_DEAD  '/'
-
+#include "morse_beep.h"
+#include "morse_audio.h"
 
 #endif // _MORSELIB_H
