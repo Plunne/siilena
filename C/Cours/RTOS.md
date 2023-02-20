@@ -288,11 +288,11 @@ Somme du `Cout` / `Periode` de chaque tache...
 
 Doit etre <= `nombre de taches` * ( ( `2 ^` ( `1` / `nombre de taches` ) ) `-1`)
 
-$
+$$
 \sum_{i=1}^{n} \frac{C_i}{P_i}
 \leqslant
 n(2^{1/n}-1)
-$
+$$
 
 ## DMA - Deadline Monotonic priority Assignment
 
@@ -302,11 +302,11 @@ Somme du `Cout` / `Echeance` de chaque tache...
 
 Doit etre <= `nombre de taches` * ( ( `2 ^` ( `1` / `nombre de taches` ) ) `-1`)
 
-$
+$$
 \sum_{i=1}^{n} \frac{C_i}{D_i}
 \leqslant
 n(2^{1/n}-1)
-$
+$$
 
 > Le cout doit etre strictement superieur a l'echeance.
 
@@ -314,8 +314,8 @@ $
 
 Regle : A chaque fois qu'une tache est reveillee, l'ordonnanceur reevalue les taches pretes et prend l'echeance la plus courte.
 
-$
+$$
 \sum_{i=1}^{n} \frac{C_i}{D_i}
 \leqslant
 1
-$
+$$
