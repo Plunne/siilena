@@ -33,6 +33,12 @@ Formateur : Paul-Ernest MARTIN
 - [TYPES DE NOYAUX](#types-de-noyaux)
   - [Premptif](#premptif)
   - [Non-Premptif (Collaboratif)](#non-premptif-collaboratif)
+  - [Rotatif (Round-Robin)](#rotatif-round-robin)
+- [PRIORITES](#priorites)
+- [ORDONNANCEMENT](#ordonnancement)
+  - [Ordonnanceur (Scheduler)](#ordonnanceur-scheduler)
+  - [Repartiteur (Dispatcher)](#repartiteur-dispatcher)
+- [ALGORITHMES D'ORDONNANCEMENT](#algorithmes-dordonnancement)
 
 # Systemes d'Exploitation en Temps-Reel (RTOS) 
 
@@ -168,7 +174,7 @@ TCB : Task Control Block
 
 - Identifiant
 - Priorite
-- Etat (prete, bloquee, active, ...)
+- Etat (prete, bloquee, active ou dormante)
 - Contexte (compteur qui pointe vers le code, pointeur de pile SP : *Pour qu'un programme continue de s'execute il lui faut sa stack/pile pour savoir ou il en est dans la memoire et une sauvegarde de sa derniere execution pour savoir ou reprendre sa prochaine execution.*)
 
 > C'est un peu comme la carte d'identite d'une tache.
@@ -219,4 +225,47 @@ Une tache prioritaire sur l'autre l'interrompt.
 ## Non-Premptif (Collaboratif)
 
 Une tache prioritaire sur l'autre ne l'interrompt pas mais s'execute aussitot a la suite de celle-ci.
+
+## Rotatif (Round-Robin)
+
+Execute les taches avec un temps limite.
+
+Quantum fixe : duree fixe pour toutes les taches
+
+Le temps de chaque tache doit etre inferieur au quantum (duree de toutes les taches).
+
+**Caracteristiques :**
+
+- Long processus n'entraine pas de retard
+- Pseudo parallele
+- Choix du quantum important
+
+> **Formule theorique :**
+> 
+> `alpha` >= 5
+> 
+> `Quantum` = `alpha` * `temps de changement de contexte`
+
+# PRIORITES
+
+Les priorites peuvent etre :
+
+- Fixes
+- Dynamiques
+
+# ORDONNANCEMENT
+
+## Ordonnanceur (Scheduler)
+
+Choisit l'ordre d'execution grace aux informations du TCB.
+
+## Repartiteur (Dispatcher)
+
+Change le contexte.
+
+- Conserver l'etat des registres quand une tache est suspendue
+- Sauvegarder le contexte de la pile
+- Restaurer le contexte depuis le TCB
+
+# ALGORITHMES D'ORDONNANCEMENT
 
