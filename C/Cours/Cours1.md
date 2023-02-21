@@ -23,6 +23,9 @@ Formateur : Paul-Ernest MARTIN
     - [Dossier build](#dossier-build)
     - [Generer le projet](#generer-le-projet)
     - [Ouvrir le projet dans Visual Studio](#ouvrir-le-projet-dans-visual-studio)
+  - [CMake CLI](#cmake-cli)
+    - [Generer le projet](#generer-le-projet-1)
+    - [Compiler le projet](#compiler-le-projet)
 - [ETAPES DE LA REALISATION D'UN PROGRAMME](#etapes-de-la-realisation-dun-programme)
   - [Developpement](#developpement)
   - [Compilation](#compilation-1)
@@ -194,6 +197,7 @@ Cree un environement pour developper sur n'importe quel systeme d'exploitation.
 Fichier de configuration permettant la generation d'un projet avec CMake.
 
 **Version Minimaliste :**
+
 ``` cmake
 cmake_minimum_required(VERSION 3.14)
 
@@ -211,6 +215,41 @@ add_executable(HelloWorld HelloWorld.c)
 > - Choisit le nom de l'executable et le fichier source
 
 **Version Avancee :**
+
+``` cmake
+# CMake Version
+cmake_minimum_required(VERSION 3.14)
+
+# Project Name
+project(MyProjectName)
+
+# Language Version
+set(CMAKE_C_STANDARD 11)
+
+# Files
+set (SOURCES src/source1.c src/source2.c)
+set (HEADERS includes/header1.c includes/header2.c)
+
+# Create my program with some source files
+add_executable(prog main.c ${SOURCES} ${HEADERS})
+
+# Add headers to executable
+target_include_directories (prog PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+```
+
+> Le code ci-dessus :
+> - Choisit la version de CMake
+> - Choisit le nom du projet
+> - Choisit le langage
+> - Cree une variable regroupant des fichiers source
+> - Cree une variable regroupant des fichiers headers
+> - Choisit le nom de l'executable et les fichier source
+> - Informe l'executable du chemin des fichiers headers pour qu'il puisse y acceder
+
+
+
+**Version Avancee avec Bibliotheques :**
+
 ``` cmake
 # CMake Version
 cmake_minimum_required(VERSION 3.14)
@@ -240,7 +279,7 @@ target_link_libraries(prog PUBLIC MyLibraryName)
 > - Choisit le langage
 > - Cree une variable regroupant des fichiers source
 > - Cree une bibliotheque objet avec les fichiers source
-> - Choisit le nom de l'executable et le fichier source
+> - Choisit le nom de l'executable et les fichiers source
 > - Lit la bibliotheque objet a l'executable pour qu'il puisse acceder a ses fonctions
 
 ### Dossier build
@@ -257,6 +296,20 @@ Les projets Visual Studio ont comme extension `.sln` .
 
 Aller dans le dossier build et lancer avec Visual Studio le fichier `Projet_Langage_C.sln` .
 
+## CMake CLI
+
+Dans le repertoire `build` .
+
+### Generer le projet
+
+```c
+cmake ..
+```
+### Compiler le projet
+
+```c
+cmake --build .
+```
 
 # ETAPES DE LA REALISATION D'UN PROGRAMME 
 

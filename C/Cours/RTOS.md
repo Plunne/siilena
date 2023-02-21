@@ -398,31 +398,3 @@ tableau diapo 47
 Soustraction par complement a 1.
 
 # ADDITION HEXADECIMALE
-
- 23D9
-+94BE
-=B897
-
-9+E = 9+14 = 23 > 16 retenue 1 -> 23-16 = 7
-
-D + retenue = E
-E+B=...
-
-36B
- F6
-
-11+6=17 17-16=1 retenue 1
-
-37B
- F6
-  1
-
-7+F=22 22-16=6 retenue1
-
-47B
- F6
- 61
-
-4+0=4 4<16
-
-461
