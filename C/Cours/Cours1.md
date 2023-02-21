@@ -72,6 +72,9 @@ Formateur : Paul-Ernest MARTIN
     - [ET \& OU Logique](#et--ou-logique)
     - [NON Logique](#non-logique)
   - [Operateurs logiques](#operateurs-logiques)
+    - [AND](#and)
+    - [OR](#or)
+    - [XOR](#xor)
   - [Operateurs d'affectation](#operateurs-daffectation)
   - [Operateur ternaire](#operateur-ternaire)
 - [CHAINES DE CARACTERES](#chaines-de-caracteres)
@@ -612,6 +615,39 @@ Retourne `1` si la condtion est `fausse` ou le resultat `=0` .
 | `!`       | NON  | `!a`    | `1` si le contenu de l'expression `a` est `faux` , sinon `0`  |
 
 ## Operateurs logiques
+
+| Operateur | Nom | Syntaxe  | Valeur de retour                     |
+|:---------:|:---:|:--------:|:-------------------------------------|
+| `&`       | AND | `a & b`  | 1 si `a` et `b` valent 1             |
+| `\|`      | OR  | `a \| b` | 1 si au moins `a` ou `b` valent 1    |
+| `^`       | XOR | `a ^ b`  | 1 si `a` et `b` sont differents      |
+
+### AND
+
+| A   | B   | Resultat |
+|:---:|:---:|:--------:|
+| `0` | `0` | 0        |
+| `0` | `1` | 0        |
+| `1` | `0` | 0        |
+| `1` | `1` | 1        |
+
+### OR
+
+| A   | B   | Resultat |
+|:---:|:---:|:--------:|
+| `0` | `0` | 0        |
+| `0` | `1` | 1        |
+| `1` | `0` | 1        |
+| `1` | `1` | 1        |
+
+### XOR
+
+| A   | B   | Resultat |
+|:---:|:---:|:--------:|
+| `0` | `0` | 0        |
+| `0` | `1` | 1        |
+| `1` | `0` | 1        |
+| `1` | `1` | 0        |
 
 ## Operateurs d'affectation
 
