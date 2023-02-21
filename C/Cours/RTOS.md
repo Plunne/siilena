@@ -50,6 +50,11 @@ Formateur : Paul-Ernest MARTIN
   - [Timer](#timer)
   - [Interrupt](#interrupt)
   - [Serie COM Ports](#serie-com-ports)
+- [GPOS VS RTOS](#gpos-vs-rtos)
+- [CHOISIR UN MICRO-CONTROLEUR](#choisir-un-micro-controleur)
+- [ADDITION BINAIRE](#addition-binaire)
+- [COMPLEMENT A 1](#complement-a-1)
+- [ADDITION HEXADECIMALE](#addition-hexadecimale)
 
 # Systemes d'Exploitation en Temps-Reel (RTOS) 
 
@@ -362,3 +367,62 @@ Interruptions, permet de faire des instructions sans passer par le CPU, changeme
 
 Autres methodes de communication avec l'exterieur.
 
+# GPOS VS RTOS
+
+tableau diapo 47
+
+# CHOISIR UN MICRO-CONTROLEUR
+
+- Vitesse (Frequence)
+- Encombrement (Taille, poids)
+- Consommation
+- RAM/ROM
+- Peripheriques
+- Nombre d'E/S + Horloge
+- Adaptabilite
+- Prix
+- L'eco-systeme et son support (Ergonomie des Logiciels de Developpement)
+- Disponibilite
+
+# ADDITION BINAIRE
+
+| A + B     | Carry | Sum |
+|:---------:|:-----:|:---:|
+| `0` + `0` | 0     | 0   |
+| `0` + `1` | 0     | 1   |
+| `1` + `0` | 0     | 1   |
+| `1` + `1` | 1     | 0   |
+
+# COMPLEMENT A 1
+
+Soustraction par complement a 1.
+
+# ADDITION HEXADECIMALE
+
+ 23D9
++94BE
+=B897
+
+9+E = 9+14 = 23 > 16 retenue 1 -> 23-16 = 7
+
+D + retenue = E
+E+B=...
+
+36B
+ F6
+
+11+6=17 17-16=1 retenue 1
+
+37B
+ F6
+  1
+
+7+F=22 22-16=6 retenue1
+
+47B
+ F6
+ 61
+
+4+0=4 4<16
+
+461

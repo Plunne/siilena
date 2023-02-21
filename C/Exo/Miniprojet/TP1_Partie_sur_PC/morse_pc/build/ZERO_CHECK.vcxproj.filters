@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Lena.savylarigaldie\siilena\C\Exo\Miniprojet\TP1_Partie_sur_PC\morse_pc\build\CMakeFiles\2ebfc81a836e0057dfad60a1ca48a41f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3B9606FD-2FDE-3A9E-928C-4863A3222FFB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
