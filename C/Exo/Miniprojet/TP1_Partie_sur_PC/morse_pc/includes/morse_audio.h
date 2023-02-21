@@ -5,7 +5,7 @@
 #define TIMER2  50
 #define TIMER3  100
 
-int timers[3] = { TIMER1, TIMER2, TIMER3 };
+extern int timers[3];
 
 void beepAudio(int t);
 

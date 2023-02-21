@@ -9,9 +9,9 @@ int main(int argc, char **argv) {
 
     /* Create Message */
     char * message = "message";
-    timers[0] = 20;
-    timers[1] = 40;
-    timers[2] = 500;
+    timers[0] = TIMER1;
+    timers[1] = TIMER2;
+    timers[2] = TIMER3;
 
     printf("%c\n", charToMorse('a')[3]);
     int a;
