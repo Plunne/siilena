@@ -1,3 +1,0 @@
-﻿morse_audio.obj : error LNK2005: timers déjà défini(e) dans main.obj
-morse_beep.obj : error LNK2005: timers déjà défini(e) dans main.obj
-C:\Users\Lena.savylarigaldie\siilena\C\Exo\Miniprojet\TP1_Partie_sur_PC\morse_pc\build\Debug\Hello.exe : fatal error LNK1169: un ou plusieurs symboles définis à différentes reprises ont été rencontrés

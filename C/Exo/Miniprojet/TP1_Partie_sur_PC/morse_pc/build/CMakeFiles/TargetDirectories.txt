@@ -1,3 +1,0 @@
-C:/Users/Lena.savylarigaldie/siilena/C/Exo/Miniprojet/TP1_Partie_sur_PC/morse_pc/build/CMakeFiles/Hello.dir
-C:/Users/Lena.savylarigaldie/siilena/C/Exo/Miniprojet/TP1_Partie_sur_PC/morse_pc/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Lena.savylarigaldie/siilena/C/Exo/Miniprojet/TP1_Partie_sur_PC/morse_pc/build/CMakeFiles/ZERO_CHECK.dir
