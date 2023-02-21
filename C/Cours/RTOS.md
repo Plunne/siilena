@@ -341,7 +341,7 @@ $$
 
 ## CPU (Central Process Unit)
 
-Point central du systeme.
+Point central du systeme. Recupere les instructions dans la memoire et les execute.
 
 ## RAM (Random Acces Memory)
 

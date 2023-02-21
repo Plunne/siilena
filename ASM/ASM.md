@@ -18,7 +18,14 @@ Formateur : Paul-Ernest MARTIN
   - [DRAM](#dram)
     - [Pins propre a la DRAM](#pins-propre-a-la-dram)
 - [BUS](#bus)
+- [CPU](#cpu)
+  - [ALU - Arithmetiaue Logic Unit](#alu---arithmetiaue-logic-unit)
+  - [FLAG](#flag)
+  - [Registres](#registres)
+  - [Etapes](#etapes)
 - [ASM](#asm)
+  - [LDI](#ldi)
+  - [ADD](#add)
 
 # RAM
 
@@ -161,15 +168,103 @@ b) 256k 4dt DRAM
 
 2. 0x4000 - 0x7FFF Combien de ko dans cette plage d'adresse?
 
-    >  0x4000 - 0x7FFF
+    >  0x4000 -> 0x7FFF
     >
-    > 0100 0000 0000  0000 - 0111 1111 1111 1111
+    > 0100 0000 0000  0000 -> 0111 1111 1111 1111
     >
     > 00xx xxxx xxxx xxxx -> 14bits
     >
     > 2^14 = 16 384
 
-0010 0000
+    Soustraction :
+
+    > 0x4000 - 0x7FFF = 0x3FFF
+
+
+# CPU
+
+## ALU - Arithmetiaue Logic Unit
+
+Se charge uniquement des fonctions arithmetiques et logiques.
+
+## FLAG
+
+Indique se qu'il se passe pendant une operation.
+
+Suivant l'operation, il y a un flag, par exemple pour les retenues mais pas que.
+
+## Registres
+
+Memoire.
+
+Registre d'instructions : lit le programme pour le decouper en petites actions.
+
+Program counter : Compteur qui sait a quelle adresse l'instruction ou l'on est se situe pour savoir quelle instruction on fait ensuite.
+
+Registres : Stocke les donnees temporaires.
+
+## Etapes
+
+Le CPU :
+
+1. Connait l'adresse d'une instruction, place le program counter dans cette adresse d'instruction.
+
+2. Active la memoire (CS) et active un etat Read (OE) ou Write (WE) et recupere l'instruction via le bus de donnees.
+
+3. Place l'instruction dans son registre et la decode.
+
+4. Execute l'instruction
+
+5. Incrementation du program counter (Passe a l'instruction suivante)
 
 # ASM
+
+## LDI
+
+Affectation (equivalent de `=`)
+
+```asm
+LDI Rd, K ; Stocke dans le registre Rd la valeur K
+```
+
+- LDI (Load Data Immediatly) :
+- Rd : Registre d (entre 16 et 31, car la partie 0 a 15 est reservee)
+- K : Valeur 0 a 255 (0 a 255 si registre 8 bits)
+
+Exemple :
+
+```asm
+LDI R16, 0x50 ; place la valeur 0x50 dans le registre 16
+```
+
+Equivalent en C :
+
+```c
+R16 = 0x50; // Place la valeur 0x50 dans R16
+```
+
+## ADD
+
+Addition (equivalent du `+=`)
+
+```asm
+ADD Rd,Rr ; Ajoute la valeur de Rr a la valeur de Rd
+```
+
+Exemple :
+
+```asm
+LDI R16, 0x25 ; Affecte le registre R16 avec la valeur 0x25
+LDI R17, 0x34 ; Affecte le registre R17 avec la valeur 0x34
+ADD R16, R17  ; Additionne la valeur du registre R17 dans le registre R16
+```
+
+Equivalent en C :
+```c
+R16 = 0x25; // Affecte R16 avec la valeur 0x25
+R17 = 0x34; // Affecte R17 avec la valeur 0x34
+R16 += R17; // Additionne la valeur de R17 dans R16
+```
+
+La valeur dans R16 est 0x25 + 0x34 = 0x59
 
