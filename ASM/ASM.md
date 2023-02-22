@@ -66,6 +66,7 @@ Formateur : Paul-Ernest MARTIN
   - [CISC](#cisc)
 - [BRANCH, CALL et Stack pointer](#branch-call-et-stack-pointer)
   - [BNRE](#bnre)
+  - [BRSH](#brsh)
 
 # RAM
 
@@ -687,4 +688,131 @@ again:
 ```
 
 -> r16 sera decremente 0x50 fois.
+
+**Exercice :**
+
+Alterner l'etat du PORTB 700 fois.
+
+```asm
+            ldi r16, 0x55   ; put 0x55 into r16
+            out PORTB, r16  ; store r16 to PORTB
+            
+            ; init unitsLoop counter
+            ldi r17, 0x07   ; put 7 into r17
+unitsLoop:
+            ; init deciLoop counter
+            ldi r18, 0x64   ; put 100 into r17
+deciLoop:
+            out PORTB, r16  ; blink LED
+            com r16         ; reverse LED
+            dec r18         ; r18--
+            BRNE deciLoop   ; end of deciLoop
+
+            dec r17         ; r17--
+            BRNE unitsLoop  ; end of units loop
+```
+
+**Equivalence en C :**
+
+```c
+char var = 0x55;    // Put 0x55 in var
+PORTB = var;        // Store var into PORTB
+
+/* Units Loop */
+for (char i=7; i > 0; i--) {
+
+    /* Deci Loop */
+    for (char j=100; j > 0; j--) {
+        PORTB ^= PORTB; // Reverse LED
+    }
+}
+```
+
+## BRSH
+
+Jump a un label si la valeur du drapeau C de la derniere instruction = 0
+
+> Soit si apres la derniere instruction le resultat depassait 255 alors on retourne a l'etiquette.
+
+```asm
+label:
+      ; instructions
+      BRSH label ; Branch (goto) to label if C = 0
+```
+
+**Exercice :**
+
+```asm
+            ldi r21, 0x00   ; r21 = 0x00
+            ldi r20, 0x79   ; r20 = 0x79
+            add r20, 0xF5   ; r20 += 0xF5
+            BRLO, carry     ; if carry go to add3
+
+nocarry:
+            add r20, 0xE2       ; if no carry r20 += 0xE2
+            BRLO, nocarry256    ; if carry go to carry256
+
+nocarry256:
+            ldi r21, 0x01   ; set the carry 256
+            jmp, end        ; end of program
+
+carry:       
+            ldi r21, 0x01   ; set the carry 256
+            add r20, 0xE2   ; r20 += 0xE2
+            BRLO, carry512  ; if carry go to carry512
+            jmp, end        ; if not end of program
+
+carry512:
+            ldi r21, 0x02   ; set the carry 512
+
+end:
+```
+
+**Correction :**
+
+```asm
+            ldi r20, 0x79   ; init r20 = 0x79
+            ldi r21, 0x00   ; init r21 = 0
+
+            ldi r22, 0xF5   ; init r22 = 0xF5
+            ldi r23, 0xE2   ; init r23 = 0xE2
+
+            add r20, r22    ; 0x79 + 0xF5 = 0x16E
+            BRSH, nocarry   ; if no carry go to nocarry
+            inc r21         ; if carry, increment r21 (+256)
+
+nocarry:
+            add r20, r23    ; 0x16E + 0xE2
+            BRSH, nocarry2  ; if no carry go to nocarry2
+            inc, r21        ; if carry, increment r21 (+512)
+
+nocarry2:
+            ; end of program
+```
+
+**Equivalence en C :**
+
+```c
+char valueLow  = 0x79;  // Put 0x55 in valueLow
+char valueHigh = 0x79;  // Put 0x00 in valueHigh
+
+char value2 = 0XF5; // Init value2 = 0xF5
+char value3 = 0XE2; // Init value3 = 0xE2
+
+/* Add Value 2 */
+if ((valueLow + value2) < 256) {    // If no carry
+    valueLow += value2;             // 0x79 + 0xF5 = 0x16E
+} else {                            // If carry
+    valueLow += value2;             // 0x79 + 0xF5 = 0x16E
+    valueHigh++;                    // Increment Value High (+256)
+}
+
+/* Add Value 3 */
+if ((valueLow + value3) < 512) {    // If no carry
+    valueLow += value3;             // 0x16E + 0xE2
+} else {                            // If carry
+    valueLow += value3;             // 0x16E + 0xE2
+    valueHigh++;                    // Increment Value High (+512)
+}
+```
 
