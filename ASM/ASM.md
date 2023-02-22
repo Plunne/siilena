@@ -12,23 +12,17 @@ Formateur : Paul-Ernest MARTIN
   - [TABLE DES MATIERES](#table-des-matieres)
 - [RAM](#ram)
   - [SRAM](#sram)
-    - [Pins d'une SRAM](#pins-dune-sram)
   - [Calculs](#calculs)
-    - [Calcul pins d'adresses](#calcul-pins-dadresses)
 - [pins](#pins)
-    - [Calcul bits de donnees](#calcul-bits-de-donnees)
 - [data](#data)
-    - [Calcul des emplacements memoire](#calcul-des-emplacements-memoire)
   - [Etapes de communication avec la RAM](#etapes-de-communication-avec-la-ram)
-    - [Ecriture](#ecriture)
-    - [Lecture](#lecture)
   - [DRAM](#dram)
-    - [Pins propre a la DRAM](#pins-propre-a-la-dram)
 - [BUS](#bus)
 - [CPU](#cpu)
   - [ALU - Arithmetiaue Logic Unit](#alu---arithmetiaue-logic-unit)
   - [FLAG](#flag)
-  - [Registres](#registres)
+  - [Registre d'instructions](#registre-dinstructions)
+  - [Program Counter (PC)](#program-counter-pc)
   - [Etapes](#etapes)
 - [LES REGISTRES GENERAUX](#les-registres-generaux)
   - [General purpose registers](#general-purpose-registers)
@@ -64,10 +58,15 @@ Formateur : Paul-Ernest MARTIN
 - [RISC VS CISC](#risc-vs-cisc)
   - [RISC](#risc)
   - [CISC](#cisc)
-- [BRANCH, CALL et Stack pointer](#branch-call-et-stack-pointer)
+- [BRANCH](#branch)
   - [BNRE](#bnre)
   - [BRSH](#brsh)
-- [POINTEURS](#pointeurs)
+- [LA PILE (STACK)](#la-pile-stack)
+  - [PUSH](#push)
+  - [POP](#pop)
+- [CALL \& RET](#call--ret)
+  - [CALL](#call)
+  - [RET](#ret)
 
 # RAM
 
@@ -266,25 +265,23 @@ Se charge uniquement des fonctions arithmetiques et logiques.
 
 ## FLAG
 
-Indique se qu'il se passe pendant une operation.
+Indique ce qu'il se passe pendant une operation.
 
 Suivant l'operation, il y a un flag, par exemple pour les retenues mais pas que.
 
-## Registres
+## Registre d'instructions
 
-Memoire.
+Lit le programme pour le decouper en petites actions.
 
-Registre d'instructions : lit le programme pour le decouper en petites actions.
+## Program Counter (PC)
 
-Program counter : Compteur qui sait a quelle adresse l'instruction ou l'on est se situe pour savoir quelle instruction on fait ensuite.
-
-Registres : Stocke les donnees temporaires.
+Compteur qui sait a quelle adresse l'instruction se situe pour savoir quelle instruction faire par la suite.
 
 ## Etapes
 
 Le CPU :
 
-1. Connait l'adresse d'une instruction, place le program counter dans cette adresse d'instruction.
+1. Connait l'adresse d'une instruction, place le Program Counter a cette adresse.
 
 2. Active la memoire (CS) et active un etat Read (OE) ou Write (WE) et recupere l'instruction via le bus de donnees.
 
@@ -292,7 +289,7 @@ Le CPU :
 
 4. Execute l'instruction
 
-5. Incrementation du program counter (Passe a l'instruction suivante)
+5. Incrementation du Program Counter (Passe a l'instruction suivante)
 
 # LES REGISTRES GENERAUX
 
@@ -583,7 +580,6 @@ Principe un peu similaire aux `#include` en C.
 
 # EN LANGAGE MACHINE
 
-
 ## LDI
 
 ```asm
@@ -614,7 +610,7 @@ Pour l'instruction `LDI r16, 0x56`
 add Rd, Rr
 ```
 
-r : valeur du registre r
+r : valeur du registre r  
 d : valeur du registre d
 
 = 0000 11rd dddd rrrr
@@ -625,7 +621,7 @@ Exemple :
 
 add r16, r17
 
-r16 : 16 = 1 0000
+r16 : 16 = 1 0000  
 r17 : 17 = 1 0001
 
 = `0000 11` - `bit 4 r16 = 1` - `bit 4 r17 = 1` - `bits[0;3] r16 = 0000` - `bits[0;3] r17 = 0001`
@@ -665,7 +661,7 @@ Il y a differentes tailles de registres d'instructions.
 > On prefere utiliser du RISC car les instructions CISC sont overkill et pas interessantes
 > pour leur cout etant donne qu'on comble les lacunes du RISC en ajoutant de la memoire peu chere.*
 
-# BRANCH, CALL et Stack pointer
+# BRANCH
 
 ## BNRE
 
@@ -688,7 +684,7 @@ again:
     BRNE again ; revient a l'etiquette again tant que r16 != 0
 ```
 
--> r16 sera decremente 0x50 fois.
+-> r16 sera decremente 0x05 fois.
 
 **Exercice :**
 
@@ -747,21 +743,21 @@ label:
             ldi r21, 0x00   ; r21 = 0x00
             ldi r20, 0x79   ; r20 = 0x79
             add r20, 0xF5   ; r20 += 0xF5
-            BRLO, carry     ; if carry go to add3
+            BRLO carry      ; if carry go to add3
 
 nocarry:
-            add r20, 0xE2       ; if no carry r20 += 0xE2
-            BRLO, nocarry256    ; if carry go to carry256
+            add r20, 0xE2   ; if no carry r20 += 0xE2
+            BRLO nocarry256 ; if carry go to carry256
 
 nocarry256:
             ldi r21, 0x01   ; set the carry 256
-            jmp, end        ; end of program
+            jmp end         ; end of program
 
 carry:       
             ldi r21, 0x01   ; set the carry 256
             add r20, 0xE2   ; r20 += 0xE2
-            BRLO, carry512  ; if carry go to carry512
-            jmp, end        ; if not end of program
+            BRLO carry512   ; if carry go to carry512
+            jmp end         ; if not end of program
 
 carry512:
             ldi r21, 0x02   ; set the carry 512
@@ -779,12 +775,12 @@ end:
             ldi r23, 0xE2   ; init r23 = 0xE2
 
             add r20, r22    ; 0x79 + 0xF5 = 0x16E
-            BRSH, nocarry   ; if no carry go to nocarry
+            BRSH nocarry    ; if no carry go to nocarry
             inc r21         ; if carry, increment r21 (+256)
 
 nocarry:
             add r20, r23    ; 0x16E + 0xE2
-            BRSH, nocarry2  ; if no carry go to nocarry2
+            BRSH nocarry2   ; if no carry go to nocarry2
             inc, r21        ; if carry, increment r21 (+512)
 
 nocarry2:
@@ -817,5 +813,112 @@ if ((valueLow + value3) < 512) {    // If no carry
 }
 ```
 
-# POINTEURS
+# LA PILE (STACK)
+
+- Stack Segment (SS) : Section de la RAM (Regitre) permettant de stocker temporairement les informations par le CPU.
+- Stack Pointer (SP) : Pointeur qui permet de se deplacer d'adresse en adresse dans la stack.
+
+## PUSH
+
+Stocke la valeur du registre dans l'emplacement de la stack ou se situe le Stack Pointer et deplace le Stack Pointer vers l'emplacement memoire suivant.
+
+> *Les emplacements vont dans l'ordre decroissant des adresses, donc on decremente la valeur de l'adresse.*
+
+```asm
+push, Rd
+```
+
+**Exemple :**
+
+```asm
+ldi r16, 0xFF
+```
+
+**Avant push :**
+
+| SP | Adresse   | Valeur   | Description                          |
+|---:|:---------:|:--------:|:-------------------------------------|
+|    | 1400      | ?        |                                      |
+| >> | **1399**  | **?**    | **Stack Pointer a l'adresse 1399**   |
+|    | 1398      | vide     |                                      |
+|    | 1397      | vide     |                                      |
+|    | 1396      | ...      |                                      |
+
+**Apres push :**
+
+| SP | Adresse   | Valeur   | Description                                          |
+|---:|:---------:|:--------:|:-----------------------------------------------------|
+|    | 1400      | ?        |                                                      |
+|    | 1399      | 0xFF     | *La valeur de r16 est stockee a l'emplacement 1399*  |
+| >> | **1398**  | **vide** | **Stack Pointer deplace a l'adresse 1398**           |
+|    | 1397      | vide     |                                                      |
+|    | 1396      | ...      |                                                      |
+
+## POP
+
+Vide/Libere l'emplacement RAM de sa valeur, decremente l'adresse du Stack Pointer
+puis ecrase la valeur a cette adresse.
+
+```asm
+pop, Rd
+```
+
+**Exemple :**
+
+```asm
+ldi r16, 0xFF
+push, r16
+pop, r16
+```
+
+**Apres push et avant pop :**
+
+| SP | Adresse   | Valeur   | Description                                                        |
+|---:|:---------:|:--------:|:-------------------------------------------------------------------|
+|    | 1400      | ?        |                                                                    |
+|    | 1399      | 0xFF     | *La valeur du r16 est stockee a l'emplacement 1399 suite au push*  |
+| >> | **1398**  | **vide** | **Stack Pointer a l'adresse 1398 suite au push**                   |
+|    | 1397      | vide     |                                                                    |
+|    | 1396      | ...      |                                                                    |
+
+**Apres pop :**
+
+| SP | Adresse   | Valeur   | Description                                                            |
+|---:|:---------:|:--------:|:-----------------------------------------------------------------------|
+|    | 1400      | ?        |                                                                        |
+| >> | **1399**  | **vide** | **Stack Pointer apres pop, ecrasement de la valeur a l'adresse 1399**  |
+|    | 1398      | vide     |                                                                        |
+|    | 1397      | vide     |                                                                        |
+|    | 1396      | ...      |                                                                        |
+
+> **IMPORTANT!**
+>
+> Les valeurs contenus dans les registres CPU (r0-31) ne sont pas touchees,
+> seule la valeur dans le SS ayant ete stockee dernierement est ecrasee suite au pop.
+
+# CALL & RET
+
+Meme mecanique que les fonctions.
+
+## CALL
+
+- Sauvegarde l'adresse suivante du Program Counter dans la RAM (a l'endroit du Stack Pointer) afin de revenir directement a l'instruction suivante apres le RET a la fin du CALL.
+- Puis se deplace a une etiquette.
+
+```asm
+CALL label
+```
+
+## RET
+
+Apres avoir effectue les instructions de l'etiquette appelee par CALL :
+
+- Retourne a l'adresse du Program Counter sauvegardee precedement dans le Stack Segment.
+- Puis vide l'endroit ou elle etait stockee.
+
+> *Donc continue le programme suite a notre CALL tout comme une fonction en C apres un return.*
+
+```asm
+RET
+```
 
