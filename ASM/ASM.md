@@ -13,8 +13,6 @@ Formateur : Paul-Ernest MARTIN
 - [RAM](#ram)
   - [SRAM](#sram)
   - [Calculs](#calculs)
-- [pins](#pins)
-- [data](#data)
   - [Etapes de communication avec la RAM](#etapes-de-communication-avec-la-ram)
   - [DRAM](#dram)
 - [BUS](#bus)
@@ -98,9 +96,7 @@ data = bit de donnees
 ### Calcul pins d'adresses
 
 $$
-pins
-=
-\frac {ln(n)}{ln(2)}
+pins = \frac {ln(n)}{ln(2)}
 $$
 
 **Exemple :**
@@ -116,9 +112,7 @@ $$
 ### Calcul bits de donnees
 
 $$
-data
-=
-\frac{n}{2 ^ {pins}}
+data = \frac{n}{2 ^ {pins}}
 $$
 
 ### Calcul des emplacements memoire
