@@ -111,7 +111,7 @@ $$
 ### Calcul pins d'adresses
 
 $$
-pins = \frac {ln(n)}{ln(2)}
+pins = \frac{ln(n)}{ln(2)}
 $$
 
 **Exemple :**
