@@ -857,7 +857,8 @@ ldi r16, 0xFF
 ## POP
 
 Vide/Libere l'emplacement RAM de sa valeur, decremente l'adresse du Stack Pointer,
-ecrase la valeur a cette adresse et stocke cette valeur dans le registre CPU cible.
+stocke la valeur a cette adresse dans le registre CPU cible
+puis ecrase cette valeur de la pile.
 
 ```asm
 pop, Rd
