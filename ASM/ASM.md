@@ -883,13 +883,13 @@ pop, r16
 
 **Apres pop :**
 
-| SP | Adresse   | Valeur   | Description                                                                                 |
-|---:|:---------:|:--------:|:--------------------------------------------------------------------------------------------|
-|    | 1400      | ?        |                                                                                             |
-| >> | **1399**  | **vide** | **Stack Pointer apres pop, ecrasement de la valeur a l'adresse 1399 + stockage dans r16**   |
-|    | 1398      | vide     |                                                                                             |
-|    | 1397      | vide     |                                                                                             |
-|    | 1396      | ...      |                                                                                             |
+| SP | Adresse   | Valeur   | Description                                                                                    |
+|---:|:---------:|:--------:|:-----------------------------------------------------------------------------------------------|
+|    | 1400      | ?        |                                                                                                |
+| >> | **1399**  | **vide** | **Stack Pointer apres pop, stocke la valeur dans r16 puis ecrase la valeur a l'adresse 1399**  |
+|    | 1398      | vide     |                                                                                                |
+|    | 1397      | vide     |                                                                                                |
+|    | 1396      | ...      |                                                                                                |
 
 > **IMPORTANT!**
 >
