@@ -856,8 +856,8 @@ ldi r16, 0xFF
 
 ## POP
 
-Vide/Libere l'emplacement RAM de sa valeur, decremente l'adresse du Stack Pointer
-puis ecrase la valeur a cette adresse.
+Vide/Libere l'emplacement RAM de sa valeur, decremente l'adresse du Stack Pointer,
+ecrase la valeur a cette adresse et stocke cette valeur dans le registre CPU cible.
 
 ```asm
 pop, Rd
@@ -876,20 +876,20 @@ pop, r16
 | SP | Adresse   | Valeur   | Description                                                        |
 |---:|:---------:|:--------:|:-------------------------------------------------------------------|
 |    | 1400      | ?        |                                                                    |
-|    | 1399      | 0xFF     | *La valeur du r16 est stockee a l'emplacement 1399 suite au push*  |
+|    | 1399      | 0xFF     | *La valeur de r16 est stockee a l'emplacement 1399 suite au push*  |
 | >> | **1398**  | **vide** | **Stack Pointer a l'adresse 1398 suite au push**                   |
 |    | 1397      | vide     |                                                                    |
 |    | 1396      | ...      |                                                                    |
 
 **Apres pop :**
 
-| SP | Adresse   | Valeur   | Description                                                            |
-|---:|:---------:|:--------:|:-----------------------------------------------------------------------|
-|    | 1400      | ?        |                                                                        |
-| >> | **1399**  | **vide** | **Stack Pointer apres pop, ecrasement de la valeur a l'adresse 1399**  |
-|    | 1398      | vide     |                                                                        |
-|    | 1397      | vide     |                                                                        |
-|    | 1396      | ...      |                                                                        |
+| SP | Adresse   | Valeur   | Description                                                                                 |
+|---:|:---------:|:--------:|:--------------------------------------------------------------------------------------------|
+|    | 1400      | ?        |                                                                                             |
+| >> | **1399**  | **vide** | **Stack Pointer apres pop, ecrasement de la valeur a l'adresse 1399 + stockage dans r16**   |
+|    | 1398      | vide     |                                                                                             |
+|    | 1397      | vide     |                                                                                             |
+|    | 1396      | ...      |                                                                                             |
 
 > **IMPORTANT!**
 >
