@@ -93,6 +93,21 @@ pins = pins d'adresses
 
 data = bit de donnees
 
+b = bits de donnees
+
+
+### Calcul des bits de donnees
+
+$$
+b = 2^{pins} \times data
+$$
+
+### Calcul nombre d'emplacements
+
+$$
+n = \frac{b}{data}
+$$
+
 ### Calcul pins d'adresses
 
 $$
@@ -101,7 +116,7 @@ $$
 
 **Exemple :**
 
-> 16k emplacement * 4 data = 14 pins d'adresses
+> 16k emplacement * 4 data
 >
 > 16k = 2^14
 >
@@ -109,16 +124,10 @@ $$
 >
 > soit il y a 14 pins
 
-### Calcul bits de donnees
+### Calcul pins de donnees
 
 $$
-data = \frac{n}{2 ^ {pins}}
-$$
-
-### Calcul des emplacements memoire
-
-$$
-n = 2^{pins} \times data
+data = \frac{b}{2 ^ {pins}}
 $$
 
 ## Etapes de communication avec la RAM
