@@ -11,7 +11,14 @@ Formateur : Paul-Ernest MARTIN
 - [COURS - Le langage d'Assembleur](#cours---le-langage-dassembleur)
   - [TABLE DES MATIERES](#table-des-matieres)
 - [RAM](#ram)
-  - [Pins d'une SRAM](#pins-dune-sram)
+  - [SRAM](#sram)
+    - [Pins d'une SRAM](#pins-dune-sram)
+  - [Calculs](#calculs)
+    - [Calcul pins d'adresses](#calcul-pins-dadresses)
+- [pins](#pins)
+    - [Calcul bits de donnees](#calcul-bits-de-donnees)
+- [data](#data)
+    - [Calcul des emplacements memoire](#calcul-des-emplacements-memoire)
   - [Etapes de communication avec la RAM](#etapes-de-communication-avec-la-ram)
     - [Ecriture](#ecriture)
     - [Lecture](#lecture)
@@ -27,7 +34,8 @@ Formateur : Paul-Ernest MARTIN
   - [General purpose registers](#general-purpose-registers)
   - [IO Registers (SFRs)](#io-registers-sfrs)
   - [General purpose RAM](#general-purpose-ram)
-- [ASM](#asm)
+- [LABEL](#label)
+- [INSTRUCTIONS](#instructions)
   - [LDI](#ldi)
   - [ADD](#add)
   - [LDS](#lds)
@@ -44,20 +52,26 @@ Formateur : Paul-Ernest MARTIN
   - [Carry (C)](#carry-c)
   - [Half carry (H)](#half-carry-h)
   - [Zero Flag (Z)](#zero-flag-z)
+- [DIRECTIVES](#directives)
+  - [EQU](#equ)
+  - [INCLUDE](#include)
+- [EN LANGAGE MACHINE](#en-langage-machine)
+  - [LDI](#ldi-1)
+  - [ADD](#add-1)
+- [LITTLE/BIG ENDIAN](#littlebig-endian)
+  - [Little Endian](#little-endian)
+  - [Big Endian](#big-endian)
+- [RISC VS CISC](#risc-vs-cisc)
+  - [RISC](#risc)
+  - [CISC](#cisc)
+- [BRANCH, CALL et Stack pointer](#branch-call-et-stack-pointer)
+  - [BNRE](#bnre)
 
 # RAM
 
-**Exercice :**
+## SRAM
 
-> 16k emplacement * 4 data = 14 pins d'adresses
->
-> 16k = 2^14
->
-> exposant = 14
->
-> soit il y a 14 pins
-
-## Pins d'une SRAM
+### Pins d'une SRAM
 
 | Pin           | Fonction                                                            |
 |:-------------:|:--------------------------------------------------------------------|
@@ -70,6 +84,47 @@ Formateur : Paul-Ernest MARTIN
 | `OE`          | Output Enable (Activation Mode Lecture seule)                       |
 
 > *WE & OE ne peuvent etre actives en meme temps.*
+
+
+## Calculs
+
+n = nombre d'emplacement
+
+pins = pins d'adresses
+
+data = bit de donnees
+
+### Calcul pins d'adresses
+
+$$
+pins
+=
+\frac {ln(n)}{ln(2)}
+$$
+
+**Exemple :**
+
+> 16k emplacement * 4 data = 14 pins d'adresses
+>
+> 16k = 2^14
+>
+> exposant = 14
+>
+> soit il y a 14 pins
+
+### Calcul bits de donnees
+
+$$
+data
+=
+\frac{n}{2 ^ {pins}}
+$$
+
+### Calcul des emplacements memoire
+
+$$
+n = 2^{pins} \times data
+$$
 
 ## Etapes de communication avec la RAM
 
@@ -172,6 +227,8 @@ b) 256k 4dt DRAM
 > 
 > 18/2 + CAS + RAS = 9 + 1 + 1
 
+
+
 # BUS
 
 - Bus de controle : signal pour controler les peripheriques
@@ -249,7 +306,14 @@ Configurer les GPIO.
 
 Donnees temporaires de la RAM.
 
-# ASM
+# LABEL
+
+Les etiquettes font reference a une instruction afin de pouvoir revenir dessus a l'aide d'un jump (jmp).
+
+```asm
+label: ;instruction
+```
+# INSTRUCTIONS
 
 ## LDI
 
@@ -290,6 +354,12 @@ LDI R16, 0x25 ; Affecte le registre R16 avec la valeur 0x25
 LDI R17, 0x34 ; Affecte le registre R17 avec la valeur 0x34
 ADD R16, R17  ; Additionne la valeur du registre R17 dans le registre R16
 ```
+
+> *On peut aussi additionner directement une valeur.*
+>
+> ```asm
+> ADD Rd, 0x34 ; Additionne 0x34 au registre d
+> ```
 
 Equivalent en C (PSEUDO CODE! Contexte DIFFERENT!) :
 
@@ -394,9 +464,9 @@ com rd ; si rd = 0x55, rd = 0xAA (0101 -> 1010)
 Revenir/Aller a une etiquette.
 
 ```asm
-etiquette:
+label:
     ;instructions
-    jmp etiquette
+    jmp label
 ```
 
 Exercices :
@@ -436,8 +506,9 @@ Exercices :
 8.
     On met une valeur dans un registre du cpu avec une instruction pour la ram du coup pas bon car moins opti que OUT vu que OCRO est un registre IO.
 
-
 # FLAGS
+
+Registre d'etat (SREG : Status Register)
 
 ## Carry (C)
 
@@ -452,4 +523,168 @@ retenue entre bit 3 et bit 4. (nouveau demi-octet)
 1 quand resultat == 0
 0 quand resultat != 0
 
+3)
+9F
+61
+
+1001 1111
+0110 0001
+0000 0000
+CZH
+
+4)
+82
+22
+
+1000 0010
+0010 0010
+1000 0100
+Aucun
+
+5)
+67
+99
+
+0110 0111
+1001 1001
+0000 0000
+CZH
+
+# DIRECTIVES
+
+Les directive sont un peu similaires aux directives de pre-processeur en C
+a la difference que l'on communique avec l'assembleur et non pas le preprocesseur.
+
+## EQU
+
+Principe un peu similaire aux `#defines` en C.
+
+```asm
+.EQU COUNT=0x25
+ldi r21, COUNT
+```
+On peut aussi le faire avec des adresses :
+
+```asm
+ldi r16, 0x25
+.EQU COUNT=0x200
+sds COUNT, r16
+```
+
+## INCLUDE
+
+Principe un peu similaire aux `#include` en C.
+
+```asm
+.INCLUDE "M32DEF.inc"
+```
+
+# EN LANGAGE MACHINE
+
+
+## LDI
+
+```asm
+LDI rd, 0xXY
+```
+
+`LDI` - `Valeur de X` - `Id du Registre` - `Valeur de Y`
+
+> LDI en binaire vaut `1110`
+
+= 1110 XXXX dddd YYYY
+
+**Exemple :**
+
+Pour l'instruction `LDI r16, 0x56`
+
+> Le registre 16 est a l'indice 0 car les registres 0 a 15 sont reserves.
+
+`LDI` - `0x5` - `0` - `0x6`
+
+= 1110 - 0101 - 0000 - 0110
+
+= 0xE506
+
+## ADD
+
+```asm
+add Rd, Rr
+```
+
+r : valeur du registre r
+d : valeur du registre d
+
+= 0000 11rd dddd rrrr
+
+Pour add, tous les registres 0 a 31 sont admis.
+
+Exemple :
+
+add r16, r17
+
+r16 : 16 = 1 0000
+r17 : 17 = 1 0001
+
+= `0000 11` - `bit 4 r16 = 1` - `bit 4 r17 = 1` - `bits[0;3] r16 = 0000` - `bits[0;3] r17 = 0001`
+
+= 0000 1111 0000 0001
+
+# LITTLE/BIG ENDIAN
+
+## Little Endian
+
+Les valeurs les plus hautes sont stockees a l'adresse la plus haute.
+
+## Big Endian
+
+Les valeurs les plus hautes sont stockees a l'adresse la plus basse.
+
+# RISC VS CISC
+
+- CISC : Complex Instruction Set Computer
+- RISC : Reduced Instruction Set Computer
+
+## RISC
+
+- Instrctions <= 3Bytes
+- Grand nombre de registres
+- Prend moins de temps car les instructions sont plus courtes donc leur traduction est plus rapide.
+
+Avantages en depend du poids du programme dans la memoire car la memoire etant moins chere, autant augmenter la memoire.
+
+## CISC
+
+Le CISC est plus cher car il effectue des instructions plus complexes donc une architecture processeur plus complexe.
+
+Il y a differentes tailles de registres d'instructions.
+
+> *Etant donne qu'en embarque on souhaite effectuer des instructions simples,
+> On prefere utiliser du RISC car les instructions CISC sont overkill et pas interessantes
+> pour leur cout etant donne qu'on comble les lacunes du RISC en ajoutant de la memoire peu chere.*
+
+# BRANCH, CALL et Stack pointer
+
+## BNRE
+
+Jump a un label si la valeur du drapeau Z de la derniere instruction = 0
+
+> Soit si apres la derniere instruction le resultat valait 0 alors on retourne a l'etiquette.
+
+```asm
+label:
+      ; instructions
+      BRNE label ; Branch (goto) to label if Z = 0
+```
+
+**Exemple :**
+
+```asm
+    ldi r16, 0x05 ; mets 0x05 dans Rd
+again:
+    dec r16
+    BRNE again ; revient a l'etiquette again tant que r16 != 0
+```
+
+-> r16 sera decremente 0x50 fois.
 
