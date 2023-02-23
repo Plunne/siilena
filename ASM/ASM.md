@@ -87,31 +87,29 @@ Formateur : Paul-Ernest MARTIN
 
 ## Calculs
 
-n = nombre d'emplacement
-
-pins = pins d'adresses
-
-data = bit de donnees
-
-b = bits de donnees
-
+| Nom        | Definition                     |
+|:-----------|--------------------------------|
+| `nbReg`    | nombre d'emplacements memoire  |
+| `pinsAdd`  | pins d'adresses                |
+| `pinsData` | pins de donnees                |
+| `nbBits`   | bits de donnees                |
 
 ### Calcul des bits de donnees
 
 $$
-b = 2^{pins} \times data
+nbBits = 2^{pinsAdd} \times pinsData
 $$
 
 ### Calcul nombre d'emplacements
 
 $$
-n = \frac{b}{data}
+n = \frac{nbBits}{pinsData}
 $$
 
 ### Calcul pins d'adresses
 
 $$
-pins = \frac{ln(n)}{ln(2)}
+pinsAdd = \frac{ln(nbReg)}{ln(2)}
 $$
 
 **Exemple :**
@@ -127,7 +125,7 @@ $$
 ### Calcul pins de donnees
 
 $$
-data = \frac{b}{2 ^ {pins}}
+nbData = \frac{nbBits}{2 ^ {pinsAdd}}
 $$
 
 ## Etapes de communication avec la RAM
@@ -282,7 +280,7 @@ Compteur qui sait a quelle adresse l'instruction se situe pour savoir quelle ins
 
 ## Etapes
 
-Le CPU :
+**Le CPU :**
 
 1. Connait l'adresse d'une instruction, place le Program Counter a cette adresse.
 
@@ -471,42 +469,43 @@ label:
     jmp label
 ```
 
-Exercices :
+---
 
-1. V/F, Aucune valeur ne peut etre chargee directement dans la RAM.
-
-    Vrai, on ne peut pas car avec STS on passe par un registre.
-
-2.
-    ```asm
-    ldi r16, 0x95
-    out spl, r16
-    ```
-
-3.
-    ```asm
-    add r18, 0x02
-    ```
-
-4.
-    ```asm
-    ldi r16, 0x16
-    ldi r17, 0xCD
-    add r16, r17
-    sts 0x400, r16
-    ```
-
-5.
-    0xFF = 255
-
-6.
-    r16
-
-7.
-    Il ecrit la valeur de r23 dans le registre OCRO
-
-8.
-    On met une valeur dans un registre du cpu avec une instruction pour la ram du coup pas bon car moins opti que OUT vu que OCRO est un registre IO.
+> **Exercices :**
+> 
+> 1. V/F, Aucune valeur ne peut etre chargee directement dans la RAM.
+>
+>    Vrai, on ne peut pas car avec STS on passe par un registre.
+>
+> 2.
+>     ```asm
+>     ldi r16, 0x95
+>     ```
+> 
+> 3.
+>     ```asm
+>     add r18, 0x02
+>     ```
+> 
+> 4.
+>     ```asm
+>     ldi r16, 0x16
+>     ldi r17, 0xCD
+>     add r16, r17
+>     sts 0x400, r16
+>     ```
+> 
+> 5.
+>     0xFF = 255
+> 
+> 6.
+>     r16
+> 
+> 7.
+>     Il ecrit la valeur de r23 dans le registre OCRO
+> 
+> 8.
+>     On met une valeur dans un registre du cpu avec une instruction pour la ram du coup pas bon car moins opti que OUT vu que OCRO est un registre IO.
 
 # FLAGS
 
@@ -522,35 +521,39 @@ retenue entre bit 3 et bit 4. (nouveau demi-octet)
 
 ## Zero Flag (Z)
 
-1 quand resultat == 0
-0 quand resultat != 0
+- 1 quand resultat == 0
+- 0 quand resultat != 0
 
-3)
-9F
-61
+---
 
-1001 1111
-0110 0001
-0000 0000
-CZH
-
-4)
-82
-22
-
-1000 0010
-0010 0010
-1000 0100
-Aucun
-
-5)
-67
-99
-
-0110 0111
-1001 1001
-0000 0000
-CZH
+> **Exercice:**
+> 
+> 3)
+> 9F
+> 61
+> 
+> 1001 1111
+> 0110 0001
+> 0000 0000
+> CZH
+> 
+> 4)
+> 82
+> 22
+> 
+> 1000 0010
+> 0010 0010
+> 1000 0100
+> Aucun
+> 
+> 5)
+> 67
+> 99
+> 
+> 0110 0111
+> 1001 1001
+> 0000 0000
+> CZH
 
 # DIRECTIVES
 
@@ -610,26 +613,28 @@ Pour l'instruction `LDI r16, 0x56`
 ## ADD
 
 ```asm
-add Rd, Rr
+add Rx, Ry
 ```
 
-r : valeur du registre r  
-d : valeur du registre d
+x : numero du registre Rx  
+y : numero du registre Ry
 
-= 0000 11rd dddd rrrr
+| Valeur              | ADD     | bit 4 r | bit 4 d | bits 0:3 d | bits 0:3 r|
+|:-------------------:|:-------:|:-------:|:-------:|:----------:|:---------:|
+| 0000 11xy xxxx yyyy | 0000 11 | x       | y       | xxxx       | yyyy      |
 
 Pour add, tous les registres 0 a 31 sont admis.
 
-Exemple :
+**Exemple :**
 
 add r16, r17
 
 r16 : 16 = 1 0000  
 r17 : 17 = 1 0001
 
-= `0000 11` - `bit 4 r16 = 1` - `bit 4 r17 = 1` - `bits[0;3] r16 = 0000` - `bits[0;3] r17 = 0001`
-
-= 0000 1111 0000 0001
+| Valeur              | ADD     | bit 4 16 | bit 4 17 | bits 0:3 16 | bits 0:3 17 |
+|:-------------------:|:-------:|:--------:|:--------:|:-----------:|:-----------:|
+| 0000 1111 0000 0001 | 0000 11 | 1        | 1        | 0000        | 0001        |
 
 # LITTLE/BIG ENDIAN
 
