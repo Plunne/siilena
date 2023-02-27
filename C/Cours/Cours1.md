@@ -1435,7 +1435,7 @@ Forcer des bits a 0.
 
 ```c
 REGISTRE &= ~(1 << rang_du_bit); // 1 seul bit
-REGISTRE &= ~(1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
+REGISTRE &= ~((1 << rang_du_bit_A) | (1 << rang_du_bit_B)); // Plusieurs bits
 ```
 
 ## Toggle Bit
