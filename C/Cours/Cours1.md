@@ -170,7 +170,7 @@ add_executable(HelloWorld HelloWorld.c)
 > - Choisit la version de CMake
 > - Choisit le nom du projet
 > - Choisit le langage
-> - Choisit le nom de l'executable et le fichier source
+> - Cree l'executable en parametrant son nom et ses fichiers sources
 
 **Version Avancee :**
 
@@ -189,19 +189,19 @@ set (SOURCES src/source1.c src/source2.c)
 set (HEADERS includes/header1.c includes/header2.c)
 
 # Create my program with some source files
-add_executable(prog main.c ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} main.c ${SOURCES} ${HEADERS})
 
 # Add headers to executable
-target_include_directories (prog PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 ```
 
 > Le code ci-dessus :
 > - Choisit la version de CMake
 > - Choisit le nom du projet
 > - Choisit le langage
-> - Cree une variable regroupant des fichiers source
+> - Cree une variable regroupant des fichiers sources
 > - Cree une variable regroupant des fichiers headers
-> - Choisit le nom de l'executable et les fichier source
+> - Cree l'executable en parametrant son nom et ses fichiers source *(Ici, le nom de l'executable prend le nom du projet)*
 > - Informe l'executable du chemin des fichiers headers pour qu'il puisse y acceder
 
 
@@ -220,16 +220,15 @@ set(CMAKE_C_STANDARD 11)
 
 # MyLibrary Files
 set(SOURCES source.c)
-set(HEADERS source.h MyLibrary.h)
 
 # Create MyLibrary
 add_library(MyLibraryName MyLibrary.c)
 
 # Create my program with some source files
-add_executable(prog main.c ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} main.c ${SOURCES})
 
 # Link object libraries to executable
-target_link_libraries(prog PUBLIC MyLibraryName)
+target_link_libraries(${PROJECT_NAME} PUBLIC MyLibraryName)
 ```
 
 > Le code ci-dessus :
@@ -237,9 +236,63 @@ target_link_libraries(prog PUBLIC MyLibraryName)
 > - Choisit le nom du projet
 > - Choisit le langage
 > - Cree une variable regroupant des fichiers sources *(Qui ne seront pas dans une lib)*
-> - Cree une variable regroupant des fichiers en-tete
-> - Cree une bibliotheque objet avec ses fichiers source
-> - Choisit le nom de l'executable et ses fichiers source
+> - Cree une bibliotheque objet avec ses fichiers sources
+> - Cree l'executable en parametrant son nom et ses fichiers sources *(Ici, le nom de l'executable prend le nom du projet)*
+> - Lit la bibliotheque objet a l'executable pour qu'il puisse acceder a ses fonctions. [Voir Compilation.md](https://github.com/Plunne/siilena/blob/main/C/Cours/Compilation.md#edition-de-liens)
+
+**Avec arborescence complexe & bibliotheque :**
+
+```
+./
+|
+|---- includes/
+|        |
+|        |---- header.h
+|
+|---- src/
+|      |
+|      |---- source1.c
+|      |---- source2.c
+|
+|---- CMakeLists.txt
+|---- main.c
+```
+
+``` cmake
+# CMake Version
+cmake_minimum_required(VERSION 3.14)
+
+# Project Name
+project(MyProjectName)
+
+# Language Version
+set(CMAKE_C_STANDARD 11)
+
+# MyLibrary Files
+set(HEADERS includes)
+set(SOURCES src/source1.c src/source2.c)
+
+# Create MyLibrary
+add_library(MyLibraryName ${SOURCES})
+
+# Create my program with some source files
+add_executable(${PROJECT_NAME} main.c)
+
+# Include directories
+include_directories(${PROJECT_NAME} PUBLIC ${HEADERS})
+
+# Link object libraries to executable
+target_link_libraries(${PROJECT_NAME} PUBLIC MyLibraryName)
+```
+
+> Le code ci-dessus :
+> - Choisit la version de CMake
+> - Choisit le nom du projet
+> - Choisit le langage
+> - Cree une variable regroupant les repertoires de fichiers en-tete
+> - Cree une variable regroupant des fichiers sources *(Ici, ils seront dans une lib)*
+> - Cree une bibliotheque objet avec ses fichiers sources *(Ici, tous nos fichiers source)*
+> - Cree l'executable en parametrant son nom et ses fichiers sources *(Ici, le nom de l'executable prend le nom du projet)*
 > - Lit la bibliotheque objet a l'executable pour qu'il puisse acceder a ses fonctions. [Voir Compilation.md](https://github.com/Plunne/siilena/blob/main/C/Cours/Compilation.md#edition-de-liens)
 
 ### Dossier build
