@@ -43,7 +43,7 @@ Depot regroupant toutes mes notes concernant la formation.
 - [Calculatrice](https://github.com/Plunne/siilena/tree/main/C/Exo/Calculatrice) (Lena)
 - [Compilation](https://github.com/Plunne/siilena/tree/main/C/Exo/Compilation) (Paul-Ernest MARTIN)
 - [Extern](https://github.com/Plunne/siilena/tree/main/C/Exo/Extern) (Lena)
-- [HelloWorld](https://github.com/Plunne/siilena/tree/main/C/Exo/Extern) (Lena/Paul-Ernest, premiers cours/exos)
+- [HelloWorld](https://github.com/Plunne/siilena/tree/main/C/Exo/HelloWorld) (Lena/Paul-Ernest, premiers cours/exos)
 - [Miniprojet](https://github.com/Plunne/siilena/tree/main/C/Exo/Miniprojet) (Lena)
 
 ## Questionnaires
