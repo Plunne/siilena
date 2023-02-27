@@ -9,7 +9,7 @@ void printResult(long x) {
 
     if(!f) return;
 
-    fprintf(f, "\nLe carre de %d est %ld .\n", x, sqr(x));
+    fprintf(f, "\nResultat : %d .\n", x);
 
     fclose(f);
 

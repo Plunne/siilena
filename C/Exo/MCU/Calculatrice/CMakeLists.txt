@@ -3,12 +3,14 @@ project (Calculatrice)
 
 set(CMAKE_C_STANDARD 11)
 
-set(SOURCES calc.c)
-set(HEADERS calc.h io.h)
+set(HEADERS includes)
 
-add_library(Console console.c)
-add_library(File file.c)
+add_library(Arithmetic src/arithmetic.c)
+add_library(Console src/console.c)
+add_library(File src/file.c)
 
-add_executable (Calculatrice main.c ${SOURCES} ${HEADERS})
+add_executable (${PROJECT_NAME} main.c)
 
-target_link_libraries(Calculatrice PUBLIC File)
+include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/${HEADERS})
+
+target_link_libraries(${PROJECT_NAME} PUBLIC Console Arithmetic)
