@@ -11,6 +11,7 @@ title: COURS 1 - Les bases du langage C
   - [Include](#include)
   - [Compilation Conditionnelle](#compilation-conditionnelle)
   - [Inclusion multiple](#inclusion-multiple)
+  - [\_\_DATE\_\_ \& \_\_LINE\_\_](#__date__--__line__)
 - [CMAKE](#cmake)
   - [Edition de Liens](#edition-de-liens)
 
@@ -41,8 +42,11 @@ Avec la directive `#define` il est possible de faire des instructions.
 
 **Exemple :**
 ```c
-#define CARRE(x) ((x) * (x))
+#define CARRE(x) (x) * (x)
 ```
+
+> **INCONVENIANTS!**  
+> Cependant cela prend plus de place en memoire (ROM) car cela execute plus d'instruction.
 
 ## Include
 
@@ -115,6 +119,12 @@ Par exemple pour l'OS. *(Ces includes sont fictifs pour l'exemple)*
 
 /* Contenu Header.h */
 ```
+
+## \_\_DATE\_\_ & \_\_LINE\_\_
+
+- **\_\_DATE\_\_** : Valeur de la date au moment de la compilation.
+
+- **\_\_LINE\_\_**  :Valeur de la ligne de code au moment de la compilation.
 
 # CMAKE
 
