@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "io.h"
+#include "calcio.h"
 #include "arithmetic.h"
 
 int main(int argc, char const *argv[])
