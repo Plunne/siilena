@@ -71,4 +71,4 @@ Depot regroupant toutes mes notes concernant la formation.
 
 # XML
 
-- [XML](https://github.com/Plunne/siilena/blob/main/XML) (Matthias COLIN)
+- [XML](https://github.com/Plunne/siilena/blob/main/Xml) (Matthias COLIN)
