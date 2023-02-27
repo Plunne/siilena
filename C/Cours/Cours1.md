@@ -87,6 +87,9 @@ Formateur : Paul-Ernest MARTIN
   - [Variables Locales](#variables-locales)
   - [Variables Externes](#variables-externes)
 - [VARIABLES STATIQUES](#variables-statiques)
+- [VARIABLES EXTERNES](#variables-externes-1)
+  - [DECLARATION](#declaration-5)
+  - [ACCES](#acces)
 - [ALLOCATION DYNAMIQUE](#allocation-dynamique)
   - [Malloc](#malloc)
   - [Free](#free)
@@ -217,7 +220,7 @@ set(CMAKE_C_STANDARD 11)
 
 # MyLibrary Files
 set(SOURCES source.c)
-set(HEADERS  source.h MyLibrary.h)
+set(HEADERS source.h MyLibrary.h)
 
 # Create MyLibrary
 add_library(MyLibraryName MyLibrary.c)
@@ -1315,6 +1318,30 @@ Ce mot-cle permet a une variable locale de :
 ``` c
 static type variable = valeur;
 ```
+
+# VARIABLES EXTERNES
+
+Variable declaree dans un fichier externe.
+
+## DECLARATION
+
+Une variable exerne est declaree normalement dans un autre fichier.
+
+```c
+// fichier_externe.c
+type variable = valeur;
+```
+
+## ACCES
+
+Pour acceder a une variable externe, il suffit d'ajouter le mot cle `extern` .
+
+```c
+// fichier_courant.c
+extern type variable;
+```
+
+> *On ne fait que l'importer, on ne la redeclare pas.*
 
 # ALLOCATION DYNAMIQUE
 
