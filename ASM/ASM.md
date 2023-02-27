@@ -30,6 +30,7 @@ Formateur : Paul-Ernest MARTIN
 - [INSTRUCTIONS](#instructions)
   - [LDI](#ldi)
   - [ADD](#add)
+  - [ADC](#adc)
   - [LDS](#lds)
   - [STS](#sts)
   - [IN](#in)
@@ -38,6 +39,7 @@ Formateur : Paul-Ernest MARTIN
   - [INC](#inc)
   - [DEC](#dec)
   - [SUB](#sub)
+  - [SBC](#sbc)
   - [COM](#com)
   - [JMP](#jmp)
 - [FLAGS](#flags)
@@ -64,7 +66,18 @@ Formateur : Paul-Ernest MARTIN
   - [POP](#pop)
 - [CALL \& RET](#call--ret)
   - [CALL](#call)
+  - [RCALL](#rcall)
   - [RET](#ret)
+  - [HARVARD VS VON NEUMANN](#harvard-vs-von-neumann)
+- [DELAY](#delay)
+  - [Cycle Machine](#cycle-machine)
+  - [Calcul temps des instructions](#calcul-temps-des-instructions)
+- [SIGNE](#signe)
+- [SHIFT](#shift)
+- [Decalage a droite](#decalage-a-droite)
+- [Decalage a gauche](#decalage-a-gauche)
+- [STM32 REGISTERS](#stm32-registers)
+  - [INPUT/OUTPUTS](#inputoutputs)
 
 # RAM
 
@@ -371,6 +384,30 @@ R16 += R17; // Additionne la valeur de R17 dans R16
 
 La valeur dans R16 est 0x25 + 0x34 = 0x59
 
+## ADC
+
+Add with carry. ([Voir partie FLAGS](#carry-c))
+
+Fait une addition puis additionne la valeur carry.
+
+```asm
+adc Rx, Ry
+```
+
+**Exemple :**
+
+```asm
+ldi r16, 0xE7
+ldi r17, 0x8D
+ldi r18, 0x3C
+ldi r19, 0x3B
+
+add r16, r17 ; 0xE7 + 0x8D = 0x74
+adc r18, r19 ; 0x3C + 0x3B + C = 0x77 + 1 = 0x78
+```
+
+> Valeur contenue dans `r16` et `r18` : 0x74 + 0x77 = `0xEC`
+
 ## LDS
 
 Load Direct from data Space
@@ -450,6 +487,32 @@ Soustraction (abstraction d'addition complement a 1)
 ```asm
 sub rd, rr ; rd -= rr
 ```
+
+## SBC
+
+Sub without carry. ([Voir partie FLAGS](#carry-c))
+
+Fait une soustraction puis soustrait la valeur du carry au resultat.
+
+```asm
+sbc Rx, Ry
+```
+
+**Exemple :**
+
+0x0E1F - 0x0D2F dans r2
+
+```asm
+ldi r1, 0x1F
+ldi r2, 0x0D
+ldi r3, 0x2F
+ldi r4, 0x0E
+
+sub r1, r3 ; soustraction des LSB avec retenue (0x1F - 0x0D)
+sbc r2, r4 ; soustraction des MSB moins la valeur du carry (0x0D - 0x0E - C)
+```
+
+> Valeur contenue dans `r1` et `r2` :
 
 ## COM
 
@@ -635,6 +698,7 @@ r17 : 17 = 1 0001
 | Valeur              | ADD     | bit 4 16 | bit 4 17 | bits 0:3 16 | bits 0:3 17 |
 |:-------------------:|:-------:|:--------:|:--------:|:-----------:|:-----------:|
 | 0000 1111 0000 0001 | 0000 11 | 1        | 1        | 0000        | 0001        |
+
 
 # LITTLE/BIG ENDIAN
 
@@ -826,6 +890,8 @@ if ((valueLow + value3) < 512) {    // If no carry
 - Stack Segment (SS) : Section de la RAM (Regitre) permettant de stocker temporairement les informations par le CPU.
 - Stack Pointer (SP) : Pointeur qui permet de se deplacer d'adresse en adresse dans la stack.
 
+> La stack fait la taille de la RAM moins les Registres de fonctionnalites propre au MCU. 
+
 ## PUSH
 
 Stocke la valeur du registre dans l'emplacement de la stack ou se situe le Stack Pointer et deplace le Stack Pointer vers l'emplacement memoire suivant.
@@ -918,11 +984,19 @@ Meme mecanique que les fonctions.
 CALL label
 ```
 
+> L'instruction CALL prend 4 octets.
+
+## RCALL
+
+Au lieu de sauvegarder une adresse absolue on sauvegarde des adresses allant de -2048 a 2047 par rapport au SP.
+
+Grace a cela l'instruction RCALL ne prend que 2 octets.
+
 ## RET
 
 Apres avoir effectue les instructions de l'etiquette appelee par CALL :
 
-- Retourne a l'adresse du Program Counter sauvegardee precedement dans le Stack Segment.
+- Retourne a l'adresse du Program Counter sauvegardee precedement dans le Stack Segment *(Le PC prend donc cette valeur)* .
 - Puis vide l'endroit ou elle etait stockee.
 
 > *Donc continue le programme suite a notre CALL tout comme une fonction en C apres un return.*
@@ -930,4 +1004,99 @@ Apres avoir effectue les instructions de l'etiquette appelee par CALL :
 ```asm
 RET
 ```
+
+## HARVARD VS VON NEUMANN
+
+- Harvard : Commence le fetch suivant apres le fetch.
+- Von Neumann : Attend la fin de l'execution pour commencer le fetch suivant.
+
+- Fetch : transformation de l'instruction en machine
+- Exec : execution du code machine
+
+| Nom         | t1        | t2        | t3        | t4       | t5        |
+|:------------|:---------:|:---------:|:---------:|:--------:|:---------:|
+| Von Neumann | `fetch 1` | `exec 1`  | `fetch 2` | `exec 2` | `fetch 3` |
+|-            |-          |-          |-          |-         |-          |
+| Harvard     | `fetch 1` | `exec 1`  |           |          |           |
+|             |           | `fetch 2` | `exec 2`  |          |           |
+|             |           |           | `fetch 3` | `exec 3` |           |
+
+# DELAY
+
+Instruction Cycle : temps pour faire une instructions
+
+> *Le temps depend de la frequence de l'oscilateur.*
+
+## Cycle Machine
+
+$$
+cycle (s) = \frac{1}{frequence (Hz)}
+$$
+
+## Calcul temps des instructions
+
+- $T_{all}$ : Temps total des instructions
+- $T_{instruction}$ : Temps de chaque instruction
+
+$$
+T_{all} = ( \sum{T_{instruction}} ) \times cycle
+$$
+
+# SIGNE
+
+V : Overflow Flag pour nombre positif (carry entre Bit 6 -> Bit 7)
+N : Negative Flag pour nombre negatif (si Bit 7 = 1 (bit de signe), alors N=1)
+
+V = 1 si D6=1 & N=0 soit si D6=1 & D7=0
+N = 1 si D7=1 & V=0 soit si D7=1 & D6=0
+
+# SHIFT
+
+Decalage de bits.
+
+Operteurs qui decalent les bits d'un nombre de rang vers la gauche ou la droite.
+
+# Decalage a droite
+
+Operateur : `>>`
+
+0000 0010 >> 1  
+0000 0001
+
+```asm
+ldi r16, 0x02
+lsr r16, 0x01
+```
+
+> r16 = `0x01`
+
+# Decalage a gauche
+
+Operateur : `<<`
+
+0000 0010 << 1  
+0000 0100
+
+```asm
+ldi r16, 0x02
+lsl r16, 0x01
+```
+
+> r16 = `0x04`
+
+
+# STM32 REGISTERS
+
+## INPUT/OUTPUTS
+
+### MODER (Mode Registers)
+
+Configurer le mode des entrees/sorties
+
+| rw    | Parametre           |
+|:-----:|:--------------------|
+| `00`  | Input               |
+| `01`  | Output              |
+| `10`  | Alternate function  |
+| `11`  | Analog Input        |
 

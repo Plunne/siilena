@@ -12,20 +12,9 @@ Formateur : Paul-Ernest MARTIN
   - [TABLE DES MATIERES](#table-des-matieres)
 - [ENVIRONEMENT DE TRAVAIL](#environement-de-travail)
   - [INSTALLATION DES OUTILS](#installation-des-outils)
-    - [CMake](#cmake)
-    - [Visual Studio Community](#visual-studio-community)
   - [CL (equivalent de make sur windows)](#cl-equivalent-de-make-sur-windows)
-    - [Compilation](#compilation)
-    - [Execution](#execution)
-    - [Recompiler](#recompiler)
   - [CMAKE](#cmake-1)
-    - [CMakeLists.txt](#cmakeliststxt)
-    - [Dossier build](#dossier-build)
-    - [Generer le projet](#generer-le-projet)
-    - [Ouvrir le projet dans Visual Studio](#ouvrir-le-projet-dans-visual-studio)
   - [CMake CLI](#cmake-cli)
-    - [Generer le projet](#generer-le-projet-1)
-    - [Compiler le projet](#compiler-le-projet)
 - [ETAPES DE LA REALISATION D'UN PROGRAMME](#etapes-de-la-realisation-dun-programme)
   - [Developpement](#developpement)
   - [Compilation](#compilation-1)
@@ -50,31 +39,13 @@ Formateur : Paul-Ernest MARTIN
   - [Regles de nommage](#regles-de-nommage)
   - [Syntaxe](#syntaxe)
   - [Les Types](#les-types)
-    - [Le signe](#le-signe)
-      - [Types signed](#types-signed)
-      - [Types unsigned](#types-unsigned)
-    - [Types flottants](#types-flottants)
   - [Bases numeriques](#bases-numeriques)
   - [Constantes](#constantes)
-    - [Constantes symboliques](#constantes-symboliques)
-    - [Constantes litterales](#constantes-litterales)
   - [Valeurs negative](#valeurs-negative)
 - [OPERATEURS](#operateurs)
   - [Operateurs arithmetiques](#operateurs-arithmetiques)
-    - [Classiques](#classiques)
-    - [Incrementation/Decrementation](#incrementationdecrementation)
-      - [Incrementation :](#incrementation-)
-      - [Decremenation :](#decremenation-)
-    - [Hierarchie des operateurs](#hierarchie-des-operateurs)
   - [Operateurs de comparaison](#operateurs-de-comparaison)
-    - [Inferieur/Superieur](#inferieursuperieur)
-    - [Egalite/Difference](#egalitedifference)
-    - [ET \& OU Logique](#et--ou-logique)
-    - [NON Logique](#non-logique)
   - [Operateurs logiques](#operateurs-logiques)
-    - [AND](#and)
-    - [OR](#or)
-    - [XOR](#xor)
   - [Operateurs d'affectation](#operateurs-daffectation)
   - [Operateur ternaire](#operateur-ternaire)
 - [CHAINES DE CARACTERES](#chaines-de-caracteres)
@@ -82,39 +53,19 @@ Formateur : Paul-Ernest MARTIN
   - [Caracteres de controle](#caracteres-de-controle)
   - [Echappement de caractere](#echappement-de-caractere)
   - [Specificateurs de conversion](#specificateurs-de-conversion)
-    - [Types de donnees](#types-de-donnees)
-    - [Prefixes de tailles](#prefixes-de-tailles)
 - [ENTREE/SORTIE](#entreesortie)
   - [Insertion (scanf)](#insertion-scanf)
   - [Affichage (printf)](#affichage-printf)
   - [Affichage (puts)](#affichage-puts)
 - [LES TABLEAUX](#les-tableaux)
   - [A simple dimension](#a-simple-dimension)
-    - [Declaration](#declaration)
-    - [Affectation a l'initialisation](#affectation-a-linitialisation)
-    - [Index](#index)
-    - [Affectation a l'index](#affectation-a-lindex)
   - [A double dimensions](#a-double-dimensions)
-    - [Declaration](#declaration-1)
-    - [Affectation a l'initialisation](#affectation-a-linitialisation-1)
-    - [Index](#index-1)
-    - [Affectation a l'index](#affectation-a-lindex-1)
-    - [Passer de double dimension a simple dimension](#passer-de-double-dimension-a-simple-dimension)
 - [LES FONCTIONS](#les-fonctions)
   - [LES FONCTIONS EN 3 ETAPES](#les-fonctions-en-3-etapes)
-    - [Declaration](#declaration-2)
-    - [Definition](#definition)
-    - [Appel](#appel)
   - [LES FONCTIONS VOID](#les-fonctions-void)
-    - [Declaration](#declaration-3)
-    - [Definition](#definition-1)
-    - [Appel](#appel-1)
   - [RECURSIVITE](#recursivite)
 - [LES STRUCTURES CONDITIONNELLES](#les-structures-conditionnelles)
   - [IF, ELSE, ELSE IF](#if-else-else-if)
-    - [IF](#if)
-    - [ELSE](#else)
-    - [ELSE IF](#else-if)
   - [BREAK](#break)
   - [SWITCH](#switch)
 - [LES BOUCLES CONDITIONNELLES](#les-boucles-conditionnelles)
@@ -123,9 +74,6 @@ Formateur : Paul-Ernest MARTIN
   - [FOR](#for)
   - [BREAK](#break-1)
   - [LES BOUCLES INFINIES](#les-boucles-infinies)
-    - [Avec WHILE](#avec-while)
-    - [Avec FOR](#avec-for)
-    - [Vides](#vides)
 - [LES POINTEURS](#les-pointeurs)
   - [Declaration](#declaration-4)
   - [Valeur de la variable](#valeur-de-la-variable)
@@ -142,6 +90,10 @@ Formateur : Paul-Ernest MARTIN
 - [ALLOCATION DYNAMIQUE](#allocation-dynamique)
   - [Malloc](#malloc)
   - [Free](#free)
+- [MASQUES](#masques)
+  - [Set Bit](#set-bit)
+  - [Clear Bit](#clear-bit)
+  - [Toggle Bit](#toggle-bit)
 - [LEXIQUE](#lexique)
 
 # ENVIRONEMENT DE TRAVAIL
@@ -1382,6 +1334,34 @@ Malloc ne libere pas la memoire de lui meme la ou une allocation manuelle locale
 
 ``` c
 free(pointeur);
+```
+
+# MASQUES
+
+## Set Bit
+
+Forcer des bits a 1.
+
+```c
+REGISTRE |= (1 << rang_du_bit); // 1 seul bit
+REGISTRE |= (1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
+```
+
+## Clear Bit
+
+Forcer des bits a 0.
+
+```c
+REGISTRE &= ~(1 << rang_du_bit); // 1 seul bit
+REGISTRE &= ~(1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
+```
+
+## Toggle Bit
+
+Alterner l'etat des bits.
+```c
+REGISTRE ^= (1 << rang_du_bit); // 1 seul bit
+REGISTRE ^= (1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
 ```
 
 # LEXIQUE
