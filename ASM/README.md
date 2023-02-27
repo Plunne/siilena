@@ -3,12 +3,12 @@ author: Lena SAVY-LARIGALDIE
 title: COURS - Le Langage d'Assembleur (ASM)
 ---
 
-# COURS - Le langage d'Assembleur
+# COURS - Le Langage d'Assembleur
 
 Formateur : Paul-Ernest MARTIN
 
 ## TABLE DES MATIERES
-- [COURS - Le langage d'Assembleur](#cours---le-langage-dassembleur)
+- [COURS - Le Langage d'Assembleur](#cours---le-langage-dassembleur)
   - [TABLE DES MATIERES](#table-des-matieres)
 - [RAM](#ram)
   - [SRAM](#sram)

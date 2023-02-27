@@ -3,12 +3,12 @@ author: Lena SAVY-LARIGALDIE
 title: COURS 2 - Les Systemes d'Exploitation en Temps-Reel (RTOS)
 ---
 
-# COURS 2 - RTOS
+# COURS - Les RTOS
 
 Formateur : Paul-Ernest MARTIN
 
 ## TABLE DES MATIERES
-- [COURS 2 - RTOS](#cours-2---rtos)
+- [COURS - Les RTOS](#cours---les-rtos)
   - [TABLE DES MATIERES](#table-des-matieres)
 - [Systemes d'Exploitation en Temps-Reel (RTOS)](#systemes-dexploitation-en-temps-reel-rtos)
   - [3 Familles de RTOS](#3-familles-de-rtos)
