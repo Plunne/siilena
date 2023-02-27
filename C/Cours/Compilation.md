@@ -7,6 +7,10 @@ title: COURS 1 - Les bases du langage C
 - [TABLE DES MATIERES](#table-des-matieres)
 - [PRE-PROCESSEUR](#pre-processeur)
   - [Parametres](#parametres)
+  - [Define](#define)
+  - [Include](#include)
+  - [Compilation Conditionnelle](#compilation-conditionnelle)
+  - [Inclusion multiple](#inclusion-multiple)
 - [CMAKE](#cmake)
   - [Edition de Liens](#edition-de-liens)
 
@@ -30,6 +34,87 @@ Le pre-processeur copie les valeurs des constante symboliques dans le code du pr
 Pour avoir acces aux `.i` il faut activer l'option de pre-traitement d'un fichier.
 
 ![](https://raw.githubusercontent.com/Plunne/siilena/main/C/Cours/images/preprocsettings.PNG)
+
+## Define
+
+Avec la directive `#define` il est possible de faire des instructions.
+
+**Exemple :**
+```c
+#define CARRE(x) ((x) * (x))
+```
+
+## Include
+
+### Chevrons <>
+
+Cherche les fichiers dans les repertoires d'environnement en priorite.
+Si il ne trouve pas, cherche dans le repertoire courant.
+
+> Utilise pour les bibliotheques installees dans le systeme. (Exemple : Bibliotheques Standard)
+
+### Guillemets ""
+
+Cherche les fichiers dans le repertoire courant en priorite.
+Si il ne trouve pas, cherche dans les repertoires d'environnement.
+
+> Utilise pour les bibliotheques locales au projet.
+
+## Compilation Conditionnelle
+
+Les structures de controles `#if` `#else` `#elif` `#endif` sont disponibles pour
+controler les directives qui seront traitees par le preprocesseur.
+
+**Exemple :**
+
+Par exemple pour l'OS. *(Ces includes sont fictifs pour l'exemple)*
+
+```c
+#ifdef LINUX
+    #include <linux.h>
+#elif WINDOWS
+    #include <windows.h>
+#endif
+```
+
+## Inclusion multiple
+
+- **SI** pas defini
+- **ALORS** definit
+
+    ```c
+    #ifndef PI
+        #define PI 3.14
+    #endif
+    ```
+
+- **SI** defini
+- **ALORS** definit
+
+    ```c
+    #ifdef EXP
+        #define EXP 2.72
+    #endif
+    ```
+
+**Ceci est utilise pour les headers :**
+
+```c
+#ifndef _HEADER_H
+#define _HEADER_H
+
+/* Contenu Header.h */
+
+#endif // _HEADER_H
+```
+
+**Alternative plus moderne :**
+
+```c
+#pragma once
+
+/* Contenu Header.h */
+```
 
 # CMAKE
 
