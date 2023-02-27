@@ -14,6 +14,9 @@ title: COURS 1 - Les bases du langage C
   - [\_\_DATE\_\_ \& \_\_LINE\_\_](#__date__--__line__)
 - [CMAKE](#cmake)
   - [Edition de Liens](#edition-de-liens)
+- [COMPILATEUR](#compilateur)
+  - [Conversions de types](#conversions-de-types)
+  - [Coercition (Cast)](#coercition-cast)
 
 
 # PRE-PROCESSEUR
@@ -141,3 +144,37 @@ target_link_libraries(executable PUBLIC MyLib)
 ```
 
 > *Les headers sont renseignes a la compilation. Ils disent a l'executable qu'elle aura besoin de fonctions mais c'est qu'a l'edition des liens que le corps de celles-ci seront connues par l'executable en liant les fichiers objets.*
+
+# COMPILATEUR
+
+## Conversions de types
+
+Le compilateur privilegie toujours le type le plus grand lors d'une operation pour la valeur de retour.
+
+Si la valeur a affecter est de type plus grand que la variable a affecter, il y aura une perte de valeur.
+
+> Dans le cas d'une affectation, c'est les LSB qui sont conserves en priorite.
+
+## Coercition (Cast)
+
+Caster un type est le fait de forcer la valeur de retour a un type particulier.
+
+**Sans Coercition :**
+
+```c
+int i1 = 5;
+int i2 = 2;
+
+float f1 = i1 / i2;
+```
+> f1 = 2
+
+**Avec Coercition :**
+
+```c
+int i1 = 5;
+int i2 = 2;
+
+float f1 = (float) i1 / i2;
+```
+> f1 = 2.5
