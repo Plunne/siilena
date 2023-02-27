@@ -216,13 +216,14 @@ project(MyProjectName)
 set(CMAKE_C_STANDARD 11)
 
 # MyLibrary Files
-set (MY_LIB MyLibrary.h MyLibrary.c)
+set(SOURCES source.c)
+set(HEADERS  source.h MyLibrary.h)
 
 # Create MyLibrary
-add_library(MyLibraryName ${MY_LIB})
+add_library(MyLibraryName MyLibrary.c)
 
 # Create my program with some source files
-add_executable(prog main.c)
+add_executable(prog main.c ${SOURCES} ${HEADERS})
 
 # Link object libraries to executable
 target_link_libraries(prog PUBLIC MyLibraryName)
@@ -232,10 +233,11 @@ target_link_libraries(prog PUBLIC MyLibraryName)
 > - Choisit la version de CMake
 > - Choisit le nom du projet
 > - Choisit le langage
-> - Cree une variable regroupant des fichiers source
-> - Cree une bibliotheque objet avec les fichiers source
-> - Choisit le nom de l'executable et les fichiers source
-> - Lit la bibliotheque objet a l'executable pour qu'il puisse acceder a ses fonctions
+> - Cree une variable regroupant des fichiers sources *(Qui ne seront pas dans une lib)*
+> - Cree une variable regroupant des fichiers en-tete
+> - Cree une bibliotheque objet avec ses fichiers source
+> - Choisit le nom de l'executable et ses fichiers source
+> - Lit la bibliotheque objet a l'executable pour qu'il puisse acceder a ses fonctions. [Voir Compilation.md](https://github.com/Plunne/siilena/blob/main/C/Cours/Compilation.md#edition-de-liens)
 
 ### Dossier build
 
