@@ -29,6 +29,7 @@ Formateur : Paul-Ernest MARTIN
   - [Memory Set (memset)](#memory-set-memset)
   - [Memory Copy (memcpy)](#memory-copy-memcpy)
   - [Memory move (memmove)](#memory-move-memmove)
+- [POINTEURS DE POINTEURS](#pointeurs-de-pointeurs)
 
 # MASQUES
 
@@ -214,8 +215,34 @@ memcpy(*destination, *source, taille);
 
 ## Memory move (memmove)
 
-Copier la memoire d'un tableau dans un autre sur une taille definie en verifiant le recouvrement (permet d'eviter de se copier mutuellement si les adresses sont proches car le resultat peut etre degrade)
+Copier la memoire d'un tableau dans un autre sur une taille definie en verifiant le recouvrement/chevauchement (permet d'eviter de se copier mutuellement si les adresses sont proches car le resultat peut etre degrade)
 
 ```c
 memmove(*destination, *source, taille);
 ```
+
+# POINTEURS DE POINTEURS
+
+Il est possible de pointer vers l'adresse d'un pointeur.
+
+**Syntaxe :**
+
+```c
+type **ptr2ptr = &ptr1;
+```
+
+**Exemple :**
+
+```c
+/* Declaration d'une variable */
+int variable = valeur; 
+
+/* Declaration d'un pointeur vers l'adresse de la variable */
+int *ptr1 = &variable;
+
+/* Declaration d'un pointeur vers l'adresse d'un pointeur */
+int **ptr2ptr = &ptr1;
+```
+
+> Les pointeurs de pointeurs sont cumulables.
+
