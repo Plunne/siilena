@@ -11,8 +11,10 @@ Formateur : Paul-Ernest MARTIN
 - [COURS 2 - Le Langage C (Partie 2)](#cours-2---le-langage-c-partie-2)
   - [TABLE DES MATIERES](#table-des-matieres)
 - [ARGUMENTS](#arguments)
-- [ALLOCATION DYNAMIQUE 2](#allocation-dynamique-2)
+- [ALLOCATION DYNAMIQUE](#allocation-dynamique)
   - [Dependance](#dependance)
+  - [Malloc](#malloc)
+  - [Free](#free)
   - [Calloc](#calloc)
   - [Realloc](#realloc)
 - [BLOCS MEMOIRE](#blocs-memoire)
@@ -40,14 +42,46 @@ int main(int argc, char const *argv[])
 }
 ```
 
-# ALLOCATION DYNAMIQUE 2
-
-[Premiere partie](https://github.com/Plunne/siilena/blob/main/C/Cours/Cours1.md#allocation-dynamique)
+# ALLOCATION DYNAMIQUE
 
 ## Dependance
 
 ```c
 #include <stdlib.h>
+```
+
+## Malloc
+
+Dans certains cas on ne connait pas la place que va prendre notre variable en memoire,
+alors on utilise `malloc` qui va nous trouver puis retourner l'adresse d'un emplacement memoire adapte.
+
+**Void :**
+
+Type qui retourne un pointeur dont l'adresse est inconnue a la compilation.
+
+```c
+void *pointeur = malloc(nb_octets);
+```
+
+> On peut directement saisir le nombre d'octets a allouer. 
+
+**Tableau dynamique :**
+
+Allocation d'un tableau a taille dynamique.
+
+``` c
+int n = taille_dynamique;
+type *pointeur = (type *) malloc(n * sizeof(type));
+```
+
+## Free
+
+Malloc ne libere pas la memoire de lui meme la ou une allocation manuelle locale libere son emplacement a la fin de son bloc d'instructions. 
+
+`free` sert donc a liberer celle-ci.
+
+``` c
+free(pointeur);
 ```
 
 ## Calloc
@@ -72,18 +106,24 @@ pointeur = (type *) realloc(pointeur, n * sizeof(type));
 
 # BLOCS MEMOIRE
 
+> Pour les fonctions ci-dessous :
+> - `*destination` : adresse du debut du tableau de destination
+> - `*source` : adresse du debut du tableau source modifiant la destination
+> - `*taille` : nombre d'octets sur lesquels la plage s'etend a partir des adresses
+
 ## Dependance
 
 ```c
 #include <string.h>
 ```
 
+
 ## Memset
 
-Permet d'initialiser une partie de la memoire par une valeur sur une taille definie.
+Permet d'initialiser une partie de la memoire par une valeur sur une plage avec taille definie.
 
 ```c
-memset(*dest, caractere, taille);
+memset(*destination, caractere, taille);
 ```
 
 ## Memcpy
@@ -101,4 +141,3 @@ Copier la memoire d'un tableau dans un autre sur une taille definie en verifiant
 ```c
 memmove(*destination, *source, taille);
 ```
-

@@ -88,11 +88,6 @@ Formateur : Paul-Ernest MARTIN
   - [Variables Externes](#variables-externes)
 - [VARIABLES STATIQUES](#variables-statiques)
 - [VARIABLES EXTERNES](#variables-externes-1)
-  - [DECLARATION](#declaration-5)
-  - [ACCES](#acces)
-- [ALLOCATION DYNAMIQUE](#allocation-dynamique)
-  - [Malloc](#malloc)
-  - [Free](#free)
 - [MASQUES](#masques)
   - [Set Bit](#set-bit)
   - [Clear Bit](#clear-bit)
@@ -1376,7 +1371,7 @@ static type variable = valeur;
 
 Variable declaree dans un fichier externe.
 
-## DECLARATION
+**Declaration :**
 
 Une variable exerne est declaree normalement dans un autre fichier.
 
@@ -1385,7 +1380,7 @@ Une variable exerne est declaree normalement dans un autre fichier.
 type variable = valeur;
 ```
 
-## ACCES
+**Acces :**
 
 Pour acceder a une variable externe, il suffit d'ajouter le mot cle `extern` .
 
@@ -1395,28 +1390,6 @@ extern type variable;
 ```
 
 > *On ne fait que l'importer, on ne la redeclare pas.*
-
-# ALLOCATION DYNAMIQUE
-
-## Malloc
-
-Dans certains cas on ne connait pas la place que va prendre notre variable en memoire,
-alors on utilise `malloc` qui va nous trouver puis retourner l'adresse d'un emplacement memoire adapte.
-
-``` c
-int n = taille_dynamique;
-type *pointeur = (type *) malloc(n * sizeof(type));
-```
-
-## Free
-
-Malloc ne libere pas la memoire de lui meme la ou une allocation manuelle locale libere son emplacement a la fin de son bloc d'instructions. 
-
-`free` sert donc a liberer celle-ci.
-
-``` c
-free(pointeur);
-```
 
 # MASQUES
 

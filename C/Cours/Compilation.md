@@ -12,8 +12,8 @@ title: COURS 1 - Les bases du langage C
   - [Compilation Conditionnelle](#compilation-conditionnelle)
   - [Inclusion multiple](#inclusion-multiple)
   - [\_\_DATE\_\_ \& \_\_LINE\_\_](#__date__--__line__)
-- [CMAKE](#cmake)
-  - [Edition de Liens](#edition-de-liens)
+- [EDITION DE LIENS](#edition-de-liens)
+  - [Avec CMake](#avec-cmake)
 - [COMPILATEUR](#compilateur)
   - [Conversions de types](#conversions-de-types)
   - [Coercition (Cast)](#coercition-cast)
@@ -133,9 +133,9 @@ Par exemple pour l'OS. *(Ces includes sont fictifs pour l'exemple)*
 
 - **\_\_FILE\_\_**  : Nom du fichier au moment de la compilation.
 
-# CMAKE
+# EDITION DE LIENS
 
-## Edition de Liens
+## Avec CMake
 
 Au moment du lien on indique au programme comment fonctionnent les fonctions en liant les bibliotheques objet.
 
