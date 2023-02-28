@@ -129,6 +129,10 @@ Par exemple pour l'OS. *(Ces includes sont fictifs pour l'exemple)*
 
 - **\_\_LINE\_\_**  :Valeur de la ligne de code au moment de la compilation.
 
+- **\_\_TIME\_\_**  : Valeur de l'heure au moment de la compilation.
+
+- **\_\_FILE\_\_**  : Nom du fichier au moment de la compilation.
+
 # CMAKE
 
 ## Edition de Liens
