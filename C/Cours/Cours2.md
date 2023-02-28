@@ -3,14 +3,21 @@ author: Lena SAVY-LARIGALDIE
 title: COURS 2 - Le langage C (Partie 2)
 ---
 
-# COURS 2 - Le Langage C (Partie 2)
+# COURS 2 - Le Langage C Avance
 
 Formateur : Paul-Ernest MARTIN
 
 ## TABLE DES MATIERES
-- [COURS 2 - Le Langage C (Partie 2)](#cours-2---le-langage-c-partie-2)
+- [COURS 2 - Le Langage C Avance](#cours-2---le-langage-c-avance)
   - [TABLE DES MATIERES](#table-des-matieres)
+- [MASQUES](#masques)
+  - [Set Bit](#set-bit)
+  - [Clear Bit](#clear-bit)
+  - [Toggle Bit](#toggle-bit)
 - [ARGUMENTS](#arguments)
+- [VARIABLES SPECIALES](#variables-speciales)
+  - [Variables Statiques](#variables-statiques)
+  - [Variables Externes](#variables-externes)
 - [ALLOCATION DYNAMIQUE](#allocation-dynamique)
   - [Dependance](#dependance)
   - [Malloc](#malloc)
@@ -19,9 +26,37 @@ Formateur : Paul-Ernest MARTIN
   - [Realloc](#realloc)
 - [BLOCS MEMOIRE](#blocs-memoire)
   - [Dependance](#dependance-1)
-  - [Memset](#memset)
-  - [Memcpy](#memcpy)
-  - [Memove](#memove)
+  - [Memory Set (memset)](#memory-set-memset)
+  - [Memory Copy (memcpy)](#memory-copy-memcpy)
+  - [Memory move (memmove)](#memory-move-memmove)
+
+# MASQUES
+
+## Set Bit
+
+Forcer des bits a 1.
+
+```c
+REGISTRE |= (1 << rang_du_bit); // 1 seul bit
+REGISTRE |= (1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
+```
+
+## Clear Bit
+
+Forcer des bits a 0.
+
+```c
+REGISTRE &= ~(1 << rang_du_bit); // 1 seul bit
+REGISTRE &= ~((1 << rang_du_bit_A) | (1 << rang_du_bit_B)); // Plusieurs bits
+```
+
+## Toggle Bit
+
+Alterner l'etat des bits.
+```c
+REGISTRE ^= (1 << rang_du_bit); // 1 seul bit
+REGISTRE ^= (1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
+```
 
 # ARGUMENTS
 
@@ -41,6 +76,50 @@ int main(int argc, char const *argv[])
     return 0;
 }
 ```
+
+# VARIABLES SPECIALES
+
+## Variables Statiques
+
+Lorsqu'un bloc d'instruction se termine, toutes ses variables locales sont detruites.
+
+Pour palier a cela dans le cas ou l'on veuille conserver la valeur d'une variable au prochain appel de la fonction, il existe le mot-cle `static` .
+
+Ce mot-cle permet a une variable locale de :
+
+- persister en memoire a la fin du bloc
+- initialiser la variable qu'au premier appel de la fonction
+
+**Declaration :**
+
+``` c
+static type variable = valeur;
+```
+
+## Variables Externes
+
+Variable declaree dans un fichier externe.
+
+**Declaration :**
+
+Une variable exerne est declaree normalement dans un autre fichier.
+
+```c
+// fichier_externe.c
+type variable = valeur;
+```
+
+**Acces :**
+
+Pour acceder a une variable externe, il suffit d'ajouter le mot cle `extern` .
+
+```c
+// fichier_courant.c
+extern type variable;
+```
+
+> *On ne fait que l'importer, on ne la redeclare pas.*
+
 
 # ALLOCATION DYNAMIQUE
 
@@ -117,8 +196,7 @@ pointeur = (type *) realloc(pointeur, n * sizeof(type));
 #include <string.h>
 ```
 
-
-## Memset
+## Memory Set (memset)
 
 Permet d'initialiser une partie de la memoire par une valeur sur une plage avec taille definie.
 
@@ -126,7 +204,7 @@ Permet d'initialiser une partie de la memoire par une valeur sur une plage avec 
 memset(*destination, caractere, taille);
 ```
 
-## Memcpy
+## Memory Copy (memcpy)
 
 Copier la memoire d'un tableau dans un autre sur une taille definie.
 
@@ -134,7 +212,7 @@ Copier la memoire d'un tableau dans un autre sur une taille definie.
 memcpy(*destination, *source, taille);
 ```
 
-## Memove
+## Memory move (memmove)
 
 Copier la memoire d'un tableau dans un autre sur une taille definie en verifiant le recouvrement (permet d'eviter de se copier mutuellement si les adresses sont proches car le resultat peut etre degrade)
 

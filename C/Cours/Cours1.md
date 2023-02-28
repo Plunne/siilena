@@ -1,6 +1,6 @@
 ---
 author: Lena SAVY-LARIGALDIE
-title: COURS 1 - Les bases du langage C
+title: COURS 1 - Le Langage C (Partie 1)
 ---
 
 # COURS 1 - Les bases du langage C
@@ -86,12 +86,6 @@ Formateur : Paul-Ernest MARTIN
   - [Variables Globales](#variables-globales)
   - [Variables Locales](#variables-locales)
   - [Variables Externes](#variables-externes)
-- [VARIABLES STATIQUES](#variables-statiques)
-- [VARIABLES EXTERNES](#variables-externes-1)
-- [MASQUES](#masques)
-  - [Set Bit](#set-bit)
-  - [Clear Bit](#clear-bit)
-  - [Toggle Bit](#toggle-bit)
 - [LEXIQUE](#lexique)
 
 # ENVIRONEMENT DE TRAVAIL
@@ -1334,6 +1328,8 @@ A venir...
 
 ## Soustraction d'adresses
 
+A venir...
+
 # PORTEE DES VARIABLES
 
 Une variable a une duree de vie, cette duree de vie est definie par sa portee, il s'agit de la zone dans laquelle elle existe.
@@ -1349,75 +1345,6 @@ Les variables locales ne sont accessibles qu'a l'interieur du bloc d'instruction
 ## Variables Externes
 
 Les variables externes sont declarees dans un autre fichier, leur fichier doit etre importe pour qu'elles soient utilisees.
-
-# VARIABLES STATIQUES
-
-Lorsqu'un bloc d'instruction se termine, toutes ses variables locales sont detruites.
-
-Pour palier a cela dans le cas ou l'on veuille conserver la valeur d'une variable au prochain appel de la fonction, il existe le mot-cle `static` .
-
-Ce mot-cle permet a une variable locale de :
-
-- persister en memoire a la fin du bloc
-- initialiser la variable qu'au premier appel de la fonction
-
-**Declaration :**
-
-``` c
-static type variable = valeur;
-```
-
-# VARIABLES EXTERNES
-
-Variable declaree dans un fichier externe.
-
-**Declaration :**
-
-Une variable exerne est declaree normalement dans un autre fichier.
-
-```c
-// fichier_externe.c
-type variable = valeur;
-```
-
-**Acces :**
-
-Pour acceder a une variable externe, il suffit d'ajouter le mot cle `extern` .
-
-```c
-// fichier_courant.c
-extern type variable;
-```
-
-> *On ne fait que l'importer, on ne la redeclare pas.*
-
-# MASQUES
-
-## Set Bit
-
-Forcer des bits a 1.
-
-```c
-REGISTRE |= (1 << rang_du_bit); // 1 seul bit
-REGISTRE |= (1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
-```
-
-## Clear Bit
-
-Forcer des bits a 0.
-
-```c
-REGISTRE &= ~(1 << rang_du_bit); // 1 seul bit
-REGISTRE &= ~((1 << rang_du_bit_A) | (1 << rang_du_bit_B)); // Plusieurs bits
-```
-
-## Toggle Bit
-
-Alterner l'etat des bits.
-```c
-REGISTRE ^= (1 << rang_du_bit); // 1 seul bit
-REGISTRE ^= (1 << rang_du_bit_A) | (1 << rang_du_bit_B); // Plusieurs bits
-```
 
 # LEXIQUE
 
