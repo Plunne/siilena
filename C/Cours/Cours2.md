@@ -30,6 +30,7 @@ Formateur : Paul-Ernest MARTIN
   - [Memory Copy (memcpy)](#memory-copy-memcpy)
   - [Memory move (memmove)](#memory-move-memmove)
 - [POINTEURS DE POINTEURS](#pointeurs-de-pointeurs)
+- [POINTEURS DE FONCTION](#pointeurs-de-fonction)
 
 # MASQUES
 
@@ -245,4 +246,15 @@ int **ptr2ptr = &ptr1;
 ```
 
 > Les pointeurs de pointeurs sont cumulables.
+
+# POINTEURS DE FONCTION
+
+Il est possible de pointer vers une fonction.
+
+```c
+type (*ptr)(type arg1, type arg2, ...) = &fonction;
+```
+
+> **IMPORTANT!**  
+> Il faut que le prototype de la fonction a affecter soit le meme que la fonction affectee!
 

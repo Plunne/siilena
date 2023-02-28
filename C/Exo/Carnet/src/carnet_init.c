@@ -12,8 +12,14 @@ void copier_personne(char *nom1, char *adresse1, char *nom2, char *adresse2) {
     memcpy(adresse1, adresse2, MAX_ADRESSE);
 }
 
-
 void setValeurCarnet(char *output, char *input) {
-    output = (char *) realloc(output, sizeof(input));
-    memcpy(output, input, sizeof(input));
+    
+    char *p_tmp = calloc(output, strlen(input) + 1);
+    
+    *output = p_tmp;
+
+    memcpy(output, input, strlen(input) + 1);
+
+    free(p_tmp);
+    
 }
