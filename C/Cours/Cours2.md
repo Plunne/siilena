@@ -43,6 +43,8 @@ Formateur : Paul-Ernest MARTIN
   - [Structures imbriquees](#structures-imbriquees)
   - [Cas particulier](#cas-particulier)
 - [UNION](#union)
+- [UNION \& STRUTURES](#union--strutures)
+- [TYPEDEF](#typedef)
 
 # MASQUES
 
@@ -466,5 +468,54 @@ union nomUnion {
 |----------|----------|----------|----------|----------|
 | `char c` |          |          | xxxxxxxx | xxxxxxxx |
 | `int  i` | xxxxxxxx | xxxxxxxx | xxxxxxxx | xxxxxxxx |
+
 > La taille maximale d'un union depend de son membre le plus grand.
+
+# UNION & STRUTURES
+
+Avoir des structures dans des unions peut s'averer tres pratique.
+
+**Exemple explicite de struture dans un union :**
+
+```c
+union date {
+    char date_complete[9];
+    struct date_tab {
+        char jour[2];
+        char separateur1;
+        char mois[2];
+        char separateur2;
+        char annee[4];
+    }
+}
+```
+
+| `char`            | 9   | 8   | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
+|-------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| `date_complete`   | '3' | '2' | '0' | '2' | '/' | '3' | '0' | '/' | '1' | '0' |
+|                   |     |     |     |     |     |     |     |     |     |     |
+| `struct date_tab` | '3' | '2' | '0' | '2' | '/' | '3' | '0' | '/' | '1' | '0' |
+| `jour[2]`         |     |     |     |     |     |     |     |     | '1' | '0' |
+| `separateur1`     |     |     |     |     |     |     |     | '/' |     |     |
+| `mois[2]`         |     |     |     |     |     | '3' | '0' |     |     |     |
+| `separateur2`     |     |     |     |     | '/' |     |     |     |     |     |
+| `annee[4]`        | '3' | '2' | '0' | '2' |     |     |     |     |     |     |
+
+# TYPEDEF
+
+Le mot cle `typedef` permet d'eviter de repeter `struct` et/ou `union` lors des declarations de structures/unions.
+
+```c
+typedef struct {
+    
+    /* Membres */
+
+} NomStructure;
+```
+
+**Utilisation :**
+
+```c
+NomStructure MaStructure; // Le mot struct n'est plus necessaire
+```
 
