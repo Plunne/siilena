@@ -1074,7 +1074,26 @@ break;
 
 Lorsque l'on a un choix a valeur multiple, il est preferable d'utiliser un `switch` .
 
-A venir...
+```c
+switch (choix) {
+
+    case valeur_cas1:
+            /* Instructions */
+            break;
+    
+    case valeur_cas2:
+            /* Instructions */
+            break;
+    
+    case valeur_cas3:
+            /* Instructions */
+            break;
+
+    default:
+            /* Instructions */
+            break;
+}
+```
 
 # LES BOUCLES CONDITIONNELLES
 

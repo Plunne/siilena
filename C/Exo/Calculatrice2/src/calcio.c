@@ -1,35 +1,31 @@
 #include "calcio.h"
 
-void printResult(double x) {
-    printf("\nResultat : %lf\n", x);
-}
-
-
 void runCalculator() {
 
     char operator = '+';
+    double (*result)(void);
 
     printf("\n***** CALCULATOR *****\n\n");
     printf("Select operator (default : +) :\n");
-    scanf("%c", &operator);
+    scanf(" %c", &operator);
 
     switch (operator) {
         case '+':
-            printResult(addition(x, y));
+            result = &execAddition;
             break;
         case '-':
-            printResult(soustraction(x, y));
+            result = &execSoustraction;
             break;
         case '*':
-            printResult(multiplication(x, y));
+            result = &execMultiplication;
             break;
         case '/':
-            printResult(division(x, y));
+            result = &execDivision;
             break;
 
         default: break;
     }
 
-    printf("%lf %c %lf\n", x, operator, y);
+    printf("%lf %c %lf = %lf\n", a, operator, b, result());
 
 }

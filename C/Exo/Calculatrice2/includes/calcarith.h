@@ -5,14 +5,20 @@
 
 #include "calcope.h"
 
-double x = 0;
-double y = 0;
+static double a = 0;
+static double b = 0;
 
-void execAddition(void);
-void execSoustraction(void);
-void execMultiplication(void);
-void execDivision(void);
+void insertNumbers(void);
 
-void execSqr(void);
+double execAddition(void);
+double execSoustraction(void);
+double execMultiplication(void);
+double execDivision(void);
+
+double execSqr(void);
+
+int compSuperior(int *a, int *b);
+int compInferior(int *a, int *b);
+
 
 #endif // _CALCARITH_H

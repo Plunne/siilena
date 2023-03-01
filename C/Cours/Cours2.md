@@ -31,6 +31,11 @@ Formateur : Paul-Ernest MARTIN
   - [Memory move (memmove)](#memory-move-memmove)
 - [POINTEURS DE POINTEURS](#pointeurs-de-pointeurs)
 - [POINTEURS DE FONCTION](#pointeurs-de-fonction)
+  - [RETOUR DE FONCTION](#retour-de-fonction)
+- [PASSAGE PAR ADRESSE](#passage-par-adresse)
+- [EXIT](#exit)
+- [SYSTEM](#system)
+- [STRUCTURES](#structures)
 
 # MASQUES
 
@@ -252,9 +257,78 @@ int **ptr2ptr = &ptr1;
 Il est possible de pointer vers une fonction.
 
 ```c
+/* Declaration */
 type (*ptr)(type arg1, type arg2, ...) = &fonction;
+
+/* Utilisation */
+prt(arg1, arg2, ...);
 ```
 
 > **IMPORTANT!**  
 > Il faut que le prototype de la fonction a affecter soit le meme que la fonction affectee!
+
+## RETOUR DE FONCTION
+
+```c
+/* Pointeur de fonction a retourner */
+typeRetournee (*ptrFonction) (argsPtrFonction, ...)
+
+/* Fonction qui retourne le pointeur de fonction */
+typeRetournee (*nomFonction(argsNomFonction, ...))(argsPtrFonction, ...);
+```
+
+# PASSAGE PAR ADRESSE
+
+Le passage par adresse consiste a passer l'adresse d'une variable en parametre pointeur,
+cela permet ensuite de modifier directement le contenu de celle ci en deferencant le parametre.
+
+```c
+// main.c
+type variable = valeur;
+
+fonction(&variable);
+```
+
+Valeur de `variable` avant l'appel de la fonction : `valeur`
+
+```c
+// fonction()
+void fonction(type *var) {
+    *var = nouvelle_valeur;
+}
+```
+
+Valeur de `variable` a la sortie de la fonction : `nouvelle_valeur`
+
+# EXIT
+
+La fonction `exit()` permet de terminer l'execution du programme.
+
+Cette fonction peut prendre en argument un indice d'erreur.
+
+```c
+exit(INDICE);
+```
+
+# SYSTEM
+
+La fonction `system()` permet d'executer une commande du systeme d'exploitation.
+
+```c
+system("commande");
+```
+
+# STRUCTURES
+
+Les structures contiennent des variables (attributs) de types differentes.
+
+```c
+struct MaStructure {
+    type_1 attribut1;
+    type_2 attribut2;
+};
+```
+
+> **IMPORTANT!**  
+> Une structure ne peut avoir en attributs sa propre structure.
 

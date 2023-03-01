@@ -5,7 +5,6 @@
 
 #include "calcarith.h"
 
-void displayMenu();
-void printResult(double x);
+void runCalculator();
 
 #endif // _CALCIO_H
