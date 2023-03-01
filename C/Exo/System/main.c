@@ -4,22 +4,13 @@
 int main(void) {
 
 	char * cmd = "";
-	const char* default_prompt = "lena@sii $ ";
-	char* prompt = default_prompt;
+	char* prompt = "lena@sii $ ";
 
 	while (1) {
 		printf(prompt);
 		scanf("%s", cmd);
 
-		if (*cmd == "cprompt") {
-			printf("Change prompt : ");
-			scanf("%s", prompt);
-			if (prompt == "") prompt = default_prompt;
-		}
-		else {
-			system(cmd);
-		}
-
+		system(cmd);
 	}
 
 	return 0;
