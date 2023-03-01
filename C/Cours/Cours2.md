@@ -36,6 +36,13 @@ Formateur : Paul-Ernest MARTIN
 - [EXIT](#exit)
 - [SYSTEM](#system)
 - [STRUCTURES](#structures)
+  - [Definition](#definition)
+  - [Declaration](#declaration)
+  - [Affectation](#affectation)
+  - [Acces membre](#acces-membre)
+  - [Structures imbriquees](#structures-imbriquees)
+  - [Cas particulier](#cas-particulier)
+- [UNION](#union)
 
 # MASQUES
 
@@ -320,7 +327,9 @@ system("commande");
 
 # STRUCTURES
 
-Les structures contiennent des variables (attributs) de types differentes.
+Les structures contiennent des variables (membres) de types differentes.
+
+## Definition
 
 ```c
 struct MaStructure {
@@ -331,4 +340,131 @@ struct MaStructure {
 
 > **IMPORTANT!**  
 > Une structure ne peut avoir en attributs sa propre structure.
+
+## Declaration
+
+### Pendant la definition
+
+```c
+struct MaStructure {
+  type_1 attribut1;
+  type_2 attribut2;
+} NomStructure, NomStructure2;
+```
+
+### Apres la definition
+
+```c
+struct MaStructure NomStructure1;
+struct MaStructure NomStructure2;
+```
+
+## Affectation
+
+### Sur la structure
+
+#### Pendant la definition
+
+```c
+struct MaStructure {
+  type_1 attribut1;
+  type_2 attribut2;
+} NomStructure = {valeur_attribut1, valeur_attribut2, ...};
+```
+
+> Peut se faire avec plusieures structures.
+>
+> **Exemple :**
+>
+> ```c
+> struct MaStructure {
+>     type_1 attribut1;
+>     type_2 attribut2;
+> } Struct1 = {1,2}, Struct2 = {4,5};
+> ```
+
+#### Apres la defnition
+
+```c
+NomStructure = {valeur_attribut1, valeur_attribut2, ...};
+```
+
+### Membre par membre
+
+```c
+NomStructure.attribut1 = valeur_attribut1;
+NomStructure.attribut2 = valeur_attribut2;
+```
+
+## Acces membre
+
+```c
+NomStructure.attribut
+```
+
+## Structures imbriquees
+
+Une structure peut contenir d'autres structures en tant que membre.
+
+### Definition
+
+```c
+struct UneStructure {
+    type_1 attribut1;
+    type_2 attribut2;
+}
+struct MaStructure {
+  struct UneStructure CetteStructure;
+} NomStructure;
+```
+
+### Acces membre
+
+```c
+NomStructure.CetteStructure.attribut1
+NomStructure.CetteStructure.attribut2
+```
+
+## Cas particulier
+
+Dans le cas particulier des tableaux en attribut membre, lorsque l'on souhaite faire une initialisation d'un tableau de structures contenant des tableaux,
+il faut initialiser l'integralite des octets avec memset.
+
+**Exemple :**
+
+```c
+/* Definition d'une structure */
+struct UneStructure {
+    int attribut;
+    char * tableau[TAILLE_TABLEAU];
+}
+
+/* Declaration d'une structure */
+struct UneStructure MaStructure[NB_STRUCTURES];
+
+/* Initialisation d'une structure */
+for (int i=0; i < NB_STRUCTURES; i++) {
+    Mastructure[i].attribut = 0;
+    memset(Mastructure[i].tableau, 0, TAILLE_TABLEAU); // Remplir le tableau avec memset()
+}
+```
+
+# UNION
+
+Une union ressemble a une structure sauf que chaque membre est situe a la meme adresse afin d'interpreter un emplacement memoire de differentes manieres.
+
+**Exemple :**
+
+```c
+union nomUnion {
+    char c;
+    int i;
+}
+```
+
+|          | Octet 3  | Octet 2  | Octet 1  | Octet 0  |
+|----------|----------|----------|----------|----------|
+| `char c` |          |          | xxxxxxxx | xxxxxxxx |
+| `int  i` | xxxxxxxx | xxxxxxxx | xxxxxxxx | xxxxxxxx |
+> La taille maximale d'un union depend de son membre le plus grand.
 
