@@ -33,7 +33,7 @@ void defaultPendu(PenduGame* PenduDefault) {
 	/* Word */
 	PenduDefault->PENDU			= "PENDU";	// Init default PENDU name
 	PenduDefault->word			= "_____";	// Init default PENDU word to find
-	PenduDefault->missedCpt		= 6;		// Init number of fail allowed
+	PenduDefault->missedCpt		= 7;		// Init number of fail allowed
 	PenduDefault->missedFlag	= 1;		// Init missed flag to 1
 
 }

@@ -6,7 +6,8 @@
 
 void displayPendu(PenduGame* Pendu) {
 	
-	printf("\n-- %s --\n", Pendu->word);
+	drawPenduCaracter(Pendu);
+	printf("\n%s\n", Pendu->word);
 	printf("Letters already sent : %s\n", Pendu->try);
 	printf("Number of try remaining : %d\n", Pendu->missedCpt);
 
@@ -18,7 +19,7 @@ void insertLetter(PenduGame* Pendu) {
 		printf("Insert a letter : ");				// Insert a letter
 		scanf(" %c", &Pendu->letter);				// Get letter input
 
-	} while (checkUsed(Pendu));						// While letter was already sent
+	} while (checkUsed(Pendu));						// While letter was already sent
 
 	Pendu->try[Pendu->nbTry] = Pendu->letter;	// Put Letter into try array
 	Pendu->nbTry++;								// Increment try array indice

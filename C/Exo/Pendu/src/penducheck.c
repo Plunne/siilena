@@ -18,8 +18,9 @@ void checkInWord(PenduGame* Pendu) {
 void compareWords(PenduGame* Pendu) {
 	
 	/* Compare both words */
-	if (!strcmp(Pendu->word, Pendu->PENDU)) {	// If both words are equals
-		puts("\n***** BRAVO! *****\n");				// YOU WON THE GAME!!!
+	if (!strcmp(Pendu->word, Pendu->PENDU)) {			// If both words are equals
+		puts("\n***** BRAVO! *****\n");					// YOU WON THE GAME!!!
+		printf("You found \"%s\" UwU\n", Pendu->word);	// YOU FOUND THE WORD!!! UwU
 		exit(EXIT_SUCCESS);
 	}
 }
