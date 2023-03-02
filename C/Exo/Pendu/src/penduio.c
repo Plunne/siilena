@@ -13,9 +13,12 @@ void insertLetter(PenduGame* Pendu) {
 	printf("Insert a letter : ");				// Insert a letter
 	scanf(" %c", &Pendu->letter);				// Get letter input
 	
-	Pendu->try[Pendu->nbTry] = Pendu->letter;	// Put Letter into try array
-	Pendu->nbTry++;								// Increment try array indice
-	Pendu->try[Pendu->nbTry] = '\0';			// Put last string char '\0' into try array
+	if (!checkUsed(Pendu)) {						// If letter wasn't already sent
+
+		Pendu->try[Pendu->nbTry] = Pendu->letter;	// Put Letter into try array
+		Pendu->nbTry++;								// Increment try array indice
+		Pendu->try[Pendu->nbTry] = '\0';			// Put last string char '\0' into try array
+	}
 	
 }
 
@@ -55,4 +58,18 @@ void checkMissed(PenduGame* Pendu) {
 	/* Reset Missed Flag */
 	Pendu->missedFlag = 1;							// Set Missed Flag back to HIGH
 
+}
+
+
+char checkUsed(PenduGame* Pendu) {
+	for (int i = 0; Pendu->try[i] != '\0'; i++) {
+		if (Pendu->letter == Pendu->try[i]) {
+			puts("\nLetter already sent.\n");
+			Pendu->missedFlag = 0;
+			return 1;
+		}
+
+	}
+
+	return 0;
 }

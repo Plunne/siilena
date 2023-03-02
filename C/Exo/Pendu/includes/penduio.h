@@ -28,6 +28,6 @@ void insertLetter(PenduGame* Pendu);
 void checkInWord(PenduGame* Pendu);
 void compareWords(PenduGame* Pendu);
 void checkMissed(PenduGame* Pendu);
-void checkUsed(PenduGame* Pendu);
+char checkUsed(PenduGame* Pendu);
 
 #endif // __PENDUIO_H
