@@ -33,7 +33,12 @@ int main(void) {
 	/* age Difference */
 
 	displayDiffAge(diffAge(&Personne1, &Personne2));
-	
+
+	/* Verify anti-overlap */
+
+	setPersonne(&Personne1, "NN", "ppp", 2);
+	displayPersonne(&Personne1);
+
 	/* copy Personne */
 
 	copyPersonne(&Personne1, &Personne2);

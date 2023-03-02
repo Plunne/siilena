@@ -45,6 +45,9 @@ Formateur : Paul-Ernest MARTIN
 - [UNION](#union)
 - [UNION \& STRUTURES](#union--strutures)
 - [TYPEDEF](#typedef)
+- [ARGUMENTS VARIABLES](#arguments-variables)
+  - [Depedance](#depedance)
+  - [Definition](#definition-2)
 
 # MASQUES
 
@@ -519,3 +522,58 @@ typedef struct {
 NomStructure MaStructure; // Le mot struct n'est plus necessaire
 ```
 
+# ARGUMENTS VARIABLES
+
+Il est possible de faire en sorte que le nombre d'arguments soit variables.
+
+## Depedance
+
+```c
+#include <stdarg.h>
+```
+
+## Definition
+
+On met `...` en arguments pour dire que les arguments seront variables.
+
+```c
+void fonction(type argument, ...);
+```
+
+```c
+void fonction(type argument, ...) {
+
+    va_list arg_ptr;  // Init une variable de type va_list
+    // Ce cointeur va nous permettre de recuperer les arguments
+
+    va_start(arg_ptr, nb_args); // Init arguments variables
+    // Il faut indiquer le nombre d'arguments
+
+    // Variable recuperant la valeur de l'argument dans son type
+    type valeur = va_arg(arg_ptr, type); // retourne la valeur de l'argument
+    // Il faut preciser le type, il doit etre identique au type de notre variable
+    // Le pointeur va se deplacer pour le prochain argument a recuperer
+
+    va_end(arg_ptr); // Fin de la recuperation d'arguments (Destruction de arg_ptr)
+
+}
+```
+
+> Par convention on nomme la variable de type va_list `arg_ptr` .
+
+**Exemple :**
+
+```c
+float moyenne(int  num, ...) {
+
+    va_list arg_ptr;
+
+    va_start(arg_ptr, nb_args);
+
+    for(int i=0; i < nb_args; i++) total += va_arg(arg_ptr, int);
+
+    va_end(arg_ptr);
+
+    return ((float)total/nb_args);
+}
+```
