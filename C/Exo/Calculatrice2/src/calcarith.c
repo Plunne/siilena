@@ -1,5 +1,8 @@
 #include "calcarith.h"
 
+extern double a;
+extern double b;
+
 double arithAddition(void) {
 
     puts("-- Addition --\n");

@@ -161,7 +161,10 @@ Type qui retourne un pointeur dont l'adresse est inconnue a la compilation.
 void *pointeur = malloc(nb_octets);
 ```
 
-> On peut directement saisir le nombre d'octets a allouer. 
+*On peut directement saisir le nombre d'octets a allouer.* 
+
+> **IMPORTANT!**  
+> Un pointeur de type void s'incremente de 1 octet uniquement.
 
 **Tableau dynamique :**
 
