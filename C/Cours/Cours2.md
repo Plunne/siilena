@@ -48,6 +48,11 @@ Formateur : Paul-Ernest MARTIN
 - [ARGUMENTS VARIABLES](#arguments-variables)
   - [Depedance](#depedance)
   - [Definition](#definition-2)
+- [STRING.H](#stringh)
+  - [strlen](#strlen)
+  - [strcpy](#strcpy)
+  - [strcmp](#strcmp)
+  - [strcat](#strcat)
 
 # MASQUES
 
@@ -584,3 +589,40 @@ float moyenne(int nb_args, ...) {
     return ((float)total/nb_args);
 }
 ```
+
+# STRING.H
+
+## strlen
+
+Connaitre la longueur d'une chaine de caractere sans compter le caractere de fin `\0` .
+
+```c
+strlen(chaine);
+```
+
+## strcpy
+
+Copie une chaine dans une autre.
+
+```c
+strcpy(chaineDest, chaineSrc);
+```
+
+> La chaine de destination doit etre plus grande que celle a copier.
+
+## strcmp
+
+Compare les chaines et retourne un booleen.
+
+```c
+strcmp(chaineDest, chaineSrc);
+```
+
+## strcat
+
+Concatener des chaines de caracteres.
+
+```c
+strcpy(chaine1, chaine2);
+```
+
