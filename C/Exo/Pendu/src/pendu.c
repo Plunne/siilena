@@ -1,5 +1,9 @@
 #include "pendu.h"
 
+/*****************
+ *     Pendu     *
+ *****************/
+
 void runPendu(PenduGame* Pendu) {
 
 	/* Display */
