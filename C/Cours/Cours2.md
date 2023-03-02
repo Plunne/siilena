@@ -537,17 +537,21 @@ Il est possible de faire en sorte que le nombre d'arguments soit variables.
 On met `...` en arguments pour dire que les arguments seront variables.
 
 ```c
-void fonction(type argument, ...);
+void fonction(int nb_args, ...);
 ```
 
+> **IMPORTANT!**  
+> Il faut indiquer en premier argument le nombre d'arguments possibles
+
 ```c
-void fonction(type argument, ...) {
+void fonction(int nb_args, ...) {
 
     va_list arg_ptr;  // Init une variable de type va_list
     // Ce cointeur va nous permettre de recuperer les arguments
 
     va_start(arg_ptr, nb_args); // Init arguments variables
-    // Il faut indiquer le nombre d'arguments
+    // Il faut tout de meme connaitre le nombre d'arguments
+    // Donc on l'indique
 
     // Variable recuperant la valeur de l'argument dans son type
     type valeur = va_arg(arg_ptr, type); // retourne la valeur de l'argument
@@ -564,7 +568,7 @@ void fonction(type argument, ...) {
 **Exemple :**
 
 ```c
-float moyenne(int  num, ...) {
+float moyenne(int nb_args, ...) {
 
     va_list arg_ptr;
 
