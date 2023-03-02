@@ -6,13 +6,14 @@
 #include <stdarg.h>
 #include <string.h>
 
-#define MAX_TRY 27 // Alphabet + '\0'
+#define PENDU_MAX_WORD	30	// Approximatively, lenght of the longest dictionnary word
+#define PENDU_MAX_TRY	27	// Alphabet + '\0'
 
 typedef struct {
 
 	/* Letters */
 	char letter;
-	char try[MAX_TRY];
+	char try[PENDU_MAX_TRY];
 	char nbTry;
 
 	/* Word */
@@ -20,6 +21,9 @@ typedef struct {
 	char *word;
 	char missedCpt;
 	char missedFlag;
+
+	/* Quit */
+	char running;
 
 }PenduGame;
 

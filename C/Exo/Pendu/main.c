@@ -7,9 +7,12 @@ int main(void) {
 	
 	/* New Pendu Game */
 	PenduGame Pendu;
-	defaultPendu(&Pendu);
 
-	while (1) {
+	/* Set Pendu with a Word */
+	setPendu(&Pendu, "ALEATOIRE");
+
+	/* Pendu Game*/
+	while (Pendu.running) {
 		runPendu(&Pendu);
 	}
 

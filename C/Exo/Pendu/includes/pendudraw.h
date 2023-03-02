@@ -7,7 +7,7 @@
 #define PENDU_CARACTER_Y	8
 #define PENDU_CARACTER_X	15
 
-static char penduCaracter[7][8][15] = {
+static char penduCaracter[PENDU_CARACTER_NB][PENDU_CARACTER_Y][PENDU_CARACTER_X] = {
 	{
 		{' ', ' ', ' ', ' ', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '\0'},
 		{' ', ' ', ' ', ' ', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '\0'},

@@ -21,7 +21,7 @@ void compareWords(PenduGame* Pendu) {
 	if (!strcmp(Pendu->word, Pendu->PENDU)) {			// If both words are equals
 		puts("\n***** BRAVO! *****\n");					// YOU WON THE GAME!!!
 		printf("You found \"%s\" UwU\n", Pendu->word);	// YOU FOUND THE WORD!!! UwU
-		exit(EXIT_SUCCESS);
+		Pendu->running = 0;								// Pendu finished
 	}
 }
 
@@ -34,7 +34,7 @@ void checkMissed(PenduGame* Pendu) {
 	/* Game Over */
 	if (!(Pendu->missedCpt)) {						// Check if game lost
 		puts("\n***** GAME OVER *****\n");			// Try Again :(
-		exit(EXIT_SUCCESS);
+		Pendu->running = 0;							// Pendu finished
 	}
 	
 	/* Reset Missed Flag */

@@ -3,6 +3,9 @@
 
 #include "penduio.h"
 
-void runPendu(void);
+void runPendu(PenduGame *Pendu);
+
+void defaultPendu(PenduGame *Pendu);
+void setPendu(PenduGame *Pendu, char *word);
 
 #endif // __PENDU_H
