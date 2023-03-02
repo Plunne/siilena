@@ -1,5 +1,9 @@
 #include "structures.h"
 
+/********************
+ *     Personne     *
+ ********************/
+
 void InitPersonne(Personne* pers) {
 
 	/* Init empty pers */
@@ -33,4 +37,20 @@ void displayPersonne(Personne* pers) {
 void copyPersonne(Personne *pers1, Personne *pers2) {
 
 	memcpy(pers1, pers2, sizeof(Personne));	// Copy Personne2 into Personne1
+}
+
+/**************************
+ *     Age Difference     *
+ **************************/
+
+int diffAge(Personne *pers1, Personne *pers2) {
+	
+	if (pers1->age >= pers2->age) return pers1->age - pers2->age;
+	else return pers2->age - pers1->age;
+}
+
+void displayDiffAge(int diff) {
+
+	puts("\n-- Difference Age --");				// -- Difference Age --
+	printf("\nDifference d'age : %d\n", diff);	// Display Age Difference
 }

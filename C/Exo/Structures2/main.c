@@ -30,10 +30,14 @@ int main(void) {
 	setPersonne(&Personne2, nom2, prenom2, age2);
 	displayPersonne(&Personne2);
 	
+	/* age Difference */
+
+	displayDiffAge(diffAge(&Personne1, &Personne2));
+	
 	/* copy Personne */
 
 	copyPersonne(&Personne1, &Personne2);
 	displayPersonne(&Personne1);
-	
+
 	return 0;
 }

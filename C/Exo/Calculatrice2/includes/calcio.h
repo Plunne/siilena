@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #include "calcarith.h"
+#include "calccmp.h"
 
 void runCalculator();
 

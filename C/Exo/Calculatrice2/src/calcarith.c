@@ -1,18 +1,6 @@
 #include "calcarith.h"
 
-void insertNumbers(void) {
-    
-    /* A */
-    puts("Saisir a : \n");
-    scanf("%lf", &a);
-
-    /* B */
-    puts("Saisir b : \n");
-    scanf("%lf", &b);
-
-}
-
-double execAddition(void) {
+double arithAddition(void) {
 
     puts("-- Addition --\n");
     insertNumbers();
@@ -20,7 +8,7 @@ double execAddition(void) {
     return addition(a, b);
 }
 
-double execSoustraction(void) {
+double arithSoustraction(void) {
     
     puts("-- Soustraction --\n");
     insertNumbers();
@@ -28,7 +16,7 @@ double execSoustraction(void) {
     return soustraction(a, b);
 }
 
-double execMultiplication(void) {
+double arithMultiplication(void) {
 
     puts("-- Multiplication --\n");
     insertNumbers();
@@ -36,7 +24,7 @@ double execMultiplication(void) {
     return multiplication(a, b);
 }
 
-double execDivision(void) {
+double arithDivision(void) {
 
     puts("-- Division --\n");
     insertNumbers();
@@ -50,17 +38,4 @@ double execSqr(void) {
     insertNumbers();
 
     return sqr(a);
-}
-
-
-int compSuperior(int *a, int *b) {
-    if (*a == *b) return 0;
-    if (*a > *b) return *a;
-    else return *b;
-}
-
-int compInferior(int *a, int *b) {
-    if (*a == *b) return 0;
-    if (*a < *b) return *a;
-    else return *b;
 }

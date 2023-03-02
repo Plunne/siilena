@@ -10,17 +10,27 @@ void runCalculator() {
     scanf(" %c", &operator);
 
     switch (operator) {
+        
+        // Quit if operator is 'q'
+        case 'q': exit(0);
+        
         case '+':
-            result = &execAddition;
+            result = &arithAddition;
             break;
         case '-':
-            result = &execSoustraction;
+            result = &arithSoustraction;
             break;
         case '*':
-            result = &execMultiplication;
+            result = &arithMultiplication;
             break;
         case '/':
-            result = &execDivision;
+            result = &arithDivision;
+            break;
+        case '>':
+            result = &compSuperior;
+            break;
+        case '<':
+            result = &compInferior;
             break;
 
         default: break;
