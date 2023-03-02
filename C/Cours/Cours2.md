@@ -537,7 +537,7 @@ Il est possible de faire en sorte que le nombre d'arguments soit variables.
 On met `...` en arguments pour dire que les arguments seront variables.
 
 ```c
-void fonction(int nb_args, ...);
+void fonction(int nb_args, ...); // Fonction qui contiendra nb_args arguments
 ```
 
 > **IMPORTANT!**  
