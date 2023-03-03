@@ -3,6 +3,7 @@
 
 #include "penducheck.h"
 #include "pendudraw.h"
+#include "pendufile.h"
 
 void displayPendu(PenduGame* Pendu);
 void insertLetter(PenduGame* Pendu);

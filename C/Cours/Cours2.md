@@ -53,6 +53,8 @@ Formateur : Paul-Ernest MARTIN
   - [strcpy](#strcpy)
   - [strcmp](#strcmp)
   - [strcat](#strcat)
+- [TRIAGE](#triage)
+- [RECHERCHE](#recherche)
 
 # MASQUES
 
@@ -625,4 +627,39 @@ Concatener des chaines de caracteres.
 ```c
 strcpy(chaine1, chaine2);
 ```
+
+# TRIAGE
+
+La fonction `qsort()` permet de trier des elements par rapport a une comparaison.
+
+```c
+qsort...
+void *qsort(const void *tab, size_t nb_elem, size_t sizeof_elem, int (*compare)(const void*, const void*));
+```
+
+| Parametre     | Description                                |
+|---------------|--------------------------------------------|
+| `*tab`        | Pointeur vers le debut du tableau          |
+| `nb_elem`     | Nombre d'elements dans le tableau          |
+| `sizeof_elem` | taille de chaque elements                  |
+| `*compare`    | Pointeur pour une fonction de comparaison  |
+
+# RECHERCHE
+
+La fonction `bsearch()` permet de rechercher des elements.
+Pour cela il divise le tableau en deux et a partir du milieu.
+Il definit dans quelle partie l'element se trouve puis
+dans cette enieme partie, il redivise en deux
+et reproduit la meme etape jusqu'a trouver l'element.
+
+```c
+void *bsearch(const void *elem, const void *tab, size_t nb_elem, size_t sizeof_elem, int (*compare)(const void*, const void*));
+```
+| Parametre     | Description                                |
+|---------------|--------------------------------------------|
+| `*elem`       | Adresse de l'element a chercher            |
+| `*tab`        | Pointeur vers le debut du tableau          |
+| `nb_elem`     | Nombre d'elements dans le tableau          |
+| `sizeof_elem` | taille de chaque elements                  |
+| `*compare`    | Pointeur pour une fonction de comparaison  |
 

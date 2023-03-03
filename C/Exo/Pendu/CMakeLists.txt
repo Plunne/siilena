@@ -5,7 +5,13 @@ set(CMAKE_C_STANDARD 11)
 
 set(HEADERS includes)
 
-add_library(PenduLib src/pendu.c src/penduio.c src/penducheck.c src/pendudraw.c)
+add_library(PenduLib
+	src/pendu.c
+	src/penduio.c
+	src/penducheck.c
+	src/pendudraw.c
+	src/pendufile.c
+)
 
 add_executable (${PROJECT_NAME} main.c)
 

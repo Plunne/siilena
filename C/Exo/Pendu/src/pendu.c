@@ -4,22 +4,30 @@
  *     Pendu     *
  *****************/
 
-void runPendu(PenduGame *Pendu) {
-
-	/* Display */
-	displayPendu(Pendu);
-
-	/* Letter Input */
-	insertLetter(Pendu);
-
-	/* Check in word */
-	checkInWord(Pendu);
+void runPendu(PenduGame* Pendu) {
 	
-	/* Compare words */
-	compareWords(Pendu);
-	
-	/* Check missed */
-	checkMissed(Pendu);
+	puts("\n\n");
+	puts("*********************");
+	puts("*     NEW PENDU     *");
+	puts("*********************");
+
+	while (Pendu->running)
+	{
+		/* Display */
+		displayPendu(Pendu);
+
+		/* Letter Input */
+		insertLetter(Pendu);
+
+		/* Check in word */
+		checkInWord(Pendu);
+
+		/* Compare words */
+		compareWords(Pendu);
+
+		/* Check missed */
+		checkMissed(Pendu);
+	}
 }
 
 
@@ -62,4 +70,5 @@ void setPendu(PenduGame *Pendu, char *word) {
 	/* Running */
 	Pendu->running		= 1;		// Init Pendu running state
 
+	runPendu(Pendu);
 }

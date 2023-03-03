@@ -22,6 +22,9 @@ typedef struct {
 	char missedCpt;
 	char missedFlag;
 
+	/* File */
+	FILE* file;
+
 	/* Quit */
 	char running;
 

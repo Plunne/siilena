@@ -8,13 +8,12 @@ int main(void) {
 	/* New Pendu Game */
 	PenduGame Pendu;
 
+	/* WIP */
+	// getFileWord(&Pendu);
+	
 	/* Set Pendu with a Word */
 	setPendu(&Pendu, "ALEATOIRE");
-
-	/* Pendu Game*/
-	while (Pendu.running) {
-		runPendu(&Pendu);
-	}
+	setPendu(&Pendu, "COUCOU");
 
 	return 0;
 }
