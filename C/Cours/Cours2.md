@@ -55,6 +55,9 @@ Formateur : Paul-Ernest MARTIN
   - [strcat](#strcat)
 - [TRIAGE](#triage)
 - [RECHERCHE](#recherche)
+- [MATH](#math)
+- [FICHIERS](#fichiers)
+  - [Assert](#assert)
 
 # MASQUES
 
@@ -614,7 +617,7 @@ strcpy(chaineDest, chaineSrc);
 
 ## strcmp
 
-Compare les chaines et retourne un booleen.
+Compare les chaines et retourne zero si les chaines sont identiques, -1 si la deuxieme est plus grande et 1 si la premiere est plus grande.
 
 ```c
 strcmp(chaineDest, chaineSrc);
@@ -662,4 +665,39 @@ void *bsearch(const void *elem, const void *tab, size_t nb_elem, size_t sizeof_e
 | `nb_elem`     | Nombre d'elements dans le tableau          |
 | `sizeof_elem` | taille de chaque elements                  |
 | `*compare`    | Pointeur pour une fonction de comparaison  |
+
+# MATH
+
+La bibliotheque Math contient la plupart des fonctions mathematiques.
+
+```c
+#include <math.h>
+```
+
+**Quelques fonctions contenues :**
+
+- `cos()` et `acos()`
+- `sin()` et `asin()`
+- `tan()` et `atan()`
+- `exp()`, `log()`, `log10()`, `frexp()`, `ldexp()`
+- `cosh()`, `sinh()`, `tanh()`
+- `sqrt()`, `ceil()`, `abs()`, `labs()`, `floor()`
+- `modf()`, `pow()`, `fmod()`
+
+> *La majorite de ces fonctions retournent en type `double` .*
+
+# FICHIERS
+
+## Assert
+
+Assert est une fonction macro qui sert a detecter les problemes d'execution.
+
+La fonction `assert()` n'est interpretee par le compilateur **uniquement en mode debug**. Donc est ignoree en mode release.
+
+Elle prend en argument une expression que l'on souhaite traiter.
+
+Si l'expression est fausse, affiche un message d'erreur sur stderr et termine le programme.
+
+La constante symbolique `NDEBUG` desactive la macro `assert()` .
+
 
