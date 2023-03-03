@@ -56,8 +56,10 @@ Formateur : Paul-Ernest MARTIN
 - [TRIAGE](#triage)
 - [RECHERCHE](#recherche)
 - [MATH](#math)
-- [FICHIERS](#fichiers)
+- [ERREURS](#erreurs)
   - [Assert](#assert)
+  - [Errno](#errno)
+- [Fichiers](#fichiers)
 
 # MASQUES
 
@@ -686,11 +688,15 @@ La bibliotheque Math contient la plupart des fonctions mathematiques.
 
 > *La majorite de ces fonctions retournent en type `double` .*
 
-# FICHIERS
+# ERREURS
 
 ## Assert
 
 Assert est une fonction macro qui sert a detecter les problemes d'execution.
+
+```c
+#include <assert.h>
+```
 
 La fonction `assert()` n'est interpretee par le compilateur **uniquement en mode debug**. Donc est ignoree en mode release.
 
@@ -700,4 +706,53 @@ Si l'expression est fausse, affiche un message d'erreur sur stderr et termine le
 
 La constante symbolique `NDEBUG` desactive la macro `assert()` .
 
+> Ajouter cette ligne dans le `CMakeLists.txt` :
+> ```cmake
+> add_definitions(-DNDEBUG)
+> ```
+>
+> Sinon le flag pour gcc/g++ :
+> ```make
+> -DNDEBUG
+> ```
+
+## Errno
+
+La bibliotheque `errno.h` definit des macros qui documente les erreurs lors de l'execution du programme.
+
+```c
+#include <errno.h>
+```
+
+La fonction `perror()` permet d'afficher la derniere erreur sur stderr.
+
+# Fichiers
+
+La bibliotheque `stdio.h` offre des fonctions de manipulation de fichiers.
+
+```c
+FILE *file = fopen("nom_fichier.txt", "r/w");
+
+if (!file) {
+
+    perror("Error opening file");
+    printf("errno = %d\n", errno);
+
+    if (errno == ENOENT) {
+        perror("File not found\n");
+    }
+    else if (errno == EACCES) {
+        perror("Permission denied\n");
+    }
+    else {
+        perror("Unknown error\n");
+    }
+        
+    exit(EXIT_FAILURE);
+}
+
+/* Manage file & other */
+
+fclose(file);
+```
 

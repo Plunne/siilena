@@ -46,7 +46,7 @@ void checkMissed(PenduGame* Pendu) {
 char checkUsed(PenduGame* Pendu) {
 
 	/* Check Letter */
-	if (!checkLetter(Pendu)) {		// If not a letter
+	if (!checkLetter(Pendu)) {						// If not a letter
 		puts("\nIt's not a letter!\n");				// Show Warning
 		return 1;									// Return 1 to stay in insert loop
 	}

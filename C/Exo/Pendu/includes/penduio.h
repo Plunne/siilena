@@ -1,5 +1,5 @@
-#ifndef __PENDUIO_H
-#define __PENDUIO_H
+#ifndef _PENDUIO_H
+#define _PENDUIO_H
 
 #include "penducheck.h"
 #include "pendudraw.h"
@@ -8,4 +8,4 @@
 void displayPendu(PenduGame* Pendu);
 void insertLetter(PenduGame* Pendu);
 
-#endif // __PENDUIO_H
+#endif // _PENDUIO_H
