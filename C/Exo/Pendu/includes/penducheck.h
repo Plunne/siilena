@@ -2,6 +2,7 @@
 #define __PENDUCHECK_H
 
 #include "penduinit.h"
+#include "pendudraw.h"
 
 void checkInWord(PenduGame* Pendu);
 void compareWords(PenduGame* Pendu);

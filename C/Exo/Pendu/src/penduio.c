@@ -26,3 +26,29 @@ void insertLetter(PenduGame* Pendu) {
 	Pendu->try[Pendu->nbTry] = '\0';			// Put last string char '\0' into try array
 	
 }
+
+
+void playAgain(void) {
+	
+	char again = 0;
+	
+	printf("\nPlay again? (y/n) : ");
+	scanf(" %c", &again);
+
+	switch (again)
+	{
+	case 'y':
+	case 'Y':
+	case 'o':
+	case 'O':
+		break;
+	case 'n':
+	case 'N':
+		puts("\nGoodbye! Thanks for playing <3");
+		exit(EXIT_SUCCESS);
+	default:
+		puts("\nERROR! Character not supported.");
+		exit(EXIT_FAILURE);
+	}
+}
+

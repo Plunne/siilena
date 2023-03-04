@@ -3,6 +3,6 @@
 
 #include "penduinit.h"
 
-char* getFileWord(PenduGame *Pendu);
+void getFileWord(PenduGame *Pendu);
 
 #endif // _PENDUFILE_H

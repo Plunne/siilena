@@ -17,8 +17,8 @@ typedef struct {
 	char nbTry;
 
 	/* Word */
-	char *PENDU;
-	char *word;
+	char PENDU[PENDU_MAX_WORD];
+	char word[PENDU_MAX_WORD];
 	char missedCpt;
 	char missedFlag;
 

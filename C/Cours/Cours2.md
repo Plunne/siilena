@@ -60,6 +60,10 @@ Formateur : Paul-Ernest MARTIN
   - [Assert](#assert)
   - [Errno](#errno)
 - [Fichiers](#fichiers)
+  - [Direction](#direction)
+  - [Sorties](#sorties)
+  - [Lecture/Ecriture](#lectureecriture)
+  - [Lignes](#lignes)
 
 # MASQUES
 
@@ -668,6 +672,8 @@ void *bsearch(const void *elem, const void *tab, size_t nb_elem, size_t sizeof_e
 | `sizeof_elem` | taille de chaque elements                  |
 | `*compare`    | Pointeur pour une fonction de comparaison  |
 
+> Le tableau doit etre trie de facon a ce que la fonction de comparaison puis rendre le resultat attendu.
+
 # MATH
 
 La bibliotheque Math contient la plupart des fonctions mathematiques.
@@ -756,3 +762,60 @@ if (!file) {
 fclose(file);
 ```
 
+## Direction
+
+Mode | Signification
+-|-
+r | lecture
+w | ecriture override
+a | append, si n'existe pas, creer, si existe, ajoute a la fin
++b | binaire
+
+## Sorties
+
+
+## Lecture/Ecriture
+
+### Ecriture
+
+```c
+fprintf(FILE *file, char *chaine);
+```
+
+```c
+fputs(FILE *file, char *chaine);
+```
+
+```c
+fputc(FILE *file, char caractere);
+```
+
+```c
+fwrite(void *data, int size, int count, FILE *file)
+```
+
+### Lecture
+
+```c
+fscanf(FILE *file, char *chaine);
+```
+
+```c
+fgets(FILE *file, char *chaine);
+```
+
+```c
+fgetc(FILE *file, char caractere);
+```
+
+```c
+fread(void *data, int size, FILE *file)
+```
+
+## Lignes
+
+```c
+while (fscanf(file, "%[^\n]\n", chaine) != EOF) {
+    printf("%s", chaine);
+}
+```
