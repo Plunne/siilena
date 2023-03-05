@@ -26,7 +26,6 @@ void compareWords(PenduGame* Pendu) {
 	}
 }
 
-
 void checkMissed(PenduGame* Pendu) {
 
 	/* Check missed */
@@ -44,7 +43,6 @@ void checkMissed(PenduGame* Pendu) {
 	Pendu->missedFlag = 1;									// Set Missed Flag back to HIGH
 
 }
-
 
 char checkUsed(PenduGame* Pendu) {
 
@@ -79,3 +77,4 @@ char checkLetter(PenduGame *Pendu) {
 	/* Not a letter */
 	else return 0; // Return 0 (Null signal to inform that's not a letter)
 }
+

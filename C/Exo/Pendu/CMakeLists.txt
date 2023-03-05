@@ -11,6 +11,7 @@ add_library(PenduLib
 	src/penducheck.c
 	src/pendudraw.c
 	src/pendufile.c
+	src/penduinit.c
 )
 
 add_executable (${PROJECT_NAME} main.c)

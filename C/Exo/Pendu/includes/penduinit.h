@@ -30,4 +30,7 @@ typedef struct {
 
 }PenduGame;
 
+void initPendu(PenduGame* Pendu);
+void initWord(PenduGame* Pendu);
+
 #endif // __PENDUINIT_H
