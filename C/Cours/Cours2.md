@@ -64,6 +64,8 @@ Formateur : Paul-Ernest MARTIN
   - [Sorties](#sorties)
   - [Lecture/Ecriture](#lectureecriture)
   - [Lignes](#lignes)
+- [Enum](#enum)
+  - [Incrementation](#incrementation)
 
 # MASQUES
 
@@ -819,3 +821,38 @@ while (fscanf(file, "%[^\n]\n", chaine) != EOF) {
     printf("%s", chaine);
 }
 ```
+
+# Enum
+
+Enum permet de creer un type de valeurs avec un nom Lisible.
+
+```c
+enum type { NOM1, NOM2, ... };
+```
+
+Les valeurs sont respectivements assignees en partant de zero et de type `int` .
+
+Il est egalement possible de choisir a partir de quelle valeur ca commence.
+
+**Exemple :**
+
+```c
+typedef enum jour { LUNDI=1, MARDI, MERCREDI, JEUDI, VENDREDI, SAMEDI, DIMANCHE };
+```
+
+> Lundi:1  Mardi : 2, Mercredi 3, etc.
+
+## Incrementation
+
+Pour se ballader numeriquement dans l'enum, on peut incremmenter le type.
+
+**Exemple :**
+
+```c
+typedef enum jour { LUNDI=1, MARDI, MERCREDI, JEUDI, VENDREDI, SAMEDI, DIMANCHE };
+
+printf("%d", jour + 3);
+```
+
+-> `4` *(Valeur de JEUDI)*
+
