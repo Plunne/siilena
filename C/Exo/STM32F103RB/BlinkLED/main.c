@@ -24,10 +24,10 @@ int main(void) {
 	while (1) {
 		
 		/* BUTTON */
-		while((GPIOC->IDR &= (1 << 13))) {
+		while((GPIOC->IDR &= (1 << 13))) { // If/While button PC13 not pressed
 		
 			/* LED HIGH */
-			GPIOA->ODR ^= (1 << 5);
+			GPIOA->ODR ^= (1 << 5); // Toggle LED
 			delayMs(500);
 		
 		}
