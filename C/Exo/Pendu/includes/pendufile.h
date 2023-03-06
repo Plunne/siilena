@@ -4,5 +4,6 @@
 #include "penduinit.h"
 
 void getFileWord(PenduGame *Pendu);
+// void getFileList(PenduGame *Pendu);
 
 #endif // __PENDUFILE_H

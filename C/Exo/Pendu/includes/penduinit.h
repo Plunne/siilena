@@ -30,6 +30,11 @@ typedef struct {
 
 }PenduGame;
 
+typedef struct {
+	PenduGame *Game;
+	char *wordList;
+}PenduList;
+
 void initPendu(PenduGame* Pendu);
 void initWord(PenduGame* Pendu);
 
