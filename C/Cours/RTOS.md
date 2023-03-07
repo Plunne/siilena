@@ -54,13 +54,6 @@ Formateur : Paul-Ernest MARTIN
 - [CHOISIR UN MICRO-CONTROLEUR](#choisir-un-micro-controleur)
 - [ADDITION BINAIRE](#addition-binaire)
 - [COMPLEMENT A 1](#complement-a-1)
-- [ADDITION HEXADECIMALE](#addition-hexadecimale)
-- [MCU](#mcu)
-- [Keil](#keil)
-  - [Packages](#packages)
-- [Registres](#registres)
-  - [GPIO](#gpio)
-  - [RCC](#rcc)
 
 # Systemes d'Exploitation en Temps-Reel (RTOS) 
 
@@ -402,60 +395,4 @@ tableau diapo 47
 # COMPLEMENT A 1
 
 Soustraction par complement a 1.
-
-# ADDITION HEXADECIMALE
-
-A venir...
-
-# MCU
-
-# Keil
-
-
-## Packages
-
-- STMicroelectronics
-  - Keil::STM32F1xx_DFP
-  - ARM CMSIS
-  - Keil::ARM_COmpiler
-
-# Registres
-
-## GPIO
-
-### MODER
-
-Mode Register
-
-| Valeur | Fonction           |
-|:------:|--------------------|
-| `00`   | Input              |
-| `01`   | Output             |
-| `10`   | Alternate Function |
-| `11`   | Analog             |
-
-
-
-
-### ODR
-
-Output Data Register
-
-| Valeur | Etat  |
-|:------:|-------|
-| `0`    | LOW   |
-| `1`    | HIGH  |
-
-## RCC
-
-Reset & Clock Control register
-
-### Enable
-
-RCC->APB2ENR
-
-| 7   | 6    | 5     | 4     | 3     | 2     | 1     | 0     |
-|-----|------|-------|-------|-------|-------|-------|-------|
-| ... | IOPF | IOPE | IOPD | IOPC | IOPB | IOPA | Res. | AFIO |
-
 

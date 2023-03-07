@@ -76,8 +76,6 @@ Formateur : Paul-Ernest MARTIN
 - [SHIFT](#shift)
 - [Decalage a droite](#decalage-a-droite)
 - [Decalage a gauche](#decalage-a-gauche)
-- [STM32 REGISTERS](#stm32-registers)
-  - [INPUT/OUTPUTS](#inputoutputs)
 
 # RAM
 
@@ -1083,20 +1081,3 @@ lsl r16, 0x01
 ```
 
 > r16 = `0x04`
-
-
-# STM32 REGISTERS
-
-## INPUT/OUTPUTS
-
-### MODER (Mode Registers)
-
-Configurer le mode des entrees/sorties
-
-| rw    | Parametre           |
-|:-----:|:--------------------|
-| `00`  | Input               |
-| `01`  | Output              |
-| `10`  | Alternate function  |
-| `11`  | Analog Input        |
-
