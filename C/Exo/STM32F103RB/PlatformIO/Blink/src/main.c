@@ -1,6 +1,7 @@
 #include "lsl_init_regs.h"
 #include "lsl_utils.h"
-#include "lsl_diode.h"
+#include "lsl_display.h"
+#include "lsl_pinouts.h"
 
 int main(void) {
 
@@ -8,37 +9,40 @@ int main(void) {
 	LSL_Init_Registers();
 
 	/* Init Variables */
-
 	int i = 0;
-	int sw_state = 0;
+	int sw_cpt = 0;
 	int mode_state = 0;
 
 	/* Super Loop */
 	while (1) {
-		
-		if (!LSL_PINOUT_Read(&Button)) {
-			LSL_PINOUT_Write(&LED, TOGGLE);
-			sw_state++;
-		} else {
-			LSL_PINOUT_Write(&LED, LOW);
-			sw_state = 0;
+
+		// Button		
+		if (!LSL_PINOUTS_Read(&Button)) {	// If Button pressed
+			LSL_UTILS_DelayMs(100); 		// Anti bouncing
+			LSL_PINOUTS_Write(&LED, HIGH);	// LED ON
+			sw_cpt++;						// Switch counter ++
+		} else {							// If Button not pressed / released
+			LSL_PINOUTS_Write(&LED, LOW);	// LED OFF
+			sw_cpt = 0;						// Reset switch counter
 		}
 
-		if (sw_state == 25000) mode_state = 1;
+		if (sw_cpt == 3) mode_state = 1;	// If switch counter == 3 (> 3seconds), set Mode state to 1
 
-		// INCREMENT STATE
-		if (!mode_state) {
-			if (i == 9) i = 0;
-			else i++;
+		// Increment Number
+		if (!mode_state) {					// If Mode state is default
+			if (i == 9) i = 0;				// If number is 9 (maximum), reset to 0 (minimum)
+			else i++;						// Else Increment number
 		}
-		else {
-			if (i == 0) i = 9;
-			else i--;
+		else {								// If Mode state is reverse
+			if (i == 0) i = 9;				// If number is 0 (minimum), reset to 9 (maximum)
+			else i--;						// Else decrement number
 		}
 
-		LSL_DIODE_Display7Seg(Diodes, i);
+		// Display
+		LSL_DISPLAY_Display7Seg(Diodes, i);	// Display number (i)
 
-		LSL_UTILS_DelayMs(1000);
+		// Delay
+		LSL_UTILS_DelayMs(1000);			// Delay
 	}
 	
 	return 0;

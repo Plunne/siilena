@@ -12,18 +12,18 @@ void LSL_PINOUTS_ClearMode(GPIO_TypeDef *PORTx, unsigned char pin) {
 }
 
 /* Output */
-void LSL_PINOUT_Write(LSL_Pinout *pinout, unsigned char mode) {
+void LSL_PINOUTS_Write(LSL_Pinout *pinout, unsigned char mode) {
     
     switch (mode)
     {
     case 0:
-        LSL_PINOUT_Clear(pinout);
+        LSL_PINOUTS_Clear(pinout);
         break;
     case 1:
-        LSL_PINOUT_Set(pinout);
+        LSL_PINOUTS_Set(pinout);
         break;
     case 2:
-        LSL_PINOUT_Toggle(pinout);
+        LSL_PINOUTS_Toggle(pinout);
         break;
     
     default:
@@ -32,20 +32,20 @@ void LSL_PINOUT_Write(LSL_Pinout *pinout, unsigned char mode) {
 
 }
 
-void LSL_PINOUT_Set(LSL_Pinout *pinout) {
+void LSL_PINOUTS_Set(LSL_Pinout *pinout) {
     pinout->PORTx->ODR |= (1 << pinout->pin); 
 }
 
-void LSL_PINOUT_Clear(LSL_Pinout *pinout) {
+void LSL_PINOUTS_Clear(LSL_Pinout *pinout) {
     pinout->PORTx->ODR &= ~(1 << pinout->pin); 
 }
 
-void LSL_PINOUT_Toggle(LSL_Pinout *pinout) {
+void LSL_PINOUTS_Toggle(LSL_Pinout *pinout) {
     pinout->PORTx->ODR ^= (1 << pinout->pin); 
 }
 
 /* Input */
-unsigned char LSL_PINOUT_Read(LSL_Pinout *pinout) {
+unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout) {
     return (pinout->PORTx->IDR & (1 << pinout->pin));
 }
 

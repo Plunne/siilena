@@ -1,6 +1,6 @@
-#include "lsl_diode.h"
+#include "lsl_display.h"
 
-unsigned char LSL_DIODE_Get7Seg(unsigned char number) {
+unsigned char LSL_DISPLAY_Get7Seg(unsigned char number) {
 
     switch(number)
     {
@@ -18,17 +18,17 @@ unsigned char LSL_DIODE_Get7Seg(unsigned char number) {
     }
 }
 
-void LSL_DIODE_Display7Seg(LSL_Pinout *diode, unsigned char number) {
+void LSL_DISPLAY_Display7Seg(LSL_Pinout *diode, unsigned char number) {
 
-    unsigned char segment = LSL_DIODE_Get7Seg(number);
+    unsigned char segment = LSL_DISPLAY_Get7Seg(number);
 
     for (int i=0; i < DIODE_NB; i++) {
 
-        LSL_PINOUT_Write(&diode[i], HIGH);
+        LSL_PINOUTS_Write(&diode[i], HIGH);
         if (segment & (1 << i)) {
-            LSL_PINOUT_Write(&diode[i], LOW);
+            LSL_PINOUTS_Write(&diode[i], LOW);
         } else {
-            LSL_PINOUT_Write(&diode[i], HIGH);
+            LSL_PINOUTS_Write(&diode[i], HIGH);
         }
     }
 }

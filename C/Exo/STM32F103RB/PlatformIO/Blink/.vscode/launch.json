@@ -12,11 +12,11 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "c:/Users/Lena.savylarigaldie/siilena/C/Exo/STM32F103RB/PlatformIO/Blink/.pio/build/nucleo_f103rb/firmware.elf",
+            "executable": "/home/plunne/siilena/C/Exo/STM32F103RB/PlatformIO/Blink/.pio/build/nucleo_f103rb/firmware.elf",
             "projectEnvName": "nucleo_f103rb",
-            "toolchainBinDir": "C:/Users/Lena.savylarigaldie/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "/home/plunne/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "C:/Users/Lena.savylarigaldie/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
+            "svdPath": "/home/plunne/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug"
@@ -26,21 +26,21 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "c:/Users/Lena.savylarigaldie/siilena/C/Exo/STM32F103RB/PlatformIO/Blink/.pio/build/nucleo_f103rb/firmware.elf",
+            "executable": "/home/plunne/siilena/C/Exo/STM32F103RB/PlatformIO/Blink/.pio/build/nucleo_f103rb/firmware.elf",
             "projectEnvName": "nucleo_f103rb",
-            "toolchainBinDir": "C:/Users/Lena.savylarigaldie/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "/home/plunne/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "C:/Users/Lena.savylarigaldie/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd"
+            "svdPath": "/home/plunne/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "c:/Users/Lena.savylarigaldie/siilena/C/Exo/STM32F103RB/PlatformIO/Blink/.pio/build/nucleo_f103rb/firmware.elf",
+            "executable": "/home/plunne/siilena/C/Exo/STM32F103RB/PlatformIO/Blink/.pio/build/nucleo_f103rb/firmware.elf",
             "projectEnvName": "nucleo_f103rb",
-            "toolchainBinDir": "C:/Users/Lena.savylarigaldie/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "/home/plunne/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "C:/Users/Lena.savylarigaldie/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
+            "svdPath": "/home/plunne/.platformio/platforms/ststm32/misc/svd/STM32F103xx.svd",
             "loadMode": "manual"
         }
     ]
