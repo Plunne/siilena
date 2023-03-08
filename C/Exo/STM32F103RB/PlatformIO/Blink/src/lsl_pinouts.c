@@ -30,13 +30,13 @@ void LSL_PINOUTS_Write(LSL_Pinout *pinout, enum PINOUT_STATE mode) {
     
     switch (mode)
     {
-    case 0:
+    case LOW:
         LSL_PINOUTS_Clear(pinout);
         break;
-    case 1:
+    case HIGH:
         LSL_PINOUTS_Set(pinout);
         break;
-    case 2:
+    case TOGGLE:
         LSL_PINOUTS_Toggle(pinout);
         break;
     
