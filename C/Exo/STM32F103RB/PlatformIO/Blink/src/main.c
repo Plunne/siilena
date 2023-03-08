@@ -40,7 +40,7 @@ int main(void) {
 		}
 
 		// Display
-		LSL_DISPLAY_Display7Seg(Diodes, number, anode); 	// Display number (i)
+		LSL_DISPLAY_Display7Seg(Diodes, number, anode); // Display number (i)
 
 		// Delay
 		LSL_UTILS_DelayMs(1000); 					// Delay (Be careful sw_cpt value depends of this delay)
