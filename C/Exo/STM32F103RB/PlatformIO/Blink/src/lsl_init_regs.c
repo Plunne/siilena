@@ -9,10 +9,7 @@ void LSL_Init_Registers(void) {
 
 void LSL_Init_RCC(void) {
 
-    /* ENABLE GPIOs */   
-	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN; // Enable RCC for GPIOA
-	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN; // Enable RCC for GPIOB
-	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; // Enable RCC for GPIOC
+	/* RCC Settings */
 
 }
 

@@ -14,6 +14,9 @@ typedef struct {
     unsigned char mode;
 }LSL_Pinout;
 
+/* Enable */
+void LSL_PINOUTS_Enable(GPIO_TypeDef *PORTx);
+
 /* Mode */
 void LSL_PINOUTS_SetMode(GPIO_TypeDef *PORTx, unsigned char pin, unsigned char mode);
 void LSL_PINOUTS_ClearMode(GPIO_TypeDef *PORTx, unsigned char pin);

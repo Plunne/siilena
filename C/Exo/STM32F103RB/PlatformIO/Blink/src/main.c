@@ -1,3 +1,4 @@
+#include "main.h"
 #include "lsl_init_regs.h"
 #include "lsl_utils.h"
 #include "lsl_display.h"
@@ -9,9 +10,9 @@ int main(void) {
 	LSL_Init_Registers();
 
 	/* Init Variables */
-	int i = 0;
-	int sw_cpt = 0;
-	int mode_state = 0;
+	int number		= 0;
+	int sw_cpt 		= 0;
+	int mode_state 	= 0;
 
 	/* Super Loop */
 	while (1) {
@@ -30,19 +31,19 @@ int main(void) {
 
 		// Increment Number
 		if (!mode_state) {					// If Mode state is default
-			if (i == 9) i = 0;				// If number is 9 (maximum), reset to 0 (minimum)
-			else i++;						// Else Increment number
+			if (number == 9) number = 0;				// If number is 9 (maximum), reset to 0 (minimum)
+			else number++;						// Else Increment number
 		}
 		else {								// If Mode state is reverse
-			if (i == 0) i = 9;				// If number is 0 (minimum), reset to 9 (maximum)
-			else i--;						// Else decrement number
+			if (number == 0) number = 9;				// If number is 0 (minimum), reset to 9 (maximum)
+			else number--;						// Else decrement number
 		}
 
 		// Display
-		LSL_DISPLAY_Display7Seg(Diodes, i);	// Display number (i)
+		LSL_DISPLAY_Display7Seg(Diodes, number);	// Display number (i)
 
 		// Delay
-		LSL_UTILS_DelayMs(1000);			// Delay
+		LSL_UTILS_DelayMs(1000);			// Delay (Be careful sw_cpt value depends of this delay)
 	}
 	
 	return 0;

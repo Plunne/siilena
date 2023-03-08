@@ -1,5 +1,14 @@
 #include "lsl_pinouts.h"
 
+/* Enable */
+void LSL_PINOUTS_Enable(GPIO_TypeDef *PORTx) {
+    if (PORTx == GPIOA) RCC->APB2ENR |= RCC_APB2ENR_IOPAEN; // Enable RCC for GPIOA
+    if (PORTx == GPIOB) RCC->APB2ENR |= RCC_APB2ENR_IOPBEN; // Enable RCC for GPIOB
+    if (PORTx == GPIOC) RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; // Enable RCC for GPIOC
+    if (PORTx == GPIOD) RCC->APB2ENR |= RCC_APB2ENR_IOPDEN; // Enable RCC for GPIOD
+    if (PORTx == GPIOE) RCC->APB2ENR |= RCC_APB2ENR_IOPEEN; // Enable RCC for GPIOE
+}
+
 /* Mode */
 void LSL_PINOUTS_SetMode(GPIO_TypeDef *PORTx, unsigned char pin, unsigned char mode) {
     if (pin < 8) PORTx->CRL |= (mode << (pin * 4));
@@ -51,17 +60,20 @@ unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout) {
 
 /* Digital */
 void LSL_PINOUTS_SetInputDigital(GPIO_TypeDef *PORTx, unsigned char pin) {
+    LSL_PINOUTS_Enable(PORTx);
     LSL_PINOUTS_ClearMode(PORTx, pin);
     LSL_PINOUTS_SetMode(PORTx, pin, INPUT_MODE);
 }
 
 void LSL_PINOUTS_SetOutputDigital(GPIO_TypeDef *PORTx, unsigned char pin) {
+    LSL_PINOUTS_Enable(PORTx);
     LSL_PINOUTS_ClearMode(PORTx, pin);
     LSL_PINOUTS_SetMode(PORTx, pin, OUTPUT_MODE);
 }
 
 /* Pinout */
 void LSL_PINOUTS_SetPinout(GPIO_TypeDef *PORTx, unsigned char pin, unsigned char mode) {
+    LSL_PINOUTS_Enable(PORTx);
     LSL_PINOUTS_ClearMode(PORTx, pin);
     LSL_PINOUTS_SetMode(PORTx, pin, mode);
 }
