@@ -1,5 +1,6 @@
 #include "lsl_display.h"
 
+/* 7 Segments */
 unsigned char LSL_DISPLAY_Get7Seg(unsigned char number) {
 
     switch(number)
@@ -20,22 +21,22 @@ unsigned char LSL_DISPLAY_Get7Seg(unsigned char number) {
 
 void LSL_DISPLAY_Display7Seg(LSL_Pinout *diode, unsigned char number, enum DiodeCOM common) {
 
-    if (common == anode) LSL_DISPLAY_Display7SegAnodeCathode(diode, number, HIGH, LOW);
-    else if (common == cathode) LSL_DISPLAY_Display7SegAnodeCathode(diode, number, LOW, HIGH);
+    if (common == anode) LSL_DISPLAY_Display7SegAnodeCathode(diode, number, HIGH, LOW);         // If display has Common Anode
+    else if (common == cathode) LSL_DISPLAY_Display7SegAnodeCathode(diode, number, LOW, HIGH);  // If display has Common Cathode
 
 }
 
 void LSL_DISPLAY_Display7SegAnodeCathode(LSL_Pinout *diode, unsigned char number, enum PINOUT_STATE stateA, enum PINOUT_STATE stateB) {
 
-    unsigned char segment = LSL_DISPLAY_Get7Seg(number);
+    unsigned char segment = LSL_DISPLAY_Get7Seg(number); // Translate number to bits pattern
 
-    for (int i=0; i < DIODE_NB; i++) {
+    for (int i=0; i < DIODE_NB; i++) { // For each diode
 
-        LSL_PINOUTS_Write(&diode[i], stateA);
-        if (segment & (1 << i)) {
-            LSL_PINOUTS_Write(&diode[i], stateB);
-        } else {
-            LSL_PINOUTS_Write(&diode[i], stateA);
+        LSL_PINOUTS_Write(&diode[i], stateA);       // LED i OFF
+        if (segment & (1 << i)) {                   // Check if at bit i, Pattern bit is HIGH
+            LSL_PINOUTS_Write(&diode[i], stateB);   // If pattern bit is HIGH, LED i ON
+        } else {                                    // Else pattern dosen't match HIGH for LED
+            LSL_PINOUTS_Write(&diode[i], stateA);   // LED i OFF
         }
     }
 }
