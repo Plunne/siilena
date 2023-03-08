@@ -20,6 +20,11 @@ void LSL_PINOUTS_ClearMode(GPIO_TypeDef *PORTx, unsigned char pin) {
     else PORTx->CRH &= ~(0xF << ((pin * 4) - 32));  // Reset Mode for pins 8 -> 15
 }
 
+/* Input */
+unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout) {
+    return (pinout->PORTx->IDR & (1 << pinout->pin));   // Read a digital input
+}
+
 /* Output */
 void LSL_PINOUTS_Write(LSL_Pinout *pinout, unsigned char mode) {
     
@@ -38,7 +43,6 @@ void LSL_PINOUTS_Write(LSL_Pinout *pinout, unsigned char mode) {
     default:
         break;
     }
-
 }
 
 void LSL_PINOUTS_Set(LSL_Pinout *pinout) {
@@ -51,11 +55,6 @@ void LSL_PINOUTS_Clear(LSL_Pinout *pinout) {
 
 void LSL_PINOUTS_Toggle(LSL_Pinout *pinout) {
     pinout->PORTx->ODR ^= (1 << pinout->pin);   // Toggle pinout (Swap HIGH/LOW)
-}
-
-/* Input */
-unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout) {
-    return (pinout->PORTx->IDR & (1 << pinout->pin));   // Read a digital input
 }
 
 /* Pinout */

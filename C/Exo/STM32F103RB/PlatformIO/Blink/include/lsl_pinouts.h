@@ -21,14 +21,14 @@ void LSL_PINOUTS_Enable(GPIO_TypeDef *PORTx);
 void LSL_PINOUTS_SetMode(GPIO_TypeDef *PORTx, unsigned char pin, unsigned char mode);
 void LSL_PINOUTS_ClearMode(GPIO_TypeDef *PORTx, unsigned char pin);
 
+/* Input */
+unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout);
+
 /* Output */
 void LSL_PINOUTS_Write(LSL_Pinout *pinout, unsigned char mode);
 void LSL_PINOUTS_Set(LSL_Pinout *pinout);
 void LSL_PINOUTS_Clear(LSL_Pinout *pinout);
 void LSL_PINOUTS_Toggle(LSL_Pinout *pinout);
-
-/* Input */
-unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout);
 
 /* Pinout */
 void LSL_PINOUTS_SetPinout(GPIO_TypeDef *PORTx, unsigned char pin, unsigned char mode);
