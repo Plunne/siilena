@@ -1,11 +1,35 @@
 #include "lsl_diode.h"
 
-void LSL_DIODE_SetDiode(Diodes *diode) {
-    diode->OUT->ODR |= (1 << diode->PIN); 
+void LSL_DIODE_Write(LSL_Pinout *diode, unsigned char mode) {
+    
+    switch (mode)
+    {
+    case 0:
+        LSL_DIODE_ClearDiode(diode);
+        break;
+    case 1:
+        LSL_DIODE_SetDiode(diode);
+        break;
+    case 2:
+        LSL_DIODE_ToggleDiode(diode);
+        break;
+    
+    default:
+        break;
+    }
+
 }
 
-void LSL_DIODE_ClearDiode(Diodes *diode) {
-    diode->OUT->ODR &= ~(1 << diode->PIN); 
+void LSL_DIODE_SetDiode(LSL_Pinout *diode) {
+    diode->PORTx->ODR |= (1 << diode->pin); 
+}
+
+void LSL_DIODE_ClearDiode(LSL_Pinout *diode) {
+    diode->PORTx->ODR &= ~(1 << diode->pin); 
+}
+
+void LSL_DIODE_ToggleDiode(LSL_Pinout *diode) {
+    diode->PORTx->ODR ^= (1 << diode->pin); 
 }
 
 unsigned char LSL_DIODE_Get7Seg(unsigned char number) {
@@ -26,17 +50,17 @@ unsigned char LSL_DIODE_Get7Seg(unsigned char number) {
     }
 }
 
-void LSL_DIODE_Display7Seg(Diodes *diode, unsigned char number) {
+void LSL_DIODE_Display7Seg(LSL_Pinout *diode, unsigned char number) {
 
     unsigned char segment = LSL_DIODE_Get7Seg(number);
 
     for (int i=0; i < DIODE_NB; i++) {
 
-        LSL_DIODE_SetDiode(&diode[i]);
+        LSL_DIODE_WriteDiode(&diode[i], HIGH);
         if (segment & (1 << i)) {
-            LSL_DIODE_ClearDiode(&diode[i]);
+            LSL_DIODE_WriteDiode(&diode[i], LOW);
         } else {
-            LSL_DIODE_SetDiode(&diode[i]);
+            LSL_DIODE_WriteDiode(&diode[i], HIGH);
         }
     }
 }
