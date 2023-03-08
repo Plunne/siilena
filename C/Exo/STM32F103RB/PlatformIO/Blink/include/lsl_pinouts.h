@@ -30,10 +30,6 @@ void LSL_PINOUTS_Toggle(LSL_Pinout *pinout);
 /* Input */
 unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout);
 
-/* Digital */
-void LSL_PINOUTS_SetInputDigital(GPIO_TypeDef *PORTx, unsigned char pin);
-void LSL_PINOUTS_SetOutputDigital(GPIO_TypeDef *PORTx, unsigned char pin);
-
 /* Pinout */
 void LSL_PINOUTS_SetPinout(GPIO_TypeDef *PORTx, unsigned char pin, unsigned char mode);
 void LSL_PINOUTS_InitPinout(LSL_Pinout *pinout);
