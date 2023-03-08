@@ -15,19 +15,16 @@ int main(void) {
 
 	/* Super Loop */
 	while (1) {
-
-
-			
 		
-		if (!(GPIOC->IDR & (1 << 13))) {
-			LSL_DIODE_Write(&LED, HIGH);
+		if (!LSL_PINOUT_Read(&Button)) {
+			LSL_PINOUT_Write(&LED, TOGGLE);
 			sw_state++;
 		} else {
-			LSL_DIODE_Write(&LED, LOW);
+			LSL_PINOUT_Write(&LED, LOW);
 			sw_state = 0;
 		}
 
-		if (sw_state == 250) mode_state = 1;
+		if (sw_state == 25000) mode_state = 1;
 
 		// INCREMENT STATE
 		if (!mode_state) {

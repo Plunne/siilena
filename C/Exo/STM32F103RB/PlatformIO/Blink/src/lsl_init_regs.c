@@ -19,7 +19,7 @@ void LSL_Init_RCC(void) {
 void LSL_Init_GPIO(void) {
     
 	LSL_PINOUTS_InitPinout(Diodes);
-	// LSL_PINOUTS_InitPinout(&Button);
-	// LSL_PINOUTS_InitPinout(&LED);
+	LSL_PINOUTS_InitPinout(&Button);
+	LSL_PINOUTS_InitPinout(&LED);
 
 }
