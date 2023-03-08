@@ -18,17 +18,24 @@ unsigned char LSL_DISPLAY_Get7Seg(unsigned char number) {
     }
 }
 
-void LSL_DISPLAY_Display7Seg(LSL_Pinout *diode, unsigned char number) {
+void LSL_DISPLAY_Display7Seg(LSL_Pinout *diode, unsigned char number, enum DiodeCOM common) {
+
+    if (common == anode) LSL_DISPLAY_Display7SegAnodeCathode(diode, number, HIGH, LOW);
+    else if (common == cathode) LSL_DISPLAY_Display7SegAnodeCathode(diode, number, LOW, HIGH);
+
+}
+
+void LSL_DISPLAY_Display7SegAnodeCathode(LSL_Pinout *diode, unsigned char number, enum PINOUT_STATE stateA, enum PINOUT_STATE stateB) {
 
     unsigned char segment = LSL_DISPLAY_Get7Seg(number);
 
     for (int i=0; i < DIODE_NB; i++) {
 
-        LSL_PINOUTS_Write(&diode[i], HIGH);
+        LSL_PINOUTS_Write(&diode[i], stateA);
         if (segment & (1 << i)) {
-            LSL_PINOUTS_Write(&diode[i], LOW);
+            LSL_PINOUTS_Write(&diode[i], stateB);
         } else {
-            LSL_PINOUTS_Write(&diode[i], HIGH);
+            LSL_PINOUTS_Write(&diode[i], stateA);
         }
     }
 }
