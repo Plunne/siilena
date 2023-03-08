@@ -26,7 +26,7 @@ unsigned char LSL_PINOUTS_Read(LSL_Pinout *pinout) {
 }
 
 /* Output */
-void LSL_PINOUTS_Write(LSL_Pinout *pinout, unsigned char mode) {
+void LSL_PINOUTS_Write(LSL_Pinout *pinout, enum PINOUT_STATE mode) {
     
     switch (mode)
     {
