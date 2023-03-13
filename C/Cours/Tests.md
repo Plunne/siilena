@@ -10,7 +10,6 @@ Formateur : Paul-Ernest MARTIN
 ## TABLE DES MATIERES
 - [COURS - Les Tests](#cours---les-tests)
   - [TABLE DES MATIERES](#table-des-matieres)
-- [LOI DE PARETO](#loi-de-pareto)
 - [TYPES D'ERREUR](#types-derreur)
 - [7 PRINCIPES](#7-principes)
 - [PROCESSUS \& PSYCHOLOGIE](#processus--psychologie)
@@ -21,10 +20,19 @@ Formateur : Paul-Ernest MARTIN
   - [Test All Singles](#test-all-singles)
   - [Test All Pairs](#test-all-pairs)
   - [Classes d'Equivalences](#classes-dequivalences)
-
-# LOI DE PARETO
-
-
+  - [Diagramme d'etats](#diagramme-detats)
+- [BOITE NOIRE, GRISE, BLANCHE](#boite-noire-grise-blanche)
+  - [Boite Noire](#boite-noire)
+  - [Boite Blanche](#boite-blanche)
+  - [Boite Grise](#boite-grise)
+- [TESTS ALEATOIRES](#tests-aleatoires)
+- [JENKINS](#jenkins)
+- [FURPSE](#furpse)
+- [BOITE BLANCHE](#boite-blanche-1)
+- [PILOTE \& BOUCHON](#pilote--bouchon)
+  - [Pilote](#pilote)
+  - [Bouchon](#bouchon)
+- [MACROS ERRNO](#macros-errno)
 
 # TYPES D'ERREUR
 
@@ -60,7 +68,7 @@ Formateur : Paul-Ernest MARTIN
 
 ## Test statiques
 
-Test avant l'execution. (lecture du code source)
+Test avant l'execution. (examination du code source) + Chocoblast pour moi !
 
 ## Test dynamiques
 
@@ -93,3 +101,106 @@ Regrouper les entrees de tests logiquement.
 v     v   vv       v       vv    v    v  
 |----------[---------------]----------|
 ```
+
+### Deroulement
+
+On compare en fonction de la classe d'equivalence la plus nombreuse.
+
+**Exemple :**
+
+| Jour   | Mois        | Annee          |
+|--------|-------------|----------------|
+| [1,27] | {1,3,...}   | bissextile     |
+| 28     | {4,6,9,...} | non-bissextile |
+| 29     | 12          | 1999           |
+| 30     | 2           | bissextile     |
+| 31     | {1,3,...}   | non-bissextile |
+| [1,27] | {4,6,9,...} | 1999           |
+| 28     | 12          | bissextile     |
+| 29     | 2           | non-bisextile  |
+| ...    | ...         | ...            |
+
+> Ici, le Jour a le plus de classe d'equivalence.
+
+## Diagramme d'etats
+
+Representation des differents etats d'un systeme et la transition de ces etats.
+
+1. Initalisation (Affectation)
+2. Demande/Requete (Condition)
+3. Verification (SI Condition)
+4. Validation (Condition VRAIE)
+5. Refus (Condition FAUSSE)
+
+# BOITE NOIRE, GRISE, BLANCHE
+
+## Boite Noire
+
+Outils/Procedures de tests dont on test les entrees et sorties quand on ne connait pas l'implementation. (Generalement pour les tests de validation)
+
+## Boite Blanche
+
+Outils/Procedures de tests dont on maitrise l'entierete des tests, deroulement du programme, tests des composants. On passe dans tous les chemins possibles. (Generalement pour les tests unitaires)
+
+## Boite Grise
+
+Hybride entre boite noire et boite blanche.
+
+# TESTS ALEATOIRES
+
+Permettent d'eviter les pesticides en ayant une plus grande variete de tests grace a des valeurs d'entree aleatoires.
+
+# JENKINS
+
+Systeme Open Source pour gerer la construction et l'integration continue.
+
+Son objectif est de surveiller les modifications du code source et de lancer les tests en consequence des changements afin de generer des rapports d'erreurs pour nous informer des choses a revoir.
+
+
+# FURPSE
+
+Un bon logiciel est FURPSE.
+
+- **F**unctionnality
+- **U**sability
+- **R**eliability
+- **P**erformances
+- **S**ervice Ability
+- **E**volutive
+
+Un programe doit etre Fonctionnel/Coherent, Utilisable/Ergonomique, Fiable, Performant, Maintenable et Evolutif.
+
+# BOITE BLANCHE
+
+Tests qui se concentrent sur la structure interne du programme.
+
+
+**Quelques types/criteres de boite blanche :**
+
+- Toutes le instructions
+- Tous les chemins
+- Toutes les conditions
+
+# PILOTE & BOUCHON
+
+## Pilote
+
+Envoie des donnees au composant et recupere les sorties.
+
+## Bouchon
+
+Simule les composants auxquels le composant teste est connecte.
+
+# MACROS ERRNO
+
+Quelques macros pour errno dans le cadre des tests.
+
+| Macro    | Definition                           |
+|----------|--------------------------------------|
+| `EDOM`   | Erreur de domaine (argument mauvais) |
+| `EINVAL` | Erreur d'argument invalide           |
+| `EPERM`  | Operation non permise                |
+| `ENOMEM` | Plus de place en memoire disponible  |
+
+> La fonction retourne une erreur, errno contient les infos sur l'erreur.
+

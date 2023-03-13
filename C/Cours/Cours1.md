@@ -1317,6 +1317,9 @@ Valeur de la variable pointee.
 *pointeur
 ```
 
+> **IMPORTANT!**  
+> Il faut verifier qu'un pointeur pointe sur un emplacement memoire (!= NULL) avant de le dereferencer.
+
 ## Adresse de la variable
 
 Adresse de la variable pointee.
