@@ -11,16 +11,28 @@ int numUsers;
 Account listAccount[MAX_ACCOUNT];
 int numAccounts;
 
+class BankTest : public ::testing::TestWithParam<std::tuple<User*, int*, Account*, int*>> {};
 
-TEST(BankTest, Create_Bank_Valid) {
-    Bank* bank = create_bank(listUser, &numUsers, listAccount, &numAccounts);
-    EXPECT_TRUE(bank != nullptr);
-    EXPECT_EQ(bank->users, listUser);
-    EXPECT_EQ(bank->num_users, &numUsers);
-    EXPECT_EQ(bank->accounts, listAccount);
-    EXPECT_EQ(bank->num_accounts, &numAccounts);
+TEST_P(BankTest, BankCreation) {
+
+	User* liUser		= std::get<0>(GetParam());
+	int *nUsers			= std::get<1>(GetParam());
+	Account* liAccount	= std::get<2>(GetParam());
+	int *nAccount		= std::get<3>(GetParam());
+	Bank* bank = create_bank(liUser, nUsers, liAccount, nAccount);
+
+	EXPECT_EQ(bank, nullptr);
 }
 
+INSTANTIATE_TEST_SUITE_P(
+	CreateBank, BankTest,
+	::testing::Values(
+		std::make_tuple(nullptr,	&numUsers,	listAccount,	&numAccounts),
+		std::make_tuple(listUser,	nullptr,	listAccount,	&numAccounts),
+		std::make_tuple(listUser,	&numUsers,	nullptr,		&numAccounts),
+		std::make_tuple(listUser,	&numUsers,	listAccount,	nullptr)
+	)
+);
 
 /*
 */

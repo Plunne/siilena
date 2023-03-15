@@ -1,7 +1,11 @@
 #ifndef __LSL_PINOUTS_H
 #define __LSL_PINOUTS_H
 
-#include "stm32f103xb.h"
+#ifdef TESTING
+	#include "STM32F103_TestDriver.h"
+#else
+	#include "stm32f103xb.h"
+#endif
 
 #define INPUT_MODE   0x8
 #define OUTPUT_MODE  0x1
