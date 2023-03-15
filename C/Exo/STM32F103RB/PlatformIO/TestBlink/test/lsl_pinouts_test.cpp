@@ -8,7 +8,7 @@ extern "C" {
 }
 
 
-TEST(LSL_STMF103Pinouts, dummy) {   
+TEST(LSL_STM32F103_TestBlink, TestWriteLED) {   
 	
     LSL_PINOUTS_Write(&LED, HIGH);			// LED ON
     EXPECT_EQ(GPIOA->ODR, (1 << LED.pin));
