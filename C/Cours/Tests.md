@@ -68,7 +68,7 @@ Formateur : Paul-Ernest MARTIN
 
 ## Test statiques
 
-Test avant l'execution. (examination du code source) + Chocoblast pour moi !
+Test avant l'execution. (examination du code source)
 
 ## Test dynamiques
 
