@@ -32,7 +32,7 @@ Preparation du plan de vol (determination de la ligne a suivre).
 
 ## NOTAM
 
-Status de chaque piste (fermee/ouverte/services en moins/etc.) a telle date.
+Status de chaque piste (fermee/ouverte/services en moins/travaux/etc.) a telle date.
 
 ## METEO
 
@@ -76,3 +76,89 @@ Prevoir la bonne quantite de carburant.
 ## EQUILIBRE
 
 L'equilibre de chargement est crucial pour le bon deroulement du vol! (**DANGER DE CRASH**)
+
+
+# 2. CONDUITE DU VOL
+
+## Capitaine
+
+Le capitaine est la personne la plus responsable a bord de l'avion, il doit s'assurer que le vol se passe bien.
+
+## First officier
+
+Bras droit du capitaine.
+
+## Etapes du vol
+
+1. FLY
+2. NAVIGATE
+3. COMMUNICATE
+4. MANAGE
+
+## IHM & HHS
+
+Dans un avion il existe une relation Homme-Machine mais aussi une relation Humain-Humain pour le departagement des taches entre les 2 pilotes.
+
+## PF & PM
+
+### Pilot Flying
+
+Est premierement Responsable du controle de l'avion et le monitoring de l'avion (la vitesse et la route).
+
+Donne des instruction de commandes (flaps, landing gear, etc.) a etre execute par le PM.
+
+### Pilot Monitoring
+
+Est premierement responsable du monitoring de l'avion.
+
+## SOP
+
+La SOP permet d'anticiper et de preparer le vol avec des procedures predefinies.
+
+## Operation normale
+
+- Les pilotes arrivent sur place 2h avant le depart pour un briefing.
+
+- Apres 1h de briefing, ils programment la coordination du vol.
+
+- 45 min avant le depart, les pilotes mettent a jour les donnees de vol.
+
+- 20 min avant le depart, les pilotes refont un briefing.
+
+- 10 min avant le depart, tout l'equipage doit etre complet pour finaliser les calculs des donnees de vol.
+
+- Pendant le vol, les pilotes surveillent l'EMAC System Display pour les erreurs et les mises a jour des NOTAM pour reagir si des evenements ont lieux.
+
+- La descente prend environ 30 minutes.
+
+## Procedures d'urgence
+
+En cas d'urgence les pilotes suivent la checklist et les indications de l'ECAM. 
+
+### PILOT
+
+- **P** : Pool the facts
+- **I** : Identify the problem
+- **L** : Look for solutions
+- **O** : Operate
+- **T** : Take stock
+
+### FORDEC
+
+- **F** : Fact
+- **O** : Option
+- **R** : Risk
+- **D** : Decision
+- **E** : Execution
+- **C** : Control
+
+### CRM / HF
+
+Cockpit Resource Management.
+
+Le facteur humain (HF : Human Factor) impacte la prise de decision lors des procedures d'urgence.
+
+## Relation avec le control aerien
+
+Le controle aerien doit assurer l'absence de collision dans le traffic aerien et assister les pilotes lors des procedures.
+
