@@ -154,7 +154,8 @@ En cas d'urgence les pilotes suivent la checklist et les indications de l'ECAM.
 
 ### CRM / HF
 
-Cockpit Resource Management.
+Le Crew Resource Management est ce qui regroupe toutes les procedures sur la navigation de l'avion et la repartition des taches entre le PF et le PM et le checking des problemes.
+
 
 Le facteur humain (HF : Human Factor) impacte la prise de decision lors des procedures d'urgence.
 
