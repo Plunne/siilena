@@ -91,3 +91,12 @@ TCP/IP, SSH/SCP, SMTP, FTP, MQTT, NTP, HTTP, BLE, etc.
 - **Protocoles parallele :** PATA, Parallele, etc.
 - **Protocoles serie :** USB, UART, I2C, CAN, SPI, Ethernet, etc.
 
+
+7 - Message
+6 - contenu SMS
+5 - ??
+4 - SMS
+3 - IP
+2 - @mac
+1 - Ethernet
+0 - 4G
