@@ -25,6 +25,13 @@ Formateur : R. ELABED
 - [TRAME](#trame)
   - [Standard](#standard)
   - [Extended](#extended)
+  - [IDLE](#idle)
+- [ARBITRAGE](#arbitrage)
+- [DATA PROTECTION](#data-protection)
+  - [Prevening bit errors](#prevening-bit-errors)
+  - [Mecanismes anti-erreurs](#mecanismes-anti-erreurs)
+  - [Fault Confinement](#fault-confinement)
+- [CANFD](#canfd)
 
 # INTRODUCTION
 
@@ -156,4 +163,79 @@ Envoit de message sur reseau etendu
 |  1  | 11 |  1  |  1  |     16      |  1  |    2     |  4  | 64 (8 octets) |    15    |  1  |  1  |  7  |  3  |
 
 - SRR : Substitude Remote Request (inutile, toujours a 1)
+
+## IDLE
+
+Lors de la phase de repos, pour le bus CAN, le repos est definit a partir de 11 bits a l'etat haut.
+
+Pour eviter d'interpreter une trame ayant 11bits consecutifs a l'etat,
+les controleurs CAN effectue un Bitstuffing.
+
+> **Bitstuffing :**
+> 
+> Les bits (electriques) de la trame sont inverses sur une intervaale reguliaire.
+> Generalement tous les 5 bits.
+
+# ARBITRAGE
+
+Lorsque plusieurs trames veulent etre transmises sur le bus en meme temps un mecanisme d'arbitrage definit une priorite.
+
+Par defaut, le plus souvent, la trame en attente avec l'identifiant le plus faible est prioritaire.
+
+**Exercices :**
+
+1 - 0x01F  
+2 - 0x021  
+3 - 0x103  
+4 - 0x7F1  
+
+1 - 0x7AF  
+2 - 0x7C0  
+3 - 0x7F1  
+4 - 0x800  
+
+# DATA PROTECTION
+
+- Prevent bit error
+- Handling of remaining bit errors
+- Fault confinement
+
+## Prevening bit errors
+
+On peut prevenir les erreurs de bit avec la qualite de la ligne.
+
+- Fibre optique ou Isolation
+- Paires torsadees
+- Masse commune
+- Plus faible debit
+- Ligne plus courte
+- Reduction de reflections
+
+## Mecanismes anti-erreurs
+
+- Bit monitoring (compare Tx & Rx)
+- ACK
+- 
+- CRC
+- Form check
+
+## Fault Confinement
+
+Limite le nombre d'attente d'un identifiant.
+
+Le CAN controller dispose d'un compteur qui s'increment de 8 autant de fois qu'un identifiant n'est pas transmit.
+
+Une fois arrive a son maximum, un drapeau est levee afin d'informer que l'identifiant doit passer.
+
+# CANFD
+
+Le CAN Flexible Data Rate
+
+| SOF | ID | RTR | IDE | FDF | reserved | BRS | ESI | DLC | Data Fields | Checksum | DEL | ACK | EOF | ITM |
+|:---:|:--:|:---:|:---:|:---:|:--------:|:---:|:---:|:---:|:-----------:|:--------:|:---:|:---:|:---:|:---:|
+|  1  | 11 |  1  |  1  |  1  |    1     |  1  |  1  |  4  |  64 octets  |    15    |  1  |  1  |  7  |  3  |
+
+FDF : FD Format
+BRS : Bit Rate Switch
+ESI : Error State Indicator
 
