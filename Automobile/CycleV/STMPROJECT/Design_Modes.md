@@ -20,7 +20,11 @@
 - Sorties : T/F
 
 ```
-return (BP_Mode == PRESSED)
+if BP_Mode == PRESSED
+|-- Then
+|   | mode = mode++ % NB_MODES
+|
+return mode
 ```
 
 # Type Changement de Mode
